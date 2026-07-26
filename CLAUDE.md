@@ -56,3 +56,8 @@ For every task, return:
 
 ## ACTIVE CONTEXT (update as things change)
 - 2026-07-25: Workspace initialized. Candidate passive-income projects discussed, in priority order: (1) digital template packs (Notion/Airtable/spreadsheet systems sold on Gumroad/Lemon Squeezy), (2) niche paid micro-tool web app (Vercel/Cloudflare + Stripe), (3) print-on-demand Shopify storefront. No project started yet.
+- 2026-07-26: Discovered Isaac has a second repo: `isaacmagin78-ops/I.Magin-island-repair-` — TypeScript lead-capture app for his handyman/contractor business, 4 open issues. OPEN QUESTION: should it take priority over the passive-income ideas since it feeds an existing business? Not yet decided.
+
+## TODO (check every session, remove when done)
+- [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Reminder scheduled for 2026-07-27 morning. Nothing breaks on rename; GitHub redirects the old name.
+- [ ] Isaac to decide: first project = template pack, or work on I.Magin-island-repair instead.
