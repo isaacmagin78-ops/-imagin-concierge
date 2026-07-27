@@ -76,5 +76,5 @@ For every task, return:
 
 ## TODO (check every session, remove when done)
 - [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Reminder scheduled for 2026-07-27 morning. Nothing breaks on rename; GitHub redirects the old name.
-- [ ] Isaac to decide: first active project = Madison Moves launch, College Launch OS polish/sell, Legends Ranch content, or template pack.
+- [x] DECIDED 2026-07-27: First active project = TEMPLATE PACK (digital product), chosen over college checklist. Isaac's launch strategy: master the product fully, make it visible, limited-time founders offer for first 100 buyers, then double the price. Niche proposal pending Isaac's pick (see /projects once started).
 - [ ] Optional: Isaac renames `I.Magin-island-repair-` to something like `imagin-projects` (it's now a clean monorepo, not a repair app).
