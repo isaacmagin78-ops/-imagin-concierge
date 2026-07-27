@@ -56,7 +56,12 @@ For every task, return:
 
 ## ACTIVE CONTEXT (update as things change)
 - 2026-07-25: Workspace initialized. Candidate passive-income projects discussed, in priority order: (1) digital template packs (Notion/Airtable/spreadsheet systems sold on Gumroad/Lemon Squeezy), (2) niche paid micro-tool web app (Vercel/Cloudflare + Stripe), (3) print-on-demand Shopify storefront. No project started yet.
-- 2026-07-26: Discovered Isaac has a second repo: `isaacmagin78-ops/I.Magin-island-repair-` — TypeScript lead-capture app for his handyman/contractor business, 4 open issues. OPEN QUESTION: should it take priority over the passive-income ideas since it feeds an existing business? Not yet decided.
+- 2026-07-26: Discovered Isaac has a second repo: `isaacmagin78-ops/I.Magin-island-repair-`. INVESTIGATED — it is NOT a handyman lead-capture app despite its name/description. It is a junk drawer of at least 4 unrelated projects from separate past Claude sessions:
+  - `main` = "College Launch OS" (Next.js college-prep family checklist app). A version of it is LIVE at https://college-launch-os.vercel.app (deployed by file upload, NOT connected to the repo's git).
+  - `Isaac-Video-Engine/` folder nested in main = Remotion video-rendering engine with its own CLAUDE.md, skills, docs.
+  - PR #3 = "Madison Moves" South Florida home concierge business site (Next.js, Stripe links, booking form). This is likely the "concierge" project this workspace repo is named after.
+  - PR #5 = sync repo to the live streamlined College Launch build. PR #6 = video engine verification. PR #7 = Legends Ranch promo video theme (ranch/real-estate related).
+  - Isaac's direction 2026-07-26: untangle and fix all of it. Cleanup plan proposed, awaiting his approval on specifics.
 
 ## TODO (check every session, remove when done)
 - [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Reminder scheduled for 2026-07-27 morning. Nothing breaks on rename; GitHub redirects the old name.
