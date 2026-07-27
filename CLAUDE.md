@@ -66,6 +66,7 @@ For every task, return:
     - College Launch OS → DIGITAL PRODUCTS category (feeds the passive-income/template track).
     - Legends Ranch → standalone project; progresses as Arturo, Isaac's mom, and Bobby (Arturo's grandson) see the possibilities.
     - Isaac Video Engine → shared production tool (serves Legends Ranch promos + any project needing video).
+- 2026-07-27: CLEANUP EXECUTED. `I.Magin-island-repair-` main branch reorganized into four folders: `madison-moves/`, `college-launch-os/` (live-synced version), `isaac-video-engine/` (PR #6 + #7 merged), `legends-ranch/` (deliverables incl. finished anthem film + site audit). All 4 open PRs closed with pointers; nothing deleted, old state in git history before commit 0678ec1. GitHub integration CANNOT create new repos (403) — if Isaac wants true separate repos, he creates empty ones and a session splits the folders out.
 
 ## PEOPLE
 - Isaac (isaacmagin78-ops) — owner. Pompano Beach, FL (Eastern time). Uses voice-to-text; confirm ambiguous messages before acting.
@@ -75,4 +76,5 @@ For every task, return:
 
 ## TODO (check every session, remove when done)
 - [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Reminder scheduled for 2026-07-27 morning. Nothing breaks on rename; GitHub redirects the old name.
-- [ ] Isaac to decide: first project = template pack, or work on I.Magin-island-repair instead.
+- [ ] Isaac to decide: first active project = Madison Moves launch, College Launch OS polish/sell, Legends Ranch content, or template pack.
+- [ ] Optional: Isaac renames `I.Magin-island-repair-` to something like `imagin-projects` (it's now a clean monorepo, not a repair app).
