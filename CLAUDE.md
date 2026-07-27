@@ -61,7 +61,17 @@ For every task, return:
   - `Isaac-Video-Engine/` folder nested in main = Remotion video-rendering engine with its own CLAUDE.md, skills, docs.
   - PR #3 = "Madison Moves" South Florida home concierge business site (Next.js, Stripe links, booking form). This is likely the "concierge" project this workspace repo is named after.
   - PR #5 = sync repo to the live streamlined College Launch build. PR #6 = video engine verification. PR #7 = Legends Ranch promo video theme (ranch/real-estate related).
-  - Isaac's direction 2026-07-26: untangle and fix all of it. Cleanup plan proposed, awaiting his approval on specifics.
+  - Isaac's direction 2026-07-26: untangle and fix all of it. All projects are keepers, categorized by Isaac as:
+    - Madison Moves → under the I.Magin CONCIERGE umbrella (core business of this workspace).
+    - College Launch OS → DIGITAL PRODUCTS category (feeds the passive-income/template track).
+    - Legends Ranch → standalone project; progresses as Arturo, Isaac's mom, and Bobby (Arturo's grandson) see the possibilities.
+    - Isaac Video Engine → shared production tool (serves Legends Ranch promos + any project needing video).
+
+## PEOPLE
+- Isaac (isaacmagin78-ops) — owner. Pompano Beach, FL (Eastern time). Uses voice-to-text; confirm ambiguous messages before acting.
+- Arturo — partner/collaborator on Legends Ranch.
+- Isaac's mom — involved in Legends Ranch.
+- Bobby — Arturo's grandson, involved in Legends Ranch.
 
 ## TODO (check every session, remove when done)
 - [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Reminder scheduled for 2026-07-27 morning. Nothing breaks on rename; GitHub redirects the old name.
