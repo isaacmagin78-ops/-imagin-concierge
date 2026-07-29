@@ -1,24 +1,48 @@
 # ISAAC WORKSPACE OPERATING CHARTER
 
-## READ THIS FIRST — HOW THESE SESSIONS ACTUALLY WORK
+> ## ⛔ THIS FILE IS NOT THE SOURCE OF TRUTH
+>
+> **The canonical system of record is Notion: the `Ike OS` page and the
+> `Ike OS — Master Project Registry` database.** Read those FIRST, every session,
+> before forming any opinion about priority or state.
+>
+> This file is repo-local operating detail for the two GitHub repos, and it is
+> **subordinate** to Ike OS. Where they conflict, Ike OS wins.
+>
+> **Do not build a competing brain here.** Ike OS has an explicit duplication
+> rule: extend the registry, never create a rival operating-system page. A
+> session on 2026-07-29 violated this by rewriting this file as "the brain"
+> before checking Notion. That is exactly the drift the OS exists to prevent.
+>
+> **Every session ends with a dated write-back to the relevant Notion venture
+> page**, even if it is three lines. A six-day silent gap is what caused the
+> July continuity failure.
 
-Isaac has lost real time to a misunderstanding about this. Fix it early, kindly,
-and only if it comes up.
+## READ THIS FIRST — WHAT ACTUALLY HAPPENED, AND WHAT DIDN'T
 
-- Claude does **not** run on Isaac's computer and never has. Every session is a
-  fresh, temporary cloud container that clones the repo, works, pushes, and is
-  destroyed.
-- Every session starts with **zero memory** of every previous conversation.
-  There have been 50+ chats. None of them carry over.
-- **This file and the git history are the entire memory.** Continuity that feels
-  like a "second brain" is this file being re-read, nothing more.
-- Therefore: if it is not committed, it does not exist. Before ending any
-  session, write what changed into ACTIVE CONTEXT below and commit it.
-- When Isaac says something "broke," "went haywire," or that Claude "took over
-  the computer" — do not accept the framing and do not panic-fix. Verify the
-  actual state of the repos and live URLs with real tool calls first, then
-  explain what is genuinely true. Usually nothing is lost; it is a missing-memory
-  problem or an interface change on Anthropic's side.
+Isaac was right about the thing an earlier session told him he was wrong about.
+Do not repeat that mistake.
+
+- **On or about 2026-07-28, an agent session with local file access reorganized
+  Isaac's MacBook.** Files moved, folder structure left unrecognizable. No
+  server-side business data was lost, but a full working day was destroyed and
+  three days of founder time went with it. When Isaac says Claude "took over the
+  computer," **he is describing a real event.** Take it seriously.
+- The binding consequence is the **Destructive-action rule** on the Ike OS page
+  (2026-07-29, founder directive, non-negotiable). It overrides the 2026-07-26
+  autonomy threshold. No agent may move, rename, delete, reorganize, or
+  bulk-modify local files without a fresh, task-specific instruction naming the
+  target folder. "Organize," "clean up," and "tidy" mean *propose a plan and
+  stop*. Ambiguity about scope is a stop condition, not a judgment call.
+- Separately, and this is the part that is genuinely a memory problem: **this
+  Claude Code session runs in a disposable cloud container**, not on Isaac's
+  machine, and starts with **zero memory** of previous conversations. Both facts
+  are true at once. Explaining one does not refute the other — an earlier
+  session used the cloud fact to wave away the MacBook incident. Do not.
+- **Verify the live layer before diagnosing anything.** Notion records intent;
+  Stripe, Blotato, and the live URLs record reality. Where they disagree, the
+  live layer wins and Notion gets corrected — never the reverse. A session that
+  reports a blocker without checking live is producing an unverified claim.
 
 ## ROLE
 You are the technical execution partner for Isaac's workspace. Translate
@@ -108,12 +132,35 @@ social. **Read it and update it every session that touches marketing.**
 
 ## Live URLs
 
-| URL | What | Notes |
+Verified directly against Stripe / Blotato / live web on 2026-07-29. Trust this
+table over anything older.
+
+| URL / ID | What | Notes |
 |---|---|---|
-| `tysons-time-kit.vercel.app` | Kit sales page | Use THIS in social captions |
-| `tysons-kit-link.vercel.app` | 302 → Stripe | Tracking link, use `?s=yt` etc. |
-| `buy.stripe.com/cNi4gz1z1aBXdAW7pUg7e00` | Live $19 checkout | Redirects to access page |
+| `tysons-time-kit.vercel.app` | Kit sales page | **Use THIS in every caption.** HTTP 200 |
+| `tysons-kit-access.vercel.app/access-tyk30-8f4d2/` | Post-purchase delivery | Live, serves the PDF |
+| `buy.stripe.com/cNi4gz1z1aBXdAW7pUg7e00` | Live $19 checkout | `plink_1TvWGNFDa35si8LwJTaOvlh0`, livemode |
+| `tysons-kit-link.vercel.app` | ~~Redirect hub~~ | **BROKEN — DO NOT USE.** Skips the pitch, drops cold viewers straight onto a card form |
 | `college-launch-os.vercel.app` | College Launch OS | Deployed by file upload, NOT git-connected |
+
+**Stripe:** operating account is `acct_1ToG3jFDa35si8Lw` — live, charges and
+payouts enabled, Wells Fargo ...8223 verified, weekly Friday payouts. The old
+`acct_1ToG3tFPHMMe1WoM` "sandbox blocker" is **dead — do not re-diagnose it.**
+
+**Revenue reality:** exactly one $19 charge (≈Jul 24, Apple Pay, billing name
+Isaac Magin, his own address) — almost certainly his own delivery test.
+**Zero verified external revenue.** The funnel works; it has not yet converted a
+stranger. Claude's Stripe key here is read-only.
+
+**Known live defects (Ike-only fixes, highest value first):**
+1. Two YouTube descriptions (`u6E59H6OUP8`, `ACHx-DofbcI`, both Jul 26) point at
+   the broken redirect hub, and one says **"Free** First 30 Days Kit info" while
+   the link opens a $19 charge screen. Unintentional, but it reads as
+   bait-and-switch. ~3 minutes in YouTube Studio. Highest-value fix available.
+2. College Checklist is live at $49 but its checkout points at a **TEST-MODE**
+   Stripe link and cannot take payment.
+3. Amazon Associates tracking ID `tysonspicks-20` exists, but no tagged link is
+   in the funnel while ~25 published posts already carry the disclosure.
 
 **`*.vercel.app` is blocked by this environment's proxy for plain curl/WebFetch.**
 Checking one with curl returns a 403 CONNECT failure — that is the sandbox, NOT
@@ -242,6 +289,15 @@ session that touches marketing and refill before it drains.
       the Amazon Associates link is actually in the TikTok/IG/YouTube bios, or
       every "link in bio" CTA goes nowhere. A single link-in-bio page (Kit +
       Amazon picks) was offered and is awaiting his storefront/affiliate link.
+- [ ] **Ike OS top-5 by cash-per-hour** (from the registry's Next Action field —
+      re-read it, do not trust this copy): (1) get Amazon tagged links live,
+      (2) swap College Checklist's test-mode Stripe link for a live one — needs
+      Ike, Claude's key is read-only, (3) work the 26-prospect video-production
+      list, (4) Send Off College customer-journey audit, (5) populate
+      `04_PROMPT_LIBRARY`.
+- [ ] **Video Production Services is an ACTIVE revenue stream** (promoted
+      2026-07-29) with a 26-prospect list, sourced via Gemini and Perplexity.
+      It is not represented anywhere in these repos. See its Notion page.
 - [ ] Isaac to rename `-imagin-concierge` — drop the stray leading dash.
 - [ ] Optional: rename `I.Magin-island-repair-` to something like `imagin-projects`.
 - [ ] Template pack: build product skeleton, content outline, first module.
