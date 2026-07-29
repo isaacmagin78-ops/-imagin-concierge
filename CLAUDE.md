@@ -270,10 +270,38 @@ session that touches marketing and refill before it drains.
 - **`/gear` Amazon affiliate page** on `claude/tyson-gear-page-d15ud7` was
   deliberately removed by its own final commit — it belongs to the kit project.
 - Five fully-merged branches could not be deleted; the session git proxy returns
-  403 on ref deletion. Isaac can delete them in the GitHub UI if he wants:
+  403 on ref deletion (it blocks tag pushes too). They are harmless:
   `claude/legends-ranch-repositioning-cgc447`, `claude/remotion-video-engine-6nrljg`,
   `claude/remotion-video-engine-setup-88cegt`, `claude/todo-implementation-yheb82`,
-  `claude/workspace-cleanup`.
+  `claude/workspace-cleanup`. **Delete only these five — read the warning below
+  before touching any other branch.**
+
+## 🚨 PAID DELIVERY DEPENDS ON ONE BRANCH — DO NOT DELETE IT
+
+**`claude/fable-video-prompt-refine-b21x3t` must not be deleted.**
+
+The live customer download page — `tysons-kit-access.vercel.app/access-tyk30-8f4d2/`
+— serves the product PDF straight from GitHub, pinned to commit
+`c24622c43357338b079df03f1f9ef23d2da33ed8`. That commit is reachable **only**
+from that branch. Delete the branch and GitHub eventually garbage-collects the
+commit, the raw URL 404s, and **every customer who has paid $19 loses access to
+the product they bought.** Verified live 2026-07-29.
+
+**Permanent fix (needs Isaac — the access page is on a Vercel account this
+session cannot reach).** In the access page, replace the download `href` with:
+
+```
+https://raw.githubusercontent.com/isaacmagin78-ops/I.Magin-island-repair-/main/kit-site/files/first-30-days-kit.pdf
+```
+
+Safe to swap: the PDF is now on `main` (recovered 2026-07-29) and the blob is
+byte-identical — both are `b63b510ebf4c80a284c7db6555adca38aa088189`, 999,243
+bytes. Pinning to `main` instead of a disposable session branch ends the risk.
+Until that swap happens, the branch is load-bearing infrastructure.
+
+Serving a paid product from a raw GitHub URL is fragile in general — a repo
+rename or going private also breaks it. Worth moving the PDF into the deployed
+site's own `public/` directory when there's time.
 
 ## TODO (check every session, remove when done)
 - [ ] **Tyson's Time post queue — verified live 2026-07-29: 6 posts scheduled,
