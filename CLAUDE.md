@@ -229,9 +229,13 @@ session that touches marketing and refill before it drains.
   `claude/workspace-cleanup`.
 
 ## TODO (check every session, remove when done)
-- [ ] **URGENT — Tyson's Time post queue is scheduled only through Jul 30.**
-      Refill it. Check `blotato_list_schedules`, then queue new posts with the Kit
-      link + Amazon disclosure in every caption. Cross-post everything to Instagram.
+- [ ] **Tyson's Time post queue — verified live 2026-07-29: 6 posts scheduled,
+      running out after Jul 31 23:00Z.** (`HANDOFF.md` said Jul 30; it was stale.)
+      Refill before it drains. Check `blotato_list_schedules` first — never
+      schedule blind. Every caption needs the Kit link + Amazon disclosure.
+- [ ] **TikTok has nothing queued at all** (verified 2026-07-29). The current
+      queue is Instagram x4, Threads x1, YouTube x1. TikTok @tysons_time is
+      connected and working — it is simply being skipped.
 - [ ] **Blocked on Isaac — Facebook Page not linked** in Blotato → Accounts.
       Whole channel dark, zero posts ever. No session can fix this.
 - [ ] **Blocked on Isaac — social bios.** No tool can read or edit them. Confirm
