@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Open house Saturday, August 1, 1:00–3:00 PM. 2756 NE 35th Street, Fort Lauderdale, Florida. Offered at $1,250,000. Linda Magin Hoyt, ONE Sotheby's International Realty.">
+<meta name="theme-color" content="#0B1E2D">
+<title>2756 NE 35th Street — Open House Saturday</title>
+<style>
+/* ============================================================
+   I.MAGIN CONCIERGE — Open House Capture Page
+   2756 NE 35th Street, Fort Lauderdale FL 33306
+   Single-file, self-contained. No external requests.
+   ============================================================ */
+
+:root{
+  color-scheme: light;
+
+  /* Palette — Intracoastal at dusk */
+  --abyss:#0B1E2D;
+  --tide:#143A4E;
+  --tide-lift:#1D4F65;
+  --shell:#FBFAF7;
+  --dune:#E8E3DA;
+  --dune-deep:#D6CFC2;
+  --brass:#B18A4A;
+  --brass-soft:#C9A874;
+  --sea:#2E7E8C;
+
+  /* Neutrals, biased blue off the navy ground */
+  --ink:#132430;
+  --ink-2:#41525E;
+  --ink-3:#71818B;
+
+  /* Type */
+  --display:"Didot","Bodoni MT","Hoefler Text",Garamond,"Times New Roman",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+
+  --t-hero:clamp(2.75rem,12vw,4.5rem);
+  --t-h2:clamp(1.5rem,6.5vw,2.25rem);
+  --t-h3:1.0625rem;
+  --t-body:1.0625rem;
+  --t-label:0.6875rem;
+
+  /* Rhythm */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px;
+  --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px;
+
+  --gutter:clamp(20px,5.5vw,40px);
+  --measure:34rem;
+  --hair:rgba(19,36,48,.16);
+  --hair-dark:rgba(251,250,247,.18);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;
+  background:var(--shell);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:var(--t-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{max-width:100%;display:block}
+
+:focus-visible{
+  outline:2px solid var(--sea);
+  outline-offset:3px;
+}
+
+/* ---------- Shared primitives ---------- */
+
+.wrap{
+  width:100%;
+  max-width:44rem;
+  margin-inline:auto;
+  padding-inline:var(--gutter);
+}
+
+.label{
+  font-size:var(--t-label);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  font-weight:600;
+  line-height:1.4;
+}
+
+.serif{font-family:var(--display);font-weight:400}
+
+/* Placeholder token — every unverified value wears this */
+.tbd{
+  color:var(--brass);
+  font-style:normal;
+  border-bottom:1px dotted var(--brass-soft);
+  padding-bottom:1px;
+  white-space:nowrap;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero{
+  position:relative;
+  background:var(--abyss);
+  color:var(--shell);
+  overflow:hidden;
+  padding-block:calc(var(--s7) + env(safe-area-inset-top)) var(--s7);
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:-30% -20% auto -20%;
+  height:120%;
+  background:
+    radial-gradient(60% 45% at 25% 18%, rgba(29,79,101,.85), transparent 70%),
+    radial-gradient(50% 40% at 85% 70%, rgba(177,138,74,.18), transparent 72%);
+  animation:tide 26s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+@keyframes tide{
+  from{transform:translate3d(-3%,-2%,0) scale(1)}
+  to{transform:translate3d(4%,3%,0) scale(1.08)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero::before{animation:none}
+}
+
+.hero > .wrap{position:relative;z-index:1}
+
+/* Brokerage lockup — typographic, no logo asset */
+.brand{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s2);
+  padding-bottom:var(--s6);
+}
+.brand__one{
+  font-family:var(--display);
+  font-size:1.5rem;
+  letter-spacing:.42em;
+  line-height:1;
+  text-indent:.42em;
+}
+.brand__rule{
+  height:1px;
+  background:var(--hair-dark);
+  width:100%;
+}
+.brand__firm{
+  font-size:.625rem;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:rgba(251,250,247,.7);
+  font-weight:500;
+}
+
+.hero__eyebrow{
+  color:var(--brass-soft);
+  margin-bottom:var(--s4);
+}
+
+.hero__address{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:var(--t-hero);
+  line-height:1.02;
+  letter-spacing:-.015em;
+  margin:0;
+  text-wrap:balance;
+}
+.hero__city{
+  font-family:var(--display);
+  font-size:clamp(1.125rem,4.5vw,1.5rem);
+  color:rgba(251,250,247,.72);
+  margin:var(--s3) 0 0;
+  letter-spacing:.02em;
+}
+
+.hero__rule{
+  height:1px;
+  background:linear-gradient(90deg,var(--brass) 0%,rgba(177,138,74,.15) 100%);
+  margin-block:var(--s6);
+}
+
+.hero__price{
+  display:flex;
+  align-items:baseline;
+  gap:var(--s3);
+  flex-wrap:wrap;
+}
+.hero__price b{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1.75rem,7.5vw,2.5rem);
+  letter-spacing:.01em;
+  font-variant-numeric:tabular-nums;
+}
+.hero__price span{
+  color:rgba(251,250,247,.6);
+  font-size:var(--t-label);
+  letter-spacing:.22em;
+  text-transform:uppercase;
+}
+
+/* Open-house time block */
+.when{
+  margin-top:var(--s7);
+  border:1px solid var(--hair-dark);
+  padding:var(--s5);
+  display:flex;
+  flex-direction:column;
+  gap:var(--s4);
+}
+.when__label{color:var(--brass-soft)}
+.when__day{
+  font-family:var(--display);
+  font-size:clamp(1.375rem,5.5vw,1.75rem);
+  line-height:1.15;
+}
+.when__time{
+  font-variant-numeric:tabular-nums;
+  color:rgba(251,250,247,.78);
+  font-size:1rem;
+  letter-spacing:.01em;
+}
+
+.ics{
+  align-self:flex-start;
+  color:var(--shell);
+  text-decoration:none;
+  border-bottom:1px solid var(--brass);
+  padding-bottom:2px;
+  font-size:.8125rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:600;
+  transition:color .2s ease,border-color .2s ease;
+}
+.ics:hover,.ics:focus-visible{color:var(--brass-soft);border-color:var(--brass-soft)}
+
+/* ============================================================
+   PHOTO PLACEHOLDERS
+   ============================================================ */
+
+.shot{
+  position:relative;
+  background:linear-gradient(178deg,#1B3D52 0%,#245264 42%,#2C5F6B 62%,#20495B 100%);
+  border:1px solid var(--hair-dark);
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:var(--s5);
+  overflow:hidden;
+}
+/* Horizon line — suggests the frame without pretending to be a photo */
+.shot::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:58%;
+  height:1px;
+  background:rgba(251,250,247,.22);
+}
+.shot__inner{position:relative;z-index:1}
+.shot__kind{
+  color:rgba(251,250,247,.55);
+  font-size:.625rem;
+  letter-spacing:.26em;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.shot__brief{
+  font-family:var(--display);
+  color:var(--shell);
+  font-size:1.0625rem;
+  line-height:1.3;
+  margin-top:var(--s2);
+  text-wrap:balance;
+}
+.shot--hero{aspect-ratio:4/3}
+.shot--tile{aspect-ratio:1/1;padding:var(--s4)}
+.shot--tile .shot__brief{font-size:.9375rem}
+.shot--wide{aspect-ratio:16/10;grid-column:1 / -1}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:var(--s3);
+}
+@media (min-width:40rem){
+  .gallery{grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+}
+
+/* ============================================================
+   SECTIONS
+   ============================================================ */
+
+.band{padding-block:var(--s8)}
+.band--tight{padding-block:var(--s7)}
+.band--dark{background:var(--abyss);color:var(--shell)}
+.band--dune{background:var(--dune)}
+
+.band__head{margin-bottom:var(--s6)}
+.band__eyebrow{color:var(--sea);margin-bottom:var(--s3)}
+.band--dark .band__eyebrow{color:var(--brass-soft)}
+.band__title{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:var(--t-h2);
+  line-height:1.12;
+  margin:0;
+  letter-spacing:-.01em;
+  text-wrap:balance;
+}
+.band__note{
+  color:var(--ink-2);
+  font-size:.9375rem;
+  margin:var(--s3) 0 0;
+  max-width:var(--measure);
+}
+
+/* ---------- Title block: label / value rows ---------- */
+
+.plate{
+  border-top:1px solid var(--hair);
+  margin:0;
+}
+.plate div{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:var(--s4);
+  padding-block:var(--s4);
+  border-bottom:1px solid var(--hair);
+}
+.plate dt{
+  color:var(--ink-3);
+  font-size:var(--t-label);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:600;
+  flex:0 0 auto;
+}
+.plate dd{
+  margin:0;
+  text-align:right;
+  font-family:var(--display);
+  font-size:1.125rem;
+  font-variant-numeric:tabular-nums;
+  letter-spacing:.01em;
+}
+
+/* ---------- Highlights ---------- */
+
+.points{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:var(--s5);
+}
+.points li{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:var(--s4);
+  align-items:start;
+}
+.points li::before{
+  content:"";
+  width:22px;
+  height:1px;
+  background:var(--brass);
+  margin-top:.75em;
+}
+.points h3{
+  margin:0 0 var(--s1);
+  font-size:var(--t-h3);
+  font-weight:600;
+  letter-spacing:.01em;
+}
+.points p{
+  margin:0;
+  color:var(--ink-2);
+  font-size:.9375rem;
+  line-height:1.55;
+  max-width:var(--measure);
+}
+.band--dark .points p{color:rgba(251,250,247,.72)}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+
+.actions{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s3);
+}
+
+.btn{
+  appearance:none;
+  -webkit-appearance:none;
+  font:inherit;
+  font-size:.9375rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border:1px solid var(--abyss);
+  background:transparent;
+  color:var(--abyss);
+  padding:var(--s5) var(--s5);
+  min-height:56px;
+  width:100%;
+  text-align:left;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--s4);
+  transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+.btn__arrow{
+  font-family:var(--sans);
+  font-size:1.125rem;
+  line-height:1;
+  transition:transform .18s ease;
+}
+.btn:hover,.btn:focus-visible{background:var(--abyss);color:var(--shell)}
+.btn:hover .btn__arrow,.btn:focus-visible .btn__arrow{transform:translateX(4px)}
+
+.btn--solid{background:var(--abyss);color:var(--shell)}
+.btn--solid:hover,.btn--solid:focus-visible{background:var(--tide);border-color:var(--tide)}
+
+.btn--brass{
+  background:var(--brass);
+  border-color:var(--brass);
+  color:var(--abyss);
+  justify-content:center;
+  text-align:center;
+}
+.btn--brass:hover,.btn--brass:focus-visible{
+  background:var(--brass-soft);
+  border-color:var(--brass-soft);
+  color:var(--abyss);
+}
+
+.band--dark .btn{border-color:rgba(251,250,247,.45);color:var(--shell)}
+.band--dark .btn:hover,.band--dark .btn:focus-visible{background:var(--shell);color:var(--abyss);border-color:var(--shell)}
+
+/* ============================================================
+   FORM
+   ============================================================ */
+
+.form{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s5);
+}
+
+.field{display:flex;flex-direction:column;gap:var(--s2)}
+
+.field > label{
+  font-size:var(--t-label);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--ink-3);
+}
+.band--dark .field > label{color:rgba(251,250,247,.62)}
+
+.field input,
+.field select,
+.field textarea{
+  font:inherit;
+  font-size:1rem; /* 16px minimum — stops iOS zoom-on-focus */
+  color:var(--ink);
+  background:var(--shell);
+  border:1px solid var(--hair);
+  border-radius:0;
+  padding:var(--s4);
+  min-height:52px;
+  width:100%;
+  appearance:none;
+  -webkit-appearance:none;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+.field textarea{min-height:96px;resize:vertical;line-height:1.5}
+.field select{
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink-2) 50%),linear-gradient(135deg,var(--ink-2) 50%,transparent 50%);
+  background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;
+  background-size:6px 6px,6px 6px;
+  background-repeat:no-repeat;
+  padding-right:var(--s7);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  outline:none;
+  border-color:var(--sea);
+  box-shadow:inset 0 -2px 0 var(--sea);
+}
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"]{border-color:#A6412F;box-shadow:inset 0 -2px 0 #A6412F}
+
+.field__error{
+  font-size:.8125rem;
+  color:#A6412F;
+  min-height:0;
+}
+.field__error:empty{display:none}
+
+.consent{
+  font-size:.8125rem;
+  line-height:1.5;
+  color:var(--ink-3);
+  max-width:var(--measure);
+}
+
+/* Success state */
+.done{
+  border:1px solid var(--brass);
+  padding:var(--s6);
+  display:flex;
+  flex-direction:column;
+  gap:var(--s4);
+}
+.done h3{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:1.75rem;
+  margin:0;
+  line-height:1.15;
+}
+.done p{margin:0;color:var(--ink-2);font-size:.9375rem;max-width:var(--measure)}
+.done__what{
+  border-top:1px solid var(--hair);
+  padding-top:var(--s4);
+  font-size:.875rem;
+  color:var(--ink-2);
+}
+[hidden]{display:none !important}
+
+/* ============================================================
+   AGENT CARD
+   ============================================================ */
+
+.agent{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s5);
+}
+.agent__top{display:flex;gap:var(--s5);align-items:center}
+.agent__portrait{
+  flex:0 0 auto;
+  width:88px;
+  height:88px;
+  background:var(--tide);
+  border:1px solid var(--hair-dark);
+  display:grid;
+  place-items:center;
+  font-family:var(--display);
+  font-size:1.5rem;
+  letter-spacing:.08em;
+  color:var(--brass-soft);
+}
+.agent__name{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(1.5rem,5.5vw,1.875rem);
+  margin:0;
+  line-height:1.1;
+}
+.agent__role{
+  margin:var(--s2) 0 0;
+  font-size:.8125rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(251,250,247,.65);
+  font-weight:500;
+}
+.agent__contact{
+  list-style:none;
+  margin:0;
+  padding:0;
+  border-top:1px solid var(--hair-dark);
+}
+.agent__contact li{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:var(--s4);
+  padding-block:var(--s3);
+  border-bottom:1px solid var(--hair-dark);
+  font-size:.9375rem;
+}
+.agent__contact span:first-child{
+  font-size:var(--t-label);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(251,250,247,.55);
+  font-weight:600;
+}
+
+/* ============================================================
+   STICKY BAR
+   ============================================================ */
+
+.dock{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  z-index:40;
+  background:rgba(11,30,45,.97);
+  border-top:1px solid var(--hair-dark);
+  padding:var(--s3) var(--gutter) calc(var(--s3) + env(safe-area-inset-bottom));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--s4);
+  transform:translateY(110%);
+  transition:transform .3s cubic-bezier(.22,.61,.36,1);
+}
+.dock[data-shown="true"]{transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){.dock{transition:none}}
+
+.dock__meta{min-width:0}
+.dock__price{
+  font-family:var(--display);
+  color:var(--shell);
+  font-size:1.125rem;
+  font-variant-numeric:tabular-nums;
+  line-height:1.2;
+}
+.dock__addr{
+  color:rgba(251,250,247,.6);
+  font-size:.75rem;
+  letter-spacing:.04em;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.dock__btn{
+  flex:0 0 auto;
+  appearance:none;
+  -webkit-appearance:none;
+  font:inherit;
+  font-size:.8125rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  background:var(--brass);
+  color:var(--abyss);
+  border:0;
+  padding:var(--s4) var(--s5);
+  min-height:48px;
+  cursor:pointer;
+  transition:background .18s ease;
+}
+.dock__btn:hover,.dock__btn:focus-visible{background:var(--brass-soft)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.foot{
+  background:var(--abyss);
+  color:rgba(251,250,247,.6);
+  padding-block:var(--s7) calc(var(--s9) + env(safe-area-inset-bottom));
+  font-size:.8125rem;
+  line-height:1.6;
+}
+.foot .brand{padding-bottom:var(--s5)}
+.foot p{margin:0 0 var(--s3);max-width:var(--measure)}
+.foot a{color:rgba(251,250,247,.85)}
+
+.notes{
+  margin-top:var(--s5);
+  border-top:1px solid var(--hair-dark);
+  padding-top:var(--s4);
+}
+.notes summary{
+  cursor:pointer;
+  color:var(--brass-soft);
+  font-size:var(--t-label);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-weight:600;
+  list-style:none;
+}
+.notes summary::-webkit-details-marker{display:none}
+.notes summary::before{content:"+ ";font-family:var(--sans)}
+.notes[open] summary::before{content:"– "}
+.notes ul{margin:var(--s4) 0 0;padding-left:1.1em}
+.notes li{margin-bottom:var(--s2)}
+
+/* ============================================================
+   AGENT LEAD VIEW  (#leads)
+   ============================================================ */
+
+.leads{
+  position:fixed;
+  inset:0;
+  z-index:60;
+  background:var(--shell);
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  padding:calc(var(--s6) + env(safe-area-inset-top)) 0 calc(var(--s7) + env(safe-area-inset-bottom));
+}
+.leads__head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:var(--s4);
+  margin-bottom:var(--s6);
+}
+.leads__title{font-family:var(--display);font-weight:400;font-size:1.75rem;margin:0;line-height:1.15}
+.leads__count{color:var(--ink-3);font-size:.875rem;margin:var(--s2) 0 0}
+.leads__close{
+  appearance:none;background:none;border:1px solid var(--hair);
+  font:inherit;font-size:1.25rem;line-height:1;
+  width:44px;height:44px;flex:0 0 auto;cursor:pointer;color:var(--ink);
+}
+.leads__tools{display:flex;gap:var(--s3);margin-bottom:var(--s6);flex-wrap:wrap}
+.leads__tools .btn{width:auto;flex:1 1 auto;justify-content:center;text-align:center;min-height:48px;padding:var(--s4)}
+.lead{
+  border-top:1px solid var(--hair);
+  padding-block:var(--s4);
+  display:flex;
+  flex-direction:column;
+  gap:var(--s1);
+}
+.lead__name{font-family:var(--display);font-size:1.25rem}
+.lead__row{font-size:.875rem;color:var(--ink-2);word-break:break-word}
+.lead__meta{
+  font-size:var(--t-label);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-3);
+  font-weight:600;
+  margin-top:var(--s1);
+}
+.leads__empty{color:var(--ink-3);border-top:1px solid var(--hair);padding-top:var(--s5)}
+</style>
+</head>
+<body>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero">
+  <div class="wrap">
+
+    <div class="brand">
+      <div class="brand__one">ONE</div>
+      <div class="brand__rule"></div>
+      <div class="brand__firm">Sotheby&rsquo;s International Realty</div>
+    </div>
+
+    <p class="label hero__eyebrow">Open House &middot; By Appointment Welcome</p>
+
+    <h1 class="hero__address">2756&nbsp;NE 35th Street</h1>
+    <p class="hero__city">Fort Lauderdale, Florida 33306</p>
+
+    <div class="hero__rule"></div>
+
+    <p class="hero__price">
+      <b>$1,250,000</b>
+      <span>Offered at</span>
+    </p>
+
+    <section class="when" aria-label="Open house details">
+      <p class="label when__label">You&rsquo;re Invited</p>
+      <p class="when__day serif">Saturday, August 1, 2026</p>
+      <p class="when__time">1:00 &ndash; 3:00 PM</p>
+      <a class="ics" id="ics" download="open-house-2756-ne-35th.ics" href="#">Add to calendar</a>
+    </section>
+
+  </div>
+</header>
+
+<!-- ============================ HERO PHOTO ============================ -->
+<section class="band band--tight" aria-label="Property photography">
+  <div class="wrap">
+    <div class="shot shot--hero">
+      <div class="shot__inner">
+        <p class="shot__kind">Hero Photograph</p>
+        <p class="shot__brief">Front elevation at golden hour &mdash; landscape orientation, 2400&times;1800 or larger</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TITLE BLOCK ============================ -->
+<section class="band band--tight" aria-labelledby="spec-h">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="label band__eyebrow">The Residence</p>
+      <h2 class="band__title" id="spec-h">Property at a glance</h2>
+      <p class="band__note">Figures shown in gold are placeholders awaiting the listing sheet.</p>
+    </div>
+
+    <dl class="plate">
+      <div><dt>Bedrooms</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>Bathrooms</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>Living Area</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>Lot Size</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>Year Built</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>Garage</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>Pool</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>Waterfront</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>MLS Number</dt><dd><span class="tbd">To confirm</span></dd></div>
+      <div><dt>Offered At</dt><dd>$1,250,000</dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================ HIGHLIGHTS ============================ -->
+<section class="band band--dune" aria-labelledby="high-h">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="label band__eyebrow">Highlights</p>
+      <h2 class="band__title" id="high-h">What makes this one different</h2>
+      <p class="band__note">Four slots, written to be replaced with the true selling points once the listing details are in hand.</p>
+    </div>
+
+    <ul class="points">
+      <li>
+        <div>
+          <h3>Location</h3>
+          <p><span class="tbd">Placeholder</span> &mdash; the block, the water, the walk. One sentence on what the address itself is worth in east Fort Lauderdale.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>The Living Space</h3>
+          <p><span class="tbd">Placeholder</span> &mdash; the room that sells the house. Ceiling height, light, flow to the outdoors.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Outdoor Living</h3>
+          <p><span class="tbd">Placeholder</span> &mdash; pool, patio, dockage, or garden. What the buyer pictures on a Sunday.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Recent Improvements</h3>
+          <p><span class="tbd">Placeholder</span> &mdash; roof, impact glass, systems, kitchen. The work already done and paid for.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ GALLERY ============================ -->
+<section class="band band--tight" aria-labelledby="gal-h">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="label band__eyebrow">Gallery</p>
+      <h2 class="band__title" id="gal-h">Six frames, briefed</h2>
+      <p class="band__note">Each tile names the shot it&rsquo;s holding, so the photographer&rsquo;s set drops straight in.</p>
+    </div>
+
+    <div class="gallery">
+      <div class="shot shot--tile"><div class="shot__inner"><p class="shot__kind">01</p><p class="shot__brief">Great room</p></div></div>
+      <div class="shot shot--tile"><div class="shot__inner"><p class="shot__kind">02</p><p class="shot__brief">Kitchen</p></div></div>
+      <div class="shot shot--tile"><div class="shot__inner"><p class="shot__kind">03</p><p class="shot__brief">Primary suite</p></div></div>
+      <div class="shot shot--tile"><div class="shot__inner"><p class="shot__kind">04</p><p class="shot__brief">Primary bath</p></div></div>
+      <div class="shot shot--wide"><div class="shot__inner"><p class="shot__kind">05</p><p class="shot__brief">Pool &amp; outdoor living &mdash; wide, late afternoon</p></div></div>
+      <div class="shot shot--tile"><div class="shot__inner"><p class="shot__kind">06</p><p class="shot__brief">Aerial / street approach</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ACTIONS ============================ -->
+<section class="band band--dark" aria-labelledby="act-h">
+  <div class="wrap">
+    <div class="band__head">
+      <p class="label band__eyebrow">How can Linda help?</p>
+      <h2 class="band__title" id="act-h">Choose what you need next</h2>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn" data-intent="details">
+        Request Property Details <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+      </button>
+      <button type="button" class="btn" data-intent="showing">
+        Schedule a Private Showing <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+      </button>
+      <button type="button" class="btn" data-intent="question">
+        Ask Linda a Question <span class="btn__arrow" aria-hidden="true">&rarr;</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FORM ============================ -->
+<section class="band" id="connect" aria-labelledby="form-h">
+  <div class="wrap">
+
+    <div class="band__head">
+      <p class="label band__eyebrow">Sign In</p>
+      <h2 class="band__title" id="form-h">Leave your details with Linda</h2>
+      <p class="band__note">Takes about fifteen seconds. Linda personally follows up &mdash; no drip campaigns, no call centers.</p>
+    </div>
+
+    <form class="form" id="lead-form" novalidate>
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" enterkeyhint="next" required>
+        <p class="field__error" id="e-name" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="f-phone">Mobile phone</label>
+        <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" enterkeyhint="next" required>
+        <p class="field__error" id="e-phone" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" enterkeyhint="next" required>
+        <p class="field__error" id="e-email" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="f-intent">I&rsquo;m here to</label>
+        <select id="f-intent" name="intent">
+          <option value="details">Request property details</option>
+          <option value="showing">Schedule a private showing</option>
+          <option value="question">Ask Linda a question</option>
+          <option value="visiting">Just visiting the open house</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="f-message">Anything Linda should know <span aria-hidden="true">(optional)</span></label>
+        <textarea id="f-message" name="message" rows="3" enterkeyhint="done"></textarea>
+      </div>
+
+      <p class="consent">By sharing your details you agree that Linda Magin Hoyt may contact you about this property. Your information is never sold or shared.</p>
+
+      <button type="submit" class="btn btn--brass" id="submit-btn">Send to Linda</button>
+    </form>
+
+    <div class="done" id="done" hidden tabindex="-1">
+      <h3>Thank you &mdash; you&rsquo;re on Linda&rsquo;s list.</h3>
+      <p id="done-line">Linda has your details and will be in touch personally.</p>
+      <p class="done__what">Enjoy the house. If anything catches your eye while you walk through, tell Linda before you go &mdash; she can pull comparable sales for the block the same day.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ AGENT ============================ -->
+<section class="band band--dark" aria-labelledby="agent-h">
+  <div class="wrap">
+    <div class="agent">
+
+      <div class="agent__top">
+        <div class="agent__portrait" aria-hidden="true">LMH</div>
+        <div>
+          <h2 class="agent__name" id="agent-h">Linda Magin Hoyt</h2>
+          <p class="agent__role">ONE Sotheby&rsquo;s International Realty</p>
+        </div>
+      </div>
+
+      <ul class="agent__contact">
+        <li><span>Mobile</span> <span class="tbd">To confirm</span></li>
+        <li><span>Email</span> <span class="tbd">To confirm</span></li>
+        <li><span>FL License</span> <span class="tbd">To confirm</span></li>
+      </ul>
+
+      <p style="margin:0;color:rgba(251,250,247,.72);font-size:.9375rem;max-width:34rem;">
+        Representing buyers and sellers across east Fort Lauderdale and the coastal corridor.
+        <span class="tbd">Placeholder bio</span> &mdash; two or three sentences in Linda&rsquo;s own voice.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="foot">
+  <div class="wrap">
+
+    <div class="brand">
+      <div class="brand__one">ONE</div>
+      <div class="brand__rule"></div>
+      <div class="brand__firm">Sotheby&rsquo;s International Realty</div>
+    </div>
+
+    <p>2756 NE 35th Street, Fort Lauderdale, Florida 33306 &middot; Offered at $1,250,000</p>
+    <p>Equal Housing Opportunity. Information deemed reliable but not guaranteed. Prices, availability, and property details are subject to change without notice.</p>
+    <p>Presented by Linda Magin Hoyt &middot; ONE Sotheby&rsquo;s International Realty</p>
+
+    <details class="notes">
+      <summary>Preview notes</summary>
+      <ul>
+        <li>This is a working proof of concept. Every value shown in gold is a placeholder.</li>
+        <li>Photography tiles are briefs, not images &mdash; each names the shot it holds.</li>
+        <li>The brokerage lockup is set in type. The official logo asset has not been supplied.</li>
+        <li>Form submissions are stored on this device only until a delivery endpoint is connected.</li>
+        <li><a href="#leads">Agent view</a> &mdash; captured sign-ins and CSV export.</li>
+      </ul>
+    </details>
+
+  </div>
+</footer>
+
+<!-- ============================ STICKY DOCK ============================ -->
+<div class="dock" id="dock" data-shown="false">
+  <div class="dock__meta">
+    <div class="dock__price">$1,250,000</div>
+    <div class="dock__addr">Sat Aug 1 &middot; 1&ndash;3 PM</div>
+  </div>
+  <button type="button" class="dock__btn" data-intent="details">Get Details</button>
+</div>
+
+<!-- ============================ AGENT LEAD VIEW ============================ -->
+<div class="leads" id="leads" hidden role="dialog" aria-modal="true" aria-labelledby="leads-h">
+  <div class="wrap">
+    <div class="leads__head">
+      <div>
+        <h2 class="leads__title" id="leads-h">Open house sign-ins</h2>
+        <p class="leads__count" id="leads-count">No sign-ins yet.</p>
+      </div>
+      <button type="button" class="leads__close" id="leads-close" aria-label="Close agent view">&times;</button>
+    </div>
+    <div class="leads__tools">
+      <button type="button" class="btn" id="leads-copy">Copy CSV</button>
+      <button type="button" class="btn" id="leads-download">Download CSV</button>
+    </div>
+    <div id="leads-list"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ----------------------------------------------------------
+     CONFIG — set FORM_ENDPOINT to a URL that accepts a JSON POST
+     (Formspree, Airtable webhook, Make.com, your own function)
+     and sign-ins will be delivered there instead of held locally.
+     ---------------------------------------------------------- */
+  var FORM_ENDPOINT = null;
+  var STORE_KEY = "imagin.openhouse.2756ne35.v1";
+
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* ---------------- Add to calendar (.ics via data URI) ---------------- */
+  // Sat Aug 1 2026, 1:00–3:00 PM EDT (UTC−4) => 17:00–19:00 UTC
+  var ics = [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//I.Magin Concierge//Open House//EN",
+    "BEGIN:VEVENT",
+    "UID:openhouse-2756ne35-20260801@imagin",
+    "DTSTAMP:20260731T120000Z",
+    "DTSTART:20260801T170000Z",
+    "DTEND:20260801T190000Z",
+    "SUMMARY:Open House - 2756 NE 35th Street",
+    "LOCATION:2756 NE 35th Street\\, Fort Lauderdale\\, FL 33306",
+    "DESCRIPTION:Open house hosted by Linda Magin Hoyt\\, ONE Sotheby's International Realty. Offered at $1\\,250\\,000.",
+    "END:VEVENT",
+    "END:VCALENDAR"
+  ].join("\r\n");
+
+  var icsLink = $("#ics");
+  if (icsLink) {
+    icsLink.href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+  }
+
+  /* ---------------- Intent buttons -> form ---------------- */
+  var intentSelect = $("#f-intent");
+  var connect = $("#connect");
+
+  $$("[data-intent]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var intent = btn.getAttribute("data-intent");
+      if (intentSelect) { intentSelect.value = intent; }
+      if (connect) { connect.scrollIntoView({ behavior: "smooth", block: "start" }); }
+      window.setTimeout(function () {
+        var first = $$("#lead-form input").filter(function (i) { return !i.value; })[0];
+        if (first) { first.focus({ preventScroll: true }); }
+      }, 520);
+    });
+  });
+
+  /* ---------------- Phone formatting ---------------- */
+  var phone = $("#f-phone");
+  if (phone) {
+    phone.addEventListener("input", function () {
+      var d = phone.value.replace(/\D/g, "").slice(0, 10);
+      var out = d;
+      if (d.length > 6) { out = "(" + d.slice(0, 3) + ") " + d.slice(3, 6) + "-" + d.slice(6); }
+      else if (d.length > 3) { out = "(" + d.slice(0, 3) + ") " + d.slice(3); }
+      else if (d.length > 0) { out = "(" + d; }
+      phone.value = out;
+    });
+  }
+
+  /* ---------------- Storage ---------------- */
+  function readLeads() {
+    try { return JSON.parse(window.localStorage.getItem(STORE_KEY)) || []; }
+    catch (e) { return []; }
+  }
+  function writeLead(lead) {
+    try {
+      var all = readLeads();
+      all.unshift(lead);
+      window.localStorage.setItem(STORE_KEY, JSON.stringify(all));
+      return true;
+    } catch (e) { return false; }
+  }
+
+  /* ---------------- Validation ---------------- */
+  function setError(input, errEl, msg) {
+    if (msg) {
+      input.setAttribute("aria-invalid", "true");
+      errEl.textContent = msg;
+    } else {
+      input.removeAttribute("aria-invalid");
+      errEl.textContent = "";
+    }
+    return !msg;
+  }
+
+  var form = $("#lead-form");
+  var done = $("#done");
+  var doneLine = $("#done-line");
+  var submitBtn = $("#submit-btn");
+
+  function validate() {
+    var name = $("#f-name");
+    var email = $("#f-email");
+
+    var okName = setError(name, $("#e-name"),
+      name.value.trim().length < 2 ? "Please enter your name." : "");
+
+    var digits = phone.value.replace(/\D/g, "");
+    var okPhone = setError(phone, $("#e-phone"),
+      digits.length !== 10 ? "Please enter a 10-digit mobile number." : "");
+
+    var okEmail = setError(email, $("#e-email"),
+      /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim()) ? "" : "Please enter a valid email address.");
+
+    var firstBad = [okName ? null : name, okPhone ? null : phone, okEmail ? null : email]
+      .filter(Boolean)[0];
+    if (firstBad) { firstBad.focus(); }
+
+    return okName && okPhone && okEmail;
+  }
+
+  if (form) {
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      if (!validate()) { return; }
+
+      var lead = {
+        name: $("#f-name").value.trim(),
+        phone: phone.value.trim(),
+        email: $("#f-email").value.trim(),
+        intent: intentSelect ? intentSelect.options[intentSelect.selectedIndex].text : "",
+        message: $("#f-message").value.trim(),
+        property: "2756 NE 35th Street, Fort Lauderdale FL 33306",
+        capturedAt: new Date().toISOString()
+      };
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+
+      function finish(delivered) {
+        writeLead(lead);
+        if (doneLine) {
+          doneLine.textContent = delivered
+            ? "Linda has your details and will be in touch personally."
+            : "Your details are saved for Linda and she’ll be in touch personally.";
+        }
+        form.hidden = true;
+        done.hidden = false;
+        done.focus();
+        done.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      if (FORM_ENDPOINT) {
+        window.fetch(FORM_ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(lead)
+        }).then(function (r) { finish(r.ok); })
+          .catch(function () { finish(false); });
+      } else {
+        window.setTimeout(function () { finish(false); }, 380);
+      }
+    });
+  }
+
+  /* ---------------- Sticky dock ---------------- */
+  var dock = $("#dock");
+  var hero = $(".hero");
+
+  if (dock && hero && connect && "IntersectionObserver" in window) {
+    var pastHero = false;
+    var atForm = false;
+
+    var sync = function () {
+      dock.setAttribute("data-shown", (pastHero && !atForm) ? "true" : "false");
+    };
+
+    new IntersectionObserver(function (entries) {
+      pastHero = !entries[0].isIntersecting;
+      sync();
+    }, { rootMargin: "-40% 0px 0px 0px" }).observe(hero);
+
+    new IntersectionObserver(function (entries) {
+      atForm = entries[0].isIntersecting;
+      sync();
+    }, { rootMargin: "0px 0px -20% 0px" }).observe(connect);
+  }
+
+  /* ---------------- Agent lead view (#leads) ---------------- */
+  var panel = $("#leads");
+  var list = $("#leads-list");
+  var count = $("#leads-count");
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function toCSV(rows) {
+    var cols = ["capturedAt", "name", "phone", "email", "intent", "message", "property"];
+    var cell = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    return [cols.join(",")].concat(rows.map(function (r) {
+      return cols.map(function (c) { return cell(r[c]); }).join(",");
+    })).join("\r\n");
+  }
+
+  function renderLeads() {
+    var rows = readLeads();
+    count.textContent = rows.length
+      ? rows.length + (rows.length === 1 ? " sign-in captured on this device." : " sign-ins captured on this device.")
+      : "No sign-ins yet on this device.";
+
+    if (!rows.length) {
+      list.innerHTML = '<p class="leads__empty">Sign-ins appear here as visitors complete the form on this device.</p>';
+      return;
+    }
+
+    list.innerHTML = rows.map(function (r) {
+      var when = new Date(r.capturedAt);
+      var stamp = isNaN(when) ? "" : when.toLocaleString();
+      return '<div class="lead">'
+        + '<div class="lead__name">' + esc(r.name) + "</div>"
+        + '<div class="lead__row">' + esc(r.phone) + " &middot; " + esc(r.email) + "</div>"
+        + (r.message ? '<div class="lead__row">' + esc(r.message) + "</div>" : "")
+        + '<div class="lead__meta">' + esc(r.intent) + (stamp ? " &middot; " + esc(stamp) : "") + "</div>"
+        + "</div>";
+    }).join("");
+  }
+
+  function openLeads() {
+    renderLeads();
+    panel.hidden = false;
+    document.body.style.overflow = "hidden";
+    $("#leads-close").focus();
+  }
+  function closeLeads() {
+    panel.hidden = true;
+    document.body.style.overflow = "";
+    if (window.location.hash === "#leads") {
+      window.history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+  }
+
+  function checkHash() {
+    if (window.location.hash === "#leads") { openLeads(); }
+  }
+  window.addEventListener("hashchange", checkHash);
+  checkHash();
+
+  $("#leads-close").addEventListener("click", closeLeads);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && !panel.hidden) { closeLeads(); }
+  });
+
+  $("#leads-copy").addEventListener("click", function (e) {
+    var csv = toCSV(readLeads());
+    var btn = e.currentTarget;
+    var restore = function (msg) {
+      btn.textContent = msg;
+      window.setTimeout(function () { btn.textContent = "Copy CSV"; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(csv).then(function () { restore("Copied"); },
+        function () { restore("Copy failed"); });
+    } else {
+      restore("Copy unavailable");
+    }
+  });
+
+  $("#leads-download").addEventListener("click", function () {
+    var blob = new Blob([toCSV(readLeads())], { type: "text/csv;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "open-house-2756-ne-35th-signins.csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+  });
+
+})();
+</script>
+
+</body>
+</html>
