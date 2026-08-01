@@ -66,6 +66,8 @@ For every task, return:
     - College Launch OS → DIGITAL PRODUCTS category (feeds the passive-income/template track).
     - Legends Ranch → standalone project; progresses as Arturo, Isaac's mom, and Bobby (Arturo's grandson) see the possibilities.
     - Isaac Video Engine → shared production tool (serves Legends Ranch promos + any project needing video).
+- 2026-08-01: Isaac now working from a MacBook Pro. Setup guide written to `/shared/setup/macbook-setup.md` (no-install web path, terminal path, desktop app path, plus the dash-in-repo-name workaround). Nothing installed on the Mac yet as of this entry.
+- 2026-07-27: TEMPLATE PACK PROJECT SCAFFOLDED at `/projects/template-pack-firstgen-financial/`. Niche picked: first-gen parent financial planning toolkit (FAFSA, aid decoding, cost comparison, tax/liability, parent-student conversation scripts). Pricing set: 100-founder cohort at $9.99/mo → $29.99/mo permanent. README is a skeleton — no content drafted yet. This is the active build.
 - 2026-07-27: CLEANUP EXECUTED. `I.Magin-island-repair-` main branch reorganized into four folders: `madison-moves/`, `college-launch-os/` (live-synced version), `isaac-video-engine/` (PR #6 + #7 merged), `legends-ranch/` (deliverables incl. finished anthem film + site audit). All 4 open PRs closed with pointers; nothing deleted, old state in git history before commit 0678ec1. GitHub integration CANNOT create new repos (403) — if Isaac wants true separate repos, he creates empty ones and a session splits the folders out.
 
 ## PEOPLE
@@ -75,6 +77,6 @@ For every task, return:
 - Bobby — Arturo's grandson, involved in Legends Ranch.
 
 ## TODO (check every session, remove when done)
-- [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Reminder scheduled for 2026-07-27 morning. Nothing breaks on rename; GitHub redirects the old name.
+- [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Nothing breaks on rename; GitHub redirects the old name. NOW MORE URGENT (2026-08-01): the dash actively breaks terminal use on the MacBook — `cd -imagin-concierge` fails because the shell reads `-i` as a flag. Workaround until renamed: clone with an explicit folder name (see `/shared/setup/macbook-setup.md`).
 - [x] DECIDED 2026-07-27: First active project = TEMPLATE PACK (digital product), chosen over college checklist. Isaac's launch strategy: master the product fully, make it visible, limited-time founders offer for first 100 buyers, then double the price. Niche proposal pending Isaac's pick (see /projects once started).
 - [ ] Optional: Isaac renames `I.Magin-island-repair-` to something like `imagin-projects` (it's now a clean monorepo, not a repair app).
