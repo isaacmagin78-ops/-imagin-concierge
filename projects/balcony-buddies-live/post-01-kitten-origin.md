@@ -3,8 +3,12 @@
 **The launch piece.** Uses photos that already exist. No cameras, no OBS, no
 waiting. This is the first Balcony Buddies content and it can go out tonight.
 
-> ⚠️ **Needs from Isaac:** the cat's name, and confirm "he." Everything else is
-> ready.
+> ✅ **The cat is Calico.** Emilio and his wife, unit 203, seven floors below.
+>
+> Captions below are written to use the name instead of pronouns — so they ship
+> correctly whether Calico is male or female. An earlier transcript said "his
+> eyes," but calico coats are almost always female, so the question is open and
+> the copy simply avoids it.
 
 ---
 
@@ -50,15 +54,15 @@ Keep them short. The photos carry it.
 ## Caption
 
 ```
-Emilio and his wife found him in Miami. His eyes weren't open yet.
+Emilio and his wife found Calico in Miami. Eyes still shut.
 
-Eight months later he has a favorite spot on the balcony where he
-sits and watches everybody at the pool.
+Eight months later Calico has a favorite spot on the balcony,
+watching everybody down at the pool.
 
-He lives eight floors below Tyson. Same building, same stack —
+Unit 203. Seven floors below Tyson. Same building, same stack —
 a whole vertical line of rescues who all found somebody.
 
-We're calling it Balcony Buddies. More of them coming.
+We're calling it Balcony Buddies. There are more of us.
 
 #rescuecat #kittenrescue #adoptdontshop #rescueanimals #catsofinstagram
 #southflorida #balconybuddies #tysonstime

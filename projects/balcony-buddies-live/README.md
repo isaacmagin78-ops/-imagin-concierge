@@ -1,9 +1,8 @@
 # Balcony Buddies — Live Stream Build
 
 **Concept:** A building full of rescue animals and the people who found them.
-Tyson, the Miami orphan kitten, Neil and his wife's rescue, Emilio's cat who
-sits on the balcony watching the pool. The through-line is Isaac's: *we rescue
-each other.*
+Tyson, Calico the Miami orphan kitten, Evan's little dog. The through-line is
+Isaac's: *we rescue each other.*
 
 Not a pet cam. An ensemble with a setting, recurring characters, and neighbors
 as cast. The balcony is the signature shot — it's where the idea came from.
@@ -19,14 +18,23 @@ condominium, same stack*, seven or eight floors below Isaac. The balconies line
 up vertically. That is the literal premise — neighbors on stacked balconies,
 each with a rescue.
 
-| Who | Animal | What exists already |
-| --- | --- | --- |
-| Isaac | Tyson (pit bull) | Established audience across TikTok, IG, Threads, YouTube |
-| Emilio + wife | The rescue cat, now 7–8 months | **Complete photo timeline** — from the day it couldn't open its eyes through today. Photos already in hand. |
-| Others in the building | "A whole inventory of dogs" | Cute in a different register than Tyson. Not yet catalogued. |
+| Unit | Who | Animal | What exists already |
+| --- | --- | --- | --- |
+| Isaac's floor (PH level) | **Isaac** | **Tyson** — black & white pit bull | Established audience across TikTok, IG, Threads, YouTube. Large photo library, including Tyson with other dogs. |
+| **PH2**, down the hall | **Evan** | **Dolly** *(or Molly — confirm)* — little dog | Already appears in Isaac's photos |
+| **Unit 203**, seven floors down | **Emilio + wife** | **Calico** — the Miami orphan, now 7–8 months | **Complete photo timeline** from eyes-closed to today. Sits on the balcony watching the pool — the shot the whole concept is named for. |
 
-> ✅ **Name confirmed 2026-08-04: it is Emilio.** "Neil" was a voice-to-text
-> mis-transcription. One household, one neighbor.
+**The geography is the format.** Neighbors above and below and down the hall,
+each with a rescue. Vertical *and* horizontal. The building keeps producing
+cast members.
+
+> ✅ **2026-08-04: the neighbor is Emilio.** "Neil" was a voice-to-text error
+> and has been purged from this repo. There is no Neil.
+
+> ⚠️ **Confirm before posting:** (1) Dolly or Molly? (2) Calico's pronoun — an
+> earlier transcript said "his eyes," but calico coat patterns are almost
+> always female. Getting a neighbor's pet's pronoun wrong in a public post is
+> an avoidable embarrassment.
 
 ## The archive is the launch — it does not wait on the stream
 
@@ -153,6 +161,6 @@ putting anything behind a paywall.**
 
 - What are the two mini cameras?
 - Does the balcony shot need weather protection or a dedicated outdoor camera?
-- Do Neil, his wife, and Emilio consent to appearing on a public stream?
+- Do Emilio, his wife, and Evan consent to appearing on a public stream?
   **Neighbors and their apartments on camera is a real consent question —
   settle it before going live, not after.**

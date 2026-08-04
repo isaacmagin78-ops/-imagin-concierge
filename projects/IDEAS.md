@@ -32,7 +32,8 @@ builds the page, grows it, and charges a fee.
 
 **Proposed structure — earn the right to charge:**
 
-1. **Do the first one free**, framed openly as a case study. Neil's page.
+1. **Do the first one free**, framed openly as a case study — Evan's dog or
+   Emilio's Calico, whichever neighbor is keener.
    Agree on a 60–90 day window and what success looks like.
 2. **Document everything** — starting followers, ending followers, what
    worked. That becomes the sales asset.
