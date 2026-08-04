@@ -2,13 +2,12 @@
 
 Who does what. Drafted 2026-08-04 from Isaac's role assignments.
 
-> ⚠️ **Name unconfirmed:** the Perplexity assistant came through voice-to-text
-> as both "Flex" and "Flakes." Using **Flex** until Isaac confirms. Do not
-> propagate this name further until he does.
+> ✅ **Name confirmed 2026-08-04: Flex.** Perplexity, Max tier, research and
+> law. "Flakes" was a voice-to-text error — do not reintroduce it.
 >
-> **Mirror to Ike OS once confirmed.** The canonical AI role split lives in the
-> "Role and identity" section of the Ike OS page in Notion; this file is a
-> working draft, not the record.
+> **Mirrored to Ike OS** as the *Agent Roster* subpage. Notion is canonical;
+> this file is the working copy. The older two-agent split still sitting in the
+> "Role and identity" section of the Ike OS page is now superseded by it.
 
 ---
 
