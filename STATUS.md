@@ -5,6 +5,34 @@ History lives in `CLAUDE.md` → ACTIVE CONTEXT. This file is the 30-second answ
 
 ---
 
+## 🔴 TWO LIVE REVENUE LEAKS — fix these before building anything else
+
+Found 2026-08-04 in the Notion page *"Knowledge Asset, Research, Prompt,
+Creator, and Cross-AI Continuity Loss — Recovery Inventory"* (Ike OS, dated
+Jul 29). Both are finished work with a broken cash register.
+
+**1. College product checkout is in TEST MODE.** A finished $49 product with a
+complete sales page is wired to a Stripe `test_` URL. Nobody can pay. Nobody
+has been able to pay. ~20 minutes to fix.
+
+**2. Amazon affiliate links were never in the funnel.** Tracking ID
+`tysonspicks-20` exists and Associates is likely already approved. Roughly 25
+posts since Jul 25 have carried *"As an Amazon Associate I earn from
+qualifying purchases"* and *"gear picks in bio"* — **with no tagged link
+anywhere in the path.** Every qualifying purchase in that window earned $0 for
+a fixable reason. It is also a live disclosure-accuracy problem: the posts
+claim an affiliate relationship that has no links behind it. ~30 minutes.
+
+**These outrank everything else in this file.** They are finished assets that
+are already receiving traffic.
+
+> **Note:** "Tyson's Picks" — raised 2026-08-04 as a new app idea — already
+> exists as a named Amazon storefront concept with six planned Idea Lists,
+> documented Jul 26. The idea was reinvented because the original was
+> unreachable. That is the cross-AI continuity problem in one example.
+
+---
+
 ## 🟢 Can move right now — nothing blocking
 
 **Template pack** — `projects/template-pack-firstgen-financial/`

@@ -25,10 +25,8 @@ each with a rescue.
 | Emilio + wife | The rescue cat, now 7–8 months | **Complete photo timeline** — from the day it couldn't open its eyes through today. Photos already in hand. |
 | Others in the building | "A whole inventory of dogs" | Cute in a different register than Tyson. Not yet catalogued. |
 
-> ⚠️ **Name check:** an earlier voice message transcribed this neighbor as
-> "Neil," a later one as "Emilio," both attached to the same eyes-closed rescue
-> story. Treated as one household (Emilio) until Isaac confirms. If there are
-> two separate neighbors, split this row.
+> ✅ **Name confirmed 2026-08-04: it is Emilio.** "Neil" was a voice-to-text
+> mis-transcription. One household, one neighbor.
 
 ## The archive is the launch — it does not wait on the stream
 
