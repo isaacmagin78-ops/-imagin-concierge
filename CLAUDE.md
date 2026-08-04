@@ -55,6 +55,8 @@ For every task, return:
 - Skills already identified as high-value for active project ideas: dataviz, canvas-design, theme-factory, xlsx/docx/pptx/pdf, web-artifacts-builder, skill-creator.
 
 ## ACTIVE CONTEXT (update as things change)
+- **`STATUS.md` at repo root is the current-state snapshot — read it first every session.** This log below is history; STATUS.md is where we stand right now. Keep it current.
+- 2026-08-04: Template pack Module 1 drafted (`projects/template-pack-firstgen-financial/01-senior-year-timeline.md`) — senior year month-by-month money calendar. Next up: Module 2, decoding the aid letter.
 - 2026-07-25: Workspace initialized. Candidate passive-income projects discussed, in priority order: (1) digital template packs (Notion/Airtable/spreadsheet systems sold on Gumroad/Lemon Squeezy), (2) niche paid micro-tool web app (Vercel/Cloudflare + Stripe), (3) print-on-demand Shopify storefront. No project started yet.
 - 2026-07-26: Discovered Isaac has a second repo: `isaacmagin78-ops/I.Magin-island-repair-`. INVESTIGATED — it is NOT a handyman lead-capture app despite its name/description. It is a junk drawer of at least 4 unrelated projects from separate past Claude sessions:
   - `main` = "College Launch OS" (Next.js college-prep family checklist app). A version of it is LIVE at https://college-launch-os.vercel.app (deployed by file upload, NOT connected to the repo's git).
