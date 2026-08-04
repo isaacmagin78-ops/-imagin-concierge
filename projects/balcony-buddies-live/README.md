@@ -12,6 +12,39 @@ as cast. The balcony is the signature shot — it's where the idea came from.
 
 ---
 
+## The cast and the setting
+
+**The geometry is the concept.** Emilio and his wife live in the *same
+condominium, same stack*, seven or eight floors below Isaac. The balconies line
+up vertically. That is the literal premise — neighbors on stacked balconies,
+each with a rescue.
+
+| Who | Animal | What exists already |
+| --- | --- | --- |
+| Isaac | Tyson (pit bull) | Established audience across TikTok, IG, Threads, YouTube |
+| Emilio + wife | The rescue cat, now 7–8 months | **Complete photo timeline** — from the day it couldn't open its eyes through today. Photos already in hand. |
+| Others in the building | "A whole inventory of dogs" | Cute in a different register than Tyson. Not yet catalogued. |
+
+> ⚠️ **Name check:** an earlier voice message transcribed this neighbor as
+> "Neil," a later one as "Emilio," both attached to the same eyes-closed rescue
+> story. Treated as one household (Emilio) until Isaac confirms. If there are
+> two separate neighbors, split this row.
+
+## The archive is the launch — it does not wait on the stream
+
+The kitten timeline is finished content sitting on a phone right now. Eyes
+closed → today, eight months compressed into a reel. It needs no cameras, no
+OBS, and no 24-hour activation clock.
+
+**Post the origin story while the stream is still being built.** It seeds the
+audience that the live feed will need, and it is the single strongest piece of
+content identified so far. The dog inventory is the follow-up series.
+
+Storylines, not just cameras: each animal has an arrival story, and the
+building keeps producing them.
+
+---
+
 ## ⛔ Read this first: the Ring cameras cannot be used
 
 Isaac owns a new Ring doorbell and a new movable indoor Ring camera. Both are
