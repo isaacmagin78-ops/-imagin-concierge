@@ -12,7 +12,7 @@
 
 - ✅ Timeline: What to do when → `01-senior-year-timeline.md`
 - FAFSA prep workflow
-- Financial aid decoding
+- ✅ Financial aid decoding → `02-decoding-the-aid-letter.md`
 - Cost comparison framework
 - Tax/liability explainers
 - Decision-making scripts (parent-student conversations)
