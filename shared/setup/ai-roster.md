@@ -12,16 +12,48 @@ Who does what. Drafted 2026-08-04 from Isaac's role assignments.
 
 ---
 
-## The four
+## The roster (formalized by Isaac 2026-08-04)
 
-| Name | Which | Role | Actually good at |
+| Emoji | Name | Role | Owns |
 | --- | --- | --- | --- |
-| **Claude** | Claude | Systems and record | Files, repos, Notion, Airtable, Blotato, writing product, publishing pages. Anything with an API. |
-| **Kelly** | *(confirm which product)* | Eyes | Real-time screen analysis, camera, visuals and video, voice back-and-forth. Sees what Claude cannot. |
-| **Gem** | Gemini | Posting and execution | Device-side work, browser, social posting. Candidate to replace the Blotato subscription. |
-| **Flex** | Perplexity Max | Research and law | Cited research, legal and regulatory questions, market scans. Genuinely the right tool for this — citations are its actual strength. |
+| 🧠🚀 | **Todd** — Main System / Launch Core | Central execution engine | Strategic direction, final calls, launch momentum |
+| 🗂️ | **Kelly** — Operations / Chief of Staff | Operational structure | Workflow mapping, Mermaid.js diagrams, task management, clean agent handoffs. Also the only one with eyes: real-time screen, camera, visuals, voice. |
+| 🔬 | **Claude** | Research & Validation | Deep research, prompt design, logic and financial reality-checking, comp analysis, stress-testing before launch. **"Trust but verify."** |
+| | **Gem** — Gemini | Posting / device-side | Browser and social posting. Candidate to replace the Blotato subscription. |
+| | **Flex** — Perplexity Max | Research and law | Cited research, legal and regulatory questions. Citations are its actual strength. |
 
-All four are at max tier.
+**Emoji prefixes label which agent produced a given output.** Use them.
+
+### Active pipelines
+
+1. **The Digital Product & Idea-Testing Engine** — curated engine for testing
+   digital concepts, validating market hits, capturing upside through
+   revenue-share, equity, or royalties.
+2. **IMagin Concierge / Royal Palm Playbook** — Pompano Beach real estate asset
+   rerate: renovation, board/governance alignment, and upward asset-class
+   repositioning, grounded in strict comp evidence.
+
+> **Cross-reference found:** an Airtable base named **"Royal Palm PH3 —
+> Punchlist"** already exists. Royal Palm is Isaac's own building — he is in a
+> penthouse unit, Evan is in PH2, Emilio and Calico in 203. The Royal Palm
+> Playbook and Balcony Buddies are the *same building*.
+
+### 🔬 Conflicts with Ike OS — flagged, not resolved
+
+Ike OS is canonical and this briefing diverges from it in three places:
+
+1. **Primary focus.** Ike OS carries a standing founder override (2026-07-22):
+   *Tyson's Brand is primary; Send Off College secondary/paused.* Neither
+   active pipeline above is Tyson's Brand. Either the priority moved and Ike OS
+   is stale, or the primary is missing from the briefing.
+2. **Claude's role.** Ike OS defines Claude as *executive operating partner —
+   architecture, reasoning, synthesis, policy.* The briefing narrows it to
+   research and validation. Real change; Ike OS should be updated to match.
+3. **Final decision-making.** Ike OS states *Ike: founder and final decision
+   maker.* The briefing assigns final decisions to Todd. Isaac should confirm
+   he still holds that, not an agent.
+
+Resolve in Ike OS, not here. This file is a working draft.
 
 ---
 
