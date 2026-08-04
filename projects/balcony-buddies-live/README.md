@@ -18,15 +18,20 @@ condominium, same stack*, seven or eight floors below Isaac. The balconies line
 up vertically. That is the literal premise — neighbors on stacked balconies,
 each with a rescue.
 
+**PH = penthouse floor**, the top of the building.
+
 | Unit | Who | Animal | What exists already |
 | --- | --- | --- | --- |
-| Isaac's floor (PH level) | **Isaac** | **Tyson** — black & white pit bull | Established audience across TikTok, IG, Threads, YouTube. Large photo library, including Tyson with other dogs. |
+| **Penthouse floor** *(unit # to confirm)* | **Isaac** | **Tyson** — black & white pit bull | Established audience across TikTok, IG, Threads, YouTube. Large photo library, including Tyson with other dogs. |
 | **PH2**, down the hall | **Evan** | **Dolly** *(or Molly — confirm)* — little dog | Already appears in Isaac's photos |
 | **Unit 203**, seven floors down | **Emilio + wife** | **Calico** — the Miami orphan, now 7–8 months | **Complete photo timeline** from eyes-closed to today. Sits on the balcony watching the pool — the shot the whole concept is named for. |
 
-**The geography is the format.** Neighbors above and below and down the hall,
-each with a rescue. Vertical *and* horizontal. The building keeps producing
-cast members.
+**The geography is the format, and the span is the whole building** — penthouse
+to the second floor, top to bottom. Not a couple of neighbors: an entire
+vertical column of rescues. Plus Evan down the hall on the same floor.
+
+That range is itself the hook. *"From the penthouse to the second floor,
+everybody in this building got rescued by something."*
 
 > ✅ **2026-08-04: the neighbor is Emilio.** "Neil" was a voice-to-text error
 > and has been purged from this repo. There is no Neil.
