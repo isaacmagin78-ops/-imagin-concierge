@@ -5,6 +5,51 @@ folder in `/projects`.
 
 ---
 
+## ⭐ Pet page management as a paid service
+
+**Raised:** 2026-08-04. **Strongest near-term revenue idea captured so far.**
+
+**The pitch:** Neighbors have rescue animals and no social presence. Isaac
+builds the page, grows it, and charges a fee.
+
+**Why this beats the app by a mile:**
+
+- **No marketplace problem.** One customer, one service, paid directly. None
+  of the chicken-and-egg that kills two-sided platforms.
+- **He already has the portfolio** — Tyson's Time across four platforms.
+- **Warm market in his own building.** These are people who already know and
+  trust him, not cold leads.
+- **Can start this week.** No build, no app store, no inventory.
+
+**The honest problems:**
+
+- **It trades hours for dollars.** Isaac's stated goal is passive income; this
+  is the opposite. It pays sooner and scales worse. Both things are true.
+- **One data point.** Tyson's Time is his own dog, which he's motivated to
+  post about daily. Growing someone *else's* account is an unproven skill.
+- **Neighbor risk.** Take money, fail to deliver, and you're in the elevator
+  with them every day. Expectations must be explicit and in writing.
+
+**Proposed structure — earn the right to charge:**
+
+1. **Do the first one free**, framed openly as a case study. Neil's page.
+   Agree on a 60–90 day window and what success looks like.
+2. **Document everything** — starting followers, ending followers, what
+   worked. That becomes the sales asset.
+3. **Then charge**, with the case study as proof. Typical shape is a setup fee
+   plus a monthly retainer; validate real numbers locally before quoting.
+4. **Never promise follower counts.** Promise posts, consistency, and effort.
+   Nobody controls an algorithm.
+
+**How it compounds with Balcony Buddies:** the umbrella show features the whole
+cast and drives followers to each individual page. Individual pages feed clips
+back to the main show. Every managed page makes the service visibly work, which
+is what sells the next one.
+
+**Verdict:** Pursue. Start free with one neighbor, prove it, then price it.
+
+---
+
 ## Tyson's Picks — South Florida pet services app
 
 **Raised:** 2026-08-04
