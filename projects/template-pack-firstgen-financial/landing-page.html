@@ -1,0 +1,366 @@
+<!--
+  SETUP BEFORE SHARING:
+  1. Create a Stripe Payment Link ($9.99/mo recurring) in the Stripe dashboard.
+  2. Replace both instances of REPLACE_WITH_STRIPE_PAYMENT_LINK below.
+  3. Delete the <div class="preview-banner"> block.
+-->
+<title>Know What College Actually Costs — First-Gen Parent Toolkit</title>
+<style>
+  :root {
+    --ink:        #0E2230;
+    --ink-soft:   #33495A;
+    --paper:      #F4F5F2;
+    --paper-warm: #EBEDE7;
+    --rule:       #D2D6CE;
+    --keep:       #1B6E52;
+    --keep-bg:    #E4EFE8;
+    --owe:        #A8442F;
+    --owe-bg:     #F5E5E0;
+    --muted:      #6C7A78;
+
+    --display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+    --body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+    --measure: 34rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink:        #EDF0EC;
+      --ink-soft:   #B3C0C4;
+      --paper:      #0C1720;
+      --paper-warm: #14232E;
+      --rule:       #263945;
+      --keep:       #63C39A;
+      --keep-bg:    #10302A;
+      --owe:        #E08A6E;
+      --owe-bg:     #33201B;
+      --muted:      #8496A0;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink:        #EDF0EC;
+    --ink-soft:   #B3C0C4;
+    --paper:      #0C1720;
+    --paper-warm: #14232E;
+    --rule:       #263945;
+    --keep:       #63C39A;
+    --keep-bg:    #10302A;
+    --owe:        #E08A6E;
+    --owe-bg:     #33201B;
+    --muted:      #8496A0;
+  }
+
+  :root[data-theme="light"] {
+    --ink:        #0E2230;
+    --ink-soft:   #33495A;
+    --paper:      #F4F5F2;
+    --paper-warm: #EBEDE7;
+    --rule:       #D2D6CE;
+    --keep:       #1B6E52;
+    --keep-bg:    #E4EFE8;
+    --owe:        #A8442F;
+    --owe-bg:     #F5E5E0;
+    --muted:      #6C7A78;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    margin: 0;
+    padding: 0 1.25rem 5rem;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: var(--measure);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  .wide { max-width: 44rem; margin: 0 auto; width: 100%; }
+
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.12; letter-spacing: -0.015em; }
+  h2 { font-size: clamp(1.4rem, 4vw, 1.75rem); line-height: 1.2; }
+  h3 { font-size: 1.1rem; }
+  p { margin: 0; }
+
+  .eyebrow {
+    font-family: var(--body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .lede { font-size: 1.2rem; color: var(--ink-soft); line-height: 1.55; }
+
+  section { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .preview-banner {
+    background: var(--owe-bg);
+    color: var(--owe);
+    border: 1px solid var(--owe);
+    border-radius: 3px;
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    max-width: 44rem;
+    margin: 1.5rem auto 0;
+  }
+
+  header { padding-top: 4.5rem; }
+
+  /* ---- the comparison: the page's thesis ---- */
+  .compare-shell { overflow-x: auto; }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 30rem;
+    font-variant-numeric: tabular-nums;
+    font-size: 0.95rem;
+  }
+  caption {
+    text-align: left;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding-bottom: 0.7rem;
+    letter-spacing: 0.02em;
+  }
+  th, td { padding: 0.6rem 0.75rem; text-align: right; border-bottom: 1px solid var(--rule); }
+  th:first-child, td:first-child { text-align: left; }
+  thead th { font-size: 0.75rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  tbody td:first-child { color: var(--ink-soft); }
+  tr.headline td { color: var(--muted); }
+  tr.truth td {
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-bottom: 2px solid var(--ink);
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+  tr.debt td:last-child { color: var(--owe); font-weight: 700; }
+  .verdict {
+    background: var(--paper-warm);
+    border-left: 3px solid var(--keep);
+    padding: 1.1rem 1.25rem;
+    font-size: 1.02rem;
+  }
+  .verdict strong { color: var(--keep); }
+
+  /* ---- modules ---- */
+  .modules { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0; }
+  .modules li {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .tag {
+    flex: none;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .tag.ready { background: var(--keep-bg); color: var(--keep); }
+  .tag.soon  { background: transparent; color: var(--muted); border: 1px solid var(--rule); }
+  .modules .name { font-weight: 600; }
+  .modules .what { color: var(--ink-soft); font-size: 0.92rem; display: block; font-weight: 400; }
+
+  /* ---- offer ---- */
+  .offer {
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    align-items: flex-start;
+  }
+  .price { font-family: var(--display); font-size: 3rem; line-height: 1; }
+  .price .per { font-family: var(--body); font-size: 1rem; color: var(--muted); }
+  .was { color: var(--muted); font-size: 0.95rem; }
+  .was s { text-decoration-thickness: 1px; }
+
+  a.cta {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+    font-weight: 650;
+    font-size: 1.02rem;
+    padding: 0.85rem 1.6rem;
+    border-radius: 3px;
+    transition: opacity 0.15s ease;
+  }
+  a.cta:hover { opacity: 0.85; }
+  a.cta:focus-visible { outline: 3px solid var(--keep); outline-offset: 3px; }
+
+  .fineprint { font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+  .fineprint a { color: inherit; }
+
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<div class="preview-banner">
+  PREVIEW — add your Stripe checkout link, then delete this banner. (Instructions in the file's first comment.)
+</div>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">For parents doing this for the first time</p>
+    <h1>Two college offers. One costs $12,000 more.</h1>
+    <p class="lede" style="margin-top:1.1rem">
+      The letters look almost identical. One of them says it covers 100% of
+      your need. That's the more expensive one.
+    </p>
+  </header>
+
+  <section class="wide">
+    <div class="compare-shell">
+      <table>
+        <caption>Same student. Same year. Two real-shaped financial aid offers.</caption>
+        <thead>
+          <tr><th scope="col">&nbsp;</th><th scope="col">State U</th><th scope="col">Private College</th></tr>
+        </thead>
+        <tbody>
+          <tr class="headline">
+            <td>What the letter calls "aid"</td><td>$16,000</td><td>$65,000</td>
+          </tr>
+          <tr>
+            <td>Money you actually keep</td><td>$8,000</td><td>$42,000</td>
+          </tr>
+          <tr class="truth">
+            <td>What it really costs you</td><td>$20,000</td><td>$23,000</td>
+          </tr>
+          <tr class="debt">
+            <td>Debt in <em>your</em> name, over four years</td><td>$0</td><td>$70,000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="verdict">
+      The school advertising <strong>four times more aid</strong> is
+      $12,000 more expensive — and puts $70,000 of loans in the parent's name
+      to get there. Neither letter is lying. One is just built to be misread.
+    </p>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Nobody explains this to you</h2>
+    <p>
+      If you didn't go to college yourself, there's no one at the kitchen table
+      who's seen this before. Counselors are split across hundreds of students.
+      The colleges have no reason to explain the parts that cost you money.
+    </p>
+    <p>
+      So you're handed a document full of words like <em>subsidized</em>,
+      <em>SAI</em>, and <em>cost of attendance</em>, given a few weeks to
+      decide, and expected to make one of the largest financial decisions of
+      your life.
+    </p>
+    <p>
+      This is the plain-English version. What to do, what month to do it, and
+      exactly where families lose money.
+    </p>
+  </section>
+
+  <section>
+    <h2>What's inside</h2>
+    <ul class="modules">
+      <li>
+        <span class="tag ready">Ready</span>
+        <span><span class="name">The Senior Year Money Timeline</span>
+        <span class="what">Month by month, spring of junior year through May 1. Your job each month, and the mistake that costs money.</span></span>
+      </li>
+      <li>
+        <span class="tag ready">Ready</span>
+        <span><span class="name">Decoding the Aid Letter</span>
+        <span class="what">Sort any offer into four buckets, run one calculation, and see the real price. Includes the comparison worksheet.</span></span>
+      </li>
+      <li>
+        <span class="tag soon">Next</span>
+        <span><span class="name">The Cost Comparison Framework</span>
+        <span class="what">Deciding between real offers when you can't comfortably afford either one.</span></span>
+      </li>
+      <li>
+        <span class="tag soon">Coming</span>
+        <span><span class="name">FAFSA Prep Workflow</span>
+        <span class="what">Every document you need, gathered before you sit down to file.</span></span>
+      </li>
+      <li>
+        <span class="tag soon">Coming</span>
+        <span><span class="name">Tax &amp; Liability Explainers</span>
+        <span class="what">Who owes what, which credits you may qualify for, and what changes when they enroll.</span></span>
+      </li>
+      <li>
+        <span class="tag soon">Coming</span>
+        <span><span class="name">Parent–Student Conversation Scripts</span>
+        <span class="what">How to say "we can't afford your first choice" without it becoming a fight.</span></span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The one thing most families never do</h2>
+    <p>
+      You are allowed to ask a college for more money. It has a name —
+      a <em>special circumstances review</em> — and financial aid offices
+      process them every year as ordinary business.
+    </p>
+    <p>
+      Almost no first-generation family asks, because nobody tells them it's
+      permitted. The toolkit shows you when you have a real case and gives you
+      the letter to send. That single section can be worth more than four years
+      of the subscription.
+    </p>
+  </section>
+
+  <section>
+    <div class="offer">
+      <p class="eyebrow">Founding members — first 100 only</p>
+      <p class="price">$9.99<span class="per"> / month</span></p>
+      <p class="was">Goes to <s>$29.99/month</s> permanently once the first 100 are in.</p>
+      <p>
+        Two modules are finished and available the moment you join. The rest
+        ship as they're written, and founding members get every one of them at
+        this price for as long as you stay subscribed.
+      </p>
+      <a class="cta" href="REPLACE_WITH_STRIPE_PAYMENT_LINK">Join the founding cohort</a>
+      <p class="fineprint">Cancel anytime. Payment handled by Stripe.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="fineprint">
+      Educational material, not financial, legal, or tax advice. Deadlines,
+      loan limits, and program rules change every year — verify current details
+      at studentaid.gov and confirm all figures with each school's financial
+      aid office in writing. The comparison above uses representative figures
+      to illustrate how offers are structured.
+    </p>
+  </section>
+
+</div>
