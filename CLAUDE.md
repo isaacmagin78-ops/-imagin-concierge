@@ -31,15 +31,51 @@ Jul 25) is a **fifth room**: it was built without knowledge of `HANDOFF.md` and 
 been sending sessions down wrong paths ever since. Anything that matters belongs in
 `HANDOFF.md`, not only here.
 
-### Live business — verified 2026-08-14
-- **First 30 Days Kit — $19, LIVE.** Rescue-dog kit. `tysons-time-kit.vercel.app`,
-  Stripe link live, PDF + automated delivery. Payment and delivery both run unattended.
-- **Instagram `@tysonstime`** — ~2,200 views / 1,500 reach per post. Best channel by ~10x.
-  Hard limit 5 hashtags. Also TikTok `@tysons_time`, YouTube, Threads. Facebook is dark.
-- **Blotato** — scheduling, all channels connected. Media must live in Blotato storage.
-- **Open: Southwest Airlines brand deal**, rate guidance $1,500–$3,000. Unclosed.
-- **TysonScripts** — captions, 7-day schedule, product scripts. In Google Drive.
-- Amazon Associates active (disclosure required in every caption).
+### Actual state — read directly from Stripe/Blotato/Notion/Drive/Gmail, 2026-08-14
+
+**Total verified third-party revenue, all time: $1.29.** Do not repeat any claim that a
+product is "selling" or "proven" without re-checking Stripe. An earlier version of this
+file said exactly that and it was false.
+
+- **First 30 Days Kit — $19 — ZERO customers.** Infrastructure works (page, Stripe,
+  PDF, automated delivery). One charge exists: 2026-07-24, billed to Isaac Magin at his
+  own address — a self-test. 25 checkout sessions created, 24 expired unpaid. Balance $0.
+- **Amazon Associates — $1.29.** Tag `tysonspicks-20` live. 67 clicks, 1 item ordered.
+  The only real money in the system. Disclosure required in every caption.
+- **Channels (Blotato, all connected):** Instagram `@tysonstime` strongest — 35 posts,
+  17,965 views, 13,405+ reach; YouTube 33 posts / 11,929 views; TikTok `@tysons_time`
+  36 posts / 4,294 views (best like rate); Threads 20 posts / 1,513 views. Facebook has
+  **zero Pages attached and cannot publish.** IG hard limit 5 hashtags. Media must live
+  in Blotato storage — Drive URLs never work.
+- **PUBLISHING STOPPED 2026-08-10** after 31 straight days at 4–6/day. Queue is empty
+  (0 scheduled). 3,890 Blotato credits bought and unspent.
+
+**Broken and costing money:**
+- **College Checklist $49 buy buttons point at a Stripe TEST link** — real cards
+  rejected. Live and unbuyable since 2026-08-06.
+- Kit bio-hub button bypasses the tracked redirect — highest-intent traffic has no
+  attribution, so the 24 expired checkouts can't be split from self-testing.
+- Linktree Pro $15/mo since 07-31, zero products added; check for duplicate billing.
+
+**Corrections to prior claims in this file:**
+- **Southwest was never a deal.** Public @southwestair comment 07-23 asking to check
+  DMs; the DM never arrived; window closed. A rate card exists for a lead that never
+  converted.
+- **TikTok Shop is NOT cleanly approved.** Six "Application Rejected" emails 07-12 to
+  08-02, docs resubmitted 08-10, then "setup complete" 08-10 and 08-13. Settlement tier
+  **Deferred**. W-9 not on file, withdrawals blocked. Only Seller Center resolves this.
+- **YouTube Partner Program NOT approved** — 18.3 of 4,000 watch hours.
+- **Amazon Influencer blocked** — needs 10 sales/30 days, has 1.
+- **Facebook monetization approved 2024-09-12, never used** — 0 Pages attached.
+
+**Ready and unused:** 10 complete post packages (07-26), 2 Kit commercials (08-01),
+~40 photos (08-06), TysonScripts in Drive, ~10 unread creator DMs, 26 video prospects
+sourced 07-29. **Proven repost lever:** identical hooks re-run 2–3 weeks later held
+83–90% of views across 4 pairs.
+
+**Unresolved:** priority order contradicts across systems — Venture HQ says Send Off
+College, Ike OS says Tyson's Brand, the 08-13 briefing says something else. Pick one
+and record it here.
 
 ### Characters / property — corrected 2026-08-14
 **Tyson is Isaac's rescue dog. Miss T is the cat.** They are the brand and the
