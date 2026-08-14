@@ -1,5 +1,58 @@
 # ISAAC WORKSPACE OPERATING CHARTER
 
+## ⛔ STOP — READ `HANDOFF.md` BEFORE DOING ANYTHING
+
+**This file is NOT the memory of record. `HANDOFF.md` is.**
+
+It lives in the other repo, on an unmerged branch:
+
+```
+repo:   isaacmagin78-ops/I.Magin-island-repair-
+branch: claude/optimize-repository-context-i7ulyu
+file:   HANDOFF.md
+```
+
+```bash
+git fetch origin claude/optimize-repository-context-i7ulyu
+git show origin/claude/optimize-repository-context-i7ulyu:HANDOFF.md
+```
+
+That branch's name describes none of its contents. It holds the live business:
+the `kit-site/` storefront, `money-engine/` operating docs, and `HANDOFF.md`.
+
+**Isaac has spent six weeks re-explaining the same things to new sessions because
+the rooms cannot see each other. Do not make him explain it again. Read HANDOFF.md,
+verify with tools, then act.**
+
+### The five rooms
+Claude's surfaces — **Code**, **Dispatch**, **Cowork**, **Chats** — are separate;
+work in one is invisible to the others. This repo (`-imagin-concierge`, created
+Jul 25) is a **fifth room**: it was built without knowledge of `HANDOFF.md` and has
+been sending sessions down wrong paths ever since. Anything that matters belongs in
+`HANDOFF.md`, not only here.
+
+### Live business — verified 2026-08-14
+- **First 30 Days Kit — $19, LIVE.** Rescue-dog kit. `tysons-time-kit.vercel.app`,
+  Stripe link live, PDF + automated delivery. Payment and delivery both run unattended.
+- **Instagram `@tysonstime`** — ~2,200 views / 1,500 reach per post. Best channel by ~10x.
+  Hard limit 5 hashtags. Also TikTok `@tysons_time`, YouTube, Threads. Facebook is dark.
+- **Blotato** — scheduling, all channels connected. Media must live in Blotato storage.
+- **Open: Southwest Airlines brand deal**, rate guidance $1,500–$3,000. Unclosed.
+- **TysonScripts** — captions, 7-day schedule, product scripts. In Google Drive.
+- Amazon Associates active (disclosure required in every caption).
+
+### Characters / property — corrected 2026-08-14
+**Tyson is Isaac's rescue dog. Miss T is the cat.** They are the brand and the
+property (`isaac-video-engine/src/compositions/TysonVsMiss.tsx`; themes `tysons-time`,
+`tysons-picks`; domain `tysonstime.com`).
+
+> **A previous session logged Isaac's phrase "Tyson and cat story" as a voice-to-text
+> error and substituted a manatee book (`Positively Negbaum`) as the real property.
+> That was wrong. Isaac was accurate.** The Negbaum material is older, unrelated,
+> and per Isaac tied to a separate bad situation. It is preserved on
+> `claude/positively-negbaum-book-w0qgpx` and must not be reintroduced as an active
+> project. See `SESSION-INDEX.md`.
+
 ## ROLE
 You are the technical execution partner for Isaac's local workspace. Your role is to translate direction into clean implementation, preserve order across the system, and support active projects with precision, discipline, and speed.
 
@@ -68,7 +121,7 @@ For every task, return:
     - Isaac Video Engine → shared production tool (serves Legends Ranch promos + any project needing video).
 - 2026-07-27: CLEANUP EXECUTED. `I.Magin-island-repair-` main branch reorganized into four folders: `madison-moves/`, `college-launch-os/` (live-synced version), `isaac-video-engine/` (PR #6 + #7 merged), `legends-ranch/` (deliverables incl. finished anthem film + site audit). All 4 open PRs closed with pointers; nothing deleted, old state in git history before commit 0678ec1. GitHub integration CANNOT create new repos (403) — if Isaac wants true separate repos, he creates empty ones and a session splits the folders out.
 
-- 2026-08-14: NEW PROJECT LANDED — "Positively Negbaum" children's book franchise (Book #1: Wesley Negbaum, the Misunderstood Manatee). Isaac delivered full manuscript drafts + 3 finished concept storyboard sheets (visual style locked). Master manuscript, best-lines bank, cameo plan, and back matter committed to `/projects/positively-negbaum/`. This is the "book #1 / franchise" Isaac referenced. Standing rule for this project: use Isaac's verbiage verbatim; label any additions as NEW CONNECTIVE TISSUE. Next: Isaac's final line locks → illustration production → KDP/layout → launch plan. (Note: earlier voice-to-text garble rendered this as "Tyson and cat story" — actual property is Wesley Negbaum manatee series.)
+- 2026-08-14: **CORRECTION + RECOVERY.** An earlier entry here claimed Isaac's phrase "Tyson and cat story" was voice-to-text garble and that the real property was the Negbaum manatee book. **That was false and it poisoned every session that read it.** Tyson = Isaac's rescue dog, Miss T = the cat. Corrected at the top of this file. Also recovered: the live business (First 30 Days Kit, $19, selling; @tysonstime at ~1,500 reach/post; open Southwest deal) lives on branch `claude/optimize-repository-context-i7ulyu` in the island repo, along with the real memory file `HANDOFF.md`. Full session→branch map written to `SESSION-INDEX.md`. Negbaum material removed from `/projects/` (preserved on its own branch + in this repo's git history).
 
 ## PEOPLE
 - Isaac (isaacmagin78-ops) — owner. Pompano Beach, FL (Eastern time). Uses voice-to-text; confirm ambiguous messages before acting.
@@ -78,5 +131,5 @@ For every task, return:
 
 ## TODO (check every session, remove when done)
 - [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Reminder scheduled for 2026-07-27 morning. Nothing breaks on rename; GitHub redirects the old name.
-- [x] DECIDED 2026-07-27: First active project = TEMPLATE PACK (digital product), chosen over college checklist. Isaac's launch strategy: master the product fully, make it visible, limited-time founders offer for first 100 buyers, then double the price. Niche proposal pending Isaac's pick (see /projects once started).
+- [x] ~~DECIDED 2026-07-27: First active project = TEMPLATE PACK~~ **SUPERSEDED 2026-08-14.** This was planning a first product while a first product was already live and selling. The real first product is the **$19 First 30 Days Kit** (`tysons-time-kit.vercel.app`, Stripe live). Do not restart a "which product should we build" conversation — the answer is: grow the one that already sells. See `HANDOFF.md` and `money-engine/INSTRUCTIONS.md` on `claude/optimize-repository-context-i7ulyu`.
 - [ ] Optional: Isaac renames `I.Magin-island-repair-` to something like `imagin-projects` (it's now a clean monorepo, not a repair app).
