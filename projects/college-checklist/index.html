@@ -7,13 +7,20 @@
   existed in exactly one place nobody could reach or edit. This is now the
   version-controlled copy.
 
-  THE ONE FIX NEEDED — search for STRIPE_LIVE_LINK_HERE below.
-  The live page has had a TEST-MODE link there since 2026-07-17, so no one has
-  ever been able to pay. Replace the placeholder with a LIVE Stripe payment
-  link. A live link looks like https://buy.stripe.com/xxxx — if it contains
-  "test_", it is still test mode and will not take money.
+  STATUS 2026-08-14: THE LIVE LINK IS NOW IN THIS FILE. Nothing to edit.
 
-  Then redeploy this file to college-checklist.vercel.app.
+  Isaac created a live $49 payment link around Aug 6. It was never put on the
+  page, so the deployed page has carried a TEST-MODE link since 2026-07-17 and
+  has never been able to take a payment. This file now has the real one,
+  verified against the Stripe API on 2026-08-14:
+
+    plink_1U1yrlFDa35si8Lwu4HwHYYa
+    "College Checklist" · $49.00 one-time · livemode: true · active
+    https://buy.stripe.com/00w6oH1z16lHcwS9y2g7e02
+
+  THE ONLY REMAINING STEP: deploy this file to college-checklist.vercel.app.
+  That deployment lives on a Vercel account this session cannot reach — the
+  connected team lists zero projects — so it must be done by Isaac.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -214,8 +221,10 @@ footer a{color:var(--ink)}
         <div class="amt">$49 <small>one time</small></div>
       </div>
       <div class="report-cta">
-        <!-- ⚠️ REPLACE STRIPE_LIVE_LINK_HERE WITH A LIVE PAYMENT LINK. Must NOT contain "test_". -->
-        <a class="btn" style="width:100%;text-align:center;display:block" href="STRIPE_LIVE_LINK_HERE">Get instant access — $49</a>
+        <!-- LIVE payment link, verified against the Stripe API 2026-08-14:
+             plink_1U1yrlFDa35si8Lwu4HwHYYa · "College Checklist" · $49.00 one-time
+             · livemode true · active · redirects to college-checklist-app.vercel.app -->
+        <a class="btn" style="width:100%;text-align:center;display:block" href="https://buy.stripe.com/00w6oH1z16lHcwS9y2g7e02">Get instant access — $49</a>
         <p class="fine" style="margin:12px 0 0">Paid securely by card. You get access right away.</p>
       </div>
     </div>
