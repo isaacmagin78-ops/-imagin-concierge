@@ -68,6 +68,8 @@ For every task, return:
     - Isaac Video Engine → shared production tool (serves Legends Ranch promos + any project needing video).
 - 2026-07-27: CLEANUP EXECUTED. `I.Magin-island-repair-` main branch reorganized into four folders: `madison-moves/`, `college-launch-os/` (live-synced version), `isaac-video-engine/` (PR #6 + #7 merged), `legends-ranch/` (deliverables incl. finished anthem film + site audit). All 4 open PRs closed with pointers; nothing deleted, old state in git history before commit 0678ec1. GitHub integration CANNOT create new repos (403) — if Isaac wants true separate repos, he creates empty ones and a session splits the folders out.
 
+- 2026-08-14: NEW PROJECT LANDED — "Positively Negbaum" children's book franchise (Book #1: Wesley Negbaum, the Misunderstood Manatee). Isaac delivered full manuscript drafts + 3 finished concept storyboard sheets (visual style locked). Master manuscript, best-lines bank, cameo plan, and back matter committed to `/projects/positively-negbaum/`. This is the "book #1 / franchise" Isaac referenced. Standing rule for this project: use Isaac's verbiage verbatim; label any additions as NEW CONNECTIVE TISSUE. Next: Isaac's final line locks → illustration production → KDP/layout → launch plan. (Note: earlier voice-to-text garble rendered this as "Tyson and cat story" — actual property is Wesley Negbaum manatee series.)
+
 ## PEOPLE
 - Isaac (isaacmagin78-ops) — owner. Pompano Beach, FL (Eastern time). Uses voice-to-text; confirm ambiguous messages before acting.
 - Arturo — partner/collaborator on Legends Ranch.
