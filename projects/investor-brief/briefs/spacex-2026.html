@@ -1,0 +1,339 @@
+<title>SpaceX Trajectory Brief</title>
+<style>
+  :root{
+    --ground:#08090B;
+    --panel:#0D0F13;
+    --gold:#D6B36B;
+    --gold-lift:#EBD3A0;
+    --cream:#EAE4D6;
+    --muted:#8C8674;
+    --rule:rgba(214,179,107,.26);
+    --rule-soft:rgba(214,179,107,.13);
+    --serif:"Didot","Bodoni MT","Big Caslon","Playfair Display",Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--cream);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.5;
+    display:flex;
+    justify-content:center;
+    padding:28px 16px 56px;
+  }
+  .sheet{
+    width:100%;
+    max-width:880px;
+    background:
+      radial-gradient(120% 80% at 78% 6%, rgba(214,179,107,.07) 0%, transparent 58%),
+      linear-gradient(180deg,#0A0C0F 0%,#08090B 44%,#0A0B0E 100%);
+    border:1px solid var(--rule-soft);
+    position:relative;
+    overflow:hidden;
+    padding:44px 46px 40px;
+  }
+
+  /* blueprint motif */
+  .blueprint{
+    position:absolute; top:0; right:0; width:340px; height:620px;
+    opacity:.20; pointer-events:none;
+  }
+
+  /* header */
+  .top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;position:relative}
+  .prepared{
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
+    padding-top:4px;
+  }
+  .mark{text-align:right;line-height:1}
+  .mark .a{font-family:var(--serif);font-size:21px;letter-spacing:.30em;color:var(--gold)}
+  .mark .b{font-size:9px;letter-spacing:.42em;color:var(--muted);margin-top:5px}
+
+  h1{
+    font-family:var(--serif);
+    font-size:clamp(38px,6.4vw,62px);
+    line-height:.96;
+    letter-spacing:.005em;
+    margin:26px 0 0;
+    color:var(--cream);
+    text-wrap:balance;
+  }
+  h1 .tick{color:var(--gold);font-size:.62em;letter-spacing:.04em}
+  .span{
+    font-family:var(--serif);
+    font-size:clamp(19px,2.7vw,26px);
+    letter-spacing:.10em;
+    color:var(--gold);
+    margin-top:12px;
+  }
+  .kicker{
+    font-size:10.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);
+    margin-top:10px;
+  }
+  .hrule{height:1px;background:var(--rule);margin:20px 0 0;width:118px}
+
+  /* acts */
+  .acts{display:flex;flex-direction:column;margin-top:26px}
+  .act{display:flex;gap:22px;padding:20px 0;border-top:1px solid var(--rule-soft);position:relative}
+  .act:first-child{border-top:0}
+  .glyph{flex:0 0 auto;width:56px;height:56px}
+  .act-body{flex:1;min-width:0;border-left:1px solid var(--rule-soft);padding-left:20px}
+  .act-label{
+    font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;
+    display:flex;flex-wrap:wrap;align-items:baseline;gap:9px;
+  }
+  .act-label .era{color:var(--gold-lift);font-variant-numeric:tabular-nums}
+  .act-label .sep{color:var(--rule)}
+  .act-label .name{color:var(--gold);font-weight:600}
+  .act p{margin:8px 0 0;font-size:15px;line-height:1.52;color:var(--cream);max-width:60ch}
+
+  /* watch items */
+  .watch{display:flex;flex-direction:column;gap:0;margin-top:4px}
+  .w{display:flex;align-items:flex-start;gap:14px;padding:9px 0}
+  .w svg{flex:0 0 auto;width:24px;height:24px;margin-top:1px}
+  .w .k{
+    font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+    flex:0 0 108px;padding-top:2px;font-weight:600;
+  }
+  .w .v{font-size:14.5px;color:var(--cream);flex:1;min-width:0}
+  .w .v em{font-style:normal;color:var(--muted)}
+
+  /* chart */
+  .chart-wrap{margin-top:30px;border-top:1px solid var(--rule-soft);padding-top:22px}
+  .chart-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+  .chart-title{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+  .chart-note{font-size:11px;color:var(--muted);letter-spacing:.02em}
+  .chart-scroll{overflow-x:auto;margin-top:14px}
+  svg.chart{display:block;width:100%;min-width:520px;height:auto}
+
+  /* bottom line */
+  .bottom{
+    margin-top:30px;border:1px solid var(--rule);background:rgba(214,179,107,.045);
+    display:flex;gap:20px;padding:22px 24px;
+  }
+  .bottom svg{flex:0 0 auto;width:42px;height:42px}
+  .bottom .t{
+    font-family:var(--serif);font-size:19px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--gold);
+  }
+  .bottom p{margin:8px 0 0;font-size:15.5px;line-height:1.5;color:var(--cream);max-width:62ch}
+
+  /* footer */
+  footer{margin-top:26px;border-top:1px solid var(--rule-soft);padding-top:16px}
+  .asof{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-variant-numeric:tabular-nums}
+  .src{font-size:11.5px;line-height:1.6;color:var(--muted);margin-top:9px;max-width:74ch}
+  .src b{color:var(--cream);font-weight:600}
+  .disc{font-size:10.5px;line-height:1.55;color:var(--muted);margin-top:12px;max-width:74ch;opacity:.85}
+
+  @media (max-width:640px){
+    .sheet{padding:30px 22px 30px}
+    .blueprint{width:210px;opacity:.14}
+    .act{gap:14px}
+    .glyph{width:42px;height:42px}
+    .act-body{padding-left:14px}
+    .w{flex-wrap:wrap}
+    .w .k{flex:0 0 auto}
+  }
+  @media print{
+    body{padding:0;background:#08090B}
+    .sheet{border:0;max-width:none}
+  }
+</style>
+
+<div class="sheet">
+
+  <svg class="blueprint" viewBox="0 0 340 620" fill="none" stroke="#D6B36B" stroke-width="1" aria-hidden="true">
+    <!-- starship schematic, blueprint style -->
+    <path d="M150 40 C150 40 178 92 178 150 L178 420 L122 420 L122 150 C122 92 150 40 150 40 Z" opacity=".8"/>
+    <path d="M122 420 L100 470 L100 520 L200 520 L200 470 L178 420" opacity=".8"/>
+    <path d="M178 200 L250 236 L250 262 L178 246" opacity=".55"/>
+    <path d="M122 200 L50 236 L50 262 L122 246" opacity=".55"/>
+    <path d="M178 400 L240 450 L240 500 L178 470" opacity=".55"/>
+    <path d="M122 400 L60 450 L60 500 L122 470" opacity=".55"/>
+    <circle cx="150" cy="540" r="10" opacity=".7"/>
+    <circle cx="124" cy="540" r="10" opacity=".7"/>
+    <circle cx="176" cy="540" r="10" opacity=".7"/>
+    <path d="M100 560 L200 560" opacity=".4"/>
+    <path d="M20 150 L100 150 M20 150 L20 420 M20 420 L100 420" opacity=".3"/>
+    <path d="M300 236 L300 500" opacity=".3"/>
+    <circle cx="150" cy="150" r="46" opacity=".22"/>
+    <path d="M60 90 L280 90" opacity=".22"/>
+    <path d="M40 600 L300 600" opacity=".22"/>
+  </svg>
+
+  <div class="top">
+    <div class="prepared">Prepared for The Kukes Group</div>
+    <div class="mark">
+      <div class="a">IMAGIN</div>
+      <div class="b">CONCIERGE</div>
+    </div>
+  </div>
+
+  <h1>SPACEX <span class="tick">(SPCX)</span></h1>
+  <div class="span">2026&ndash;2028 TRAJECTORY</div>
+  <div class="kicker">Market Perspective</div>
+  <div class="hrule"></div>
+
+  <div class="acts">
+
+    <div class="act">
+      <svg class="glyph" viewBox="0 0 56 56" fill="none" stroke="#D6B36B" stroke-width="1.3" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" opacity=".55"/>
+        <ellipse cx="28" cy="28" rx="17" ry="7" transform="rotate(-28 28 28)" opacity=".9"/>
+        <circle cx="28" cy="28" r="5.5" fill="#D6B36B" stroke="none" opacity=".9"/>
+        <path d="M40 15 L44 11 M44 11 L41 10 M44 11 L45 14" opacity=".9"/>
+      </svg>
+      <div class="act-body">
+        <div class="act-label">
+          <span class="era">2002&ndash;2025</span><span class="sep">|</span><span class="name">The Monopoly Earned</span>
+        </div>
+        <p>Reusable boosters collapsed the cost of reaching orbit and made SpaceX the default ride to space. Starlink then converted that launch capability into a recurring consumer subscription &mdash; a deep-technology company that built its own customer instead of waiting for one.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <svg class="glyph" viewBox="0 0 56 56" fill="none" stroke="#D6B36B" stroke-width="1.3" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" opacity=".55"/>
+        <path d="M18 36 L18 22 M28 36 L28 16 M38 36 L38 26" opacity=".9"/>
+        <path d="M14 41 L42 41" opacity=".9"/>
+        <path d="M15 19 L23 13 L31 18 L41 9" opacity=".55"/>
+      </svg>
+      <div class="act-body">
+        <div class="act-label">
+          <span class="era">Feb&ndash;Jun 2026</span><span class="sep">|</span><span class="name">Daylight</span>
+        </div>
+        <p>An xAI merger folded an artificial-intelligence business into the rocket company at a combined $1.25&nbsp;trillion. Four months later the June&nbsp;12 listing raised roughly $75&nbsp;billion &mdash; the largest IPO on record &mdash; and ended the company's ability to choose what it disclosed.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <svg class="glyph" viewBox="0 0 56 56" fill="none" stroke="#D6B36B" stroke-width="1.3" aria-hidden="true">
+        <circle cx="28" cy="28" r="26" opacity=".55"/>
+        <circle cx="28" cy="28" r="16" opacity=".7"/>
+        <circle cx="28" cy="28" r="7" opacity=".85"/>
+        <circle cx="28" cy="28" r="2.6" fill="#D6B36B" stroke="none"/>
+        <path d="M28 2 L28 10 M28 46 L28 54 M2 28 L10 28 M46 28 L54 28" opacity=".8"/>
+      </svg>
+      <div class="act-body">
+        <div class="act-label">
+          <span class="era">2026&ndash;2028</span><span class="sep">|</span><span class="name">The Proving Ground</span>
+        </div>
+
+        <div class="watch">
+          <div class="w">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#D6B36B" stroke-width="1.4" aria-hidden="true">
+              <path d="M12 2c2.6 3.2 4 7 4 11v5H8v-5c0-4 1.4-7.8 4-11z"/>
+              <path d="M8 15l-3 4h3M16 15l3 4h-3"/>
+            </svg>
+            <div class="k">Starship</div>
+            <div class="v">V3 flying &mdash; flights 12 and 13 cleared. <em>Cadence must now carry the V3 satellites, due to begin launching late 2026.</em></div>
+          </div>
+          <div class="w">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#D6B36B" stroke-width="1.4" aria-hidden="true">
+              <path d="M4 20a12 12 0 0 1 12-12"/>
+              <path d="M4 20a8 8 0 0 1 8-8"/>
+              <circle cx="5" cy="19" r="1.6" fill="#D6B36B" stroke="none"/>
+              <path d="M17 4l3 3-6 3-0-3z"/>
+            </svg>
+            <div class="k">Starlink</div>
+            <div class="v">12&nbsp;million subscribers across 164 countries, a record 1.7&nbsp;million added in Q2. <em>The engine funding everything else.</em></div>
+          </div>
+          <div class="w">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#D6B36B" stroke-width="1.4" aria-hidden="true">
+              <rect x="7" y="7" width="10" height="10" rx="1.4"/>
+              <path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>
+            </svg>
+            <div class="k">AI Capex</div>
+            <div class="v">$15.8&nbsp;billion of $18.4&nbsp;billion quarterly capital spend. <em>The AI unit grew revenue 247% and still lost $1.3&nbsp;billion.</em></div>
+          </div>
+          <div class="w">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#D6B36B" stroke-width="1.4" aria-hidden="true">
+              <rect x="4" y="11" width="16" height="10" rx="1.6"/>
+              <path d="M8 11V7.5A4 4 0 0 1 16 7"/>
+              <circle cx="12" cy="16" r="1.4" fill="#D6B36B" stroke="none"/>
+            </svg>
+            <div class="k">Float</div>
+            <div class="v">Lockup opened 6 August on up to 911.5&nbsp;million shares. <em>Supply meets a stock still below its June peak.</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-wrap">
+    <div class="chart-head">
+      <div class="chart-title">Since Listing &middot; SPCX</div>
+      <div class="chart-note">Selected reported points &mdash; not a continuous series</div>
+    </div>
+    <div class="chart-scroll">
+      <svg class="chart" viewBox="0 0 780 214" fill="none" aria-label="SpaceX share price at four reported points between June 12 and August 14, 2026">
+        <!-- grid -->
+        <line x1="46" y1="24" x2="770" y2="24" stroke="#D6B36B" stroke-opacity=".10"/>
+        <line x1="46" y1="167" x2="770" y2="167" stroke="#D6B36B" stroke-opacity=".10"/>
+        <line x1="46" y1="96" x2="770" y2="96" stroke="#D6B36B" stroke-opacity=".07"/>
+        <text x="12" y="28" fill="#8C8674" font-size="11" font-family="-apple-system,sans-serif">230</text>
+        <text x="12" y="100" fill="#8C8674" font-size="11" font-family="-apple-system,sans-serif">170</text>
+        <text x="12" y="171" fill="#8C8674" font-size="11" font-family="-apple-system,sans-serif">110</text>
+
+        <!-- IPO reference -->
+        <line x1="46" y1="137" x2="770" y2="137" stroke="#D6B36B" stroke-opacity=".34" stroke-dasharray="5 6"/>
+        <text x="452" y="152" fill="#8C8674" font-size="10.5" font-family="-apple-system,sans-serif">IPO price $135</text>
+
+        <!-- series: 135 -> 160.95 -> 225.64 -> 140 -->
+        <path d="M70 137 L196 106 L322 30 L740 131" stroke="#D6B36B" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+
+        <!-- event markers -->
+        <line x1="628" y1="24" x2="628" y2="185" stroke="#D6B36B" stroke-opacity=".22" stroke-dasharray="3 5"/>
+        <text x="634" y="42" fill="#8C8674" font-size="10.5" font-family="-apple-system,sans-serif">4 Aug &middot; first earnings</text>
+        <line x1="660" y1="52" x2="660" y2="185" stroke="#D6B36B" stroke-opacity=".22" stroke-dasharray="3 5"/>
+        <text x="666" y="68" fill="#8C8674" font-size="10.5" font-family="-apple-system,sans-serif">6 Aug &middot; lockup</text>
+
+        <!-- points -->
+        <circle cx="70" cy="137" r="4" fill="#08090B" stroke="#D6B36B" stroke-width="2"/>
+        <circle cx="196" cy="106" r="4" fill="#08090B" stroke="#D6B36B" stroke-width="2"/>
+        <circle cx="322" cy="30" r="5" fill="#EBD3A0"/>
+        <circle cx="740" cy="131" r="5" fill="#EBD3A0"/>
+
+        <text x="46" y="126" fill="#EAE4D6" font-size="11.5" font-family="-apple-system,sans-serif">$135.00</text>
+        <text x="158" y="90" fill="#EAE4D6" font-size="11.5" font-family="-apple-system,sans-serif">$160.95</text>
+        <text x="296" y="19" fill="#EBD3A0" font-size="12.5" font-family="-apple-system,sans-serif">$225.64</text>
+        <text x="712" y="120" fill="#EBD3A0" font-size="12.5" font-family="-apple-system,sans-serif">$140.00</text>
+
+        <text x="42" y="204" fill="#8C8674" font-size="10.5" font-family="-apple-system,sans-serif">12 Jun &middot; priced</text>
+        <text x="152" y="204" fill="#8C8674" font-size="10.5" font-family="-apple-system,sans-serif">day-one close</text>
+        <text x="286" y="204" fill="#8C8674" font-size="10.5" font-family="-apple-system,sans-serif">16 Jun &middot; peak</text>
+        <text x="716" y="204" fill="#8C8674" font-size="10.5" font-family="-apple-system,sans-serif">14 Aug</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <svg viewBox="0 0 44 44" fill="none" stroke="#D6B36B" stroke-width="1.3" aria-hidden="true">
+      <path d="M6 16 L22 6 L38 16"/>
+      <path d="M9 16 L9 33 M17 16 L17 33 M27 16 L27 33 M35 16 L35 33"/>
+      <path d="M5 37 L39 37"/>
+    </svg>
+    <div>
+      <div class="t">Bottom Line</div>
+      <p>Reusable launch and Starlink built a business the public market will pay for. Whether $15.8&nbsp;billion a quarter of AI infrastructure becomes the next Starlink or a permanent drag is now the whole question &mdash; and it gets answered in public every ninety days.</p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="asof">Information current as of 15 August 2026</div>
+    <p class="src">
+      <b>Sources.</b> SpaceX pricing announcement, 12 June 2026 (555,555,555 Class&nbsp;A shares at $135.00, Nasdaq Global Select). SpaceX Q2&nbsp;2026 results and first earnings call, 4 August 2026 (revenue $7.81&nbsp;billion, +92% year over year; net loss $541&nbsp;million; adjusted EBITDA $3.5&nbsp;billion; Starlink revenue $4.29&nbsp;billion; capital expenditure $18.4&nbsp;billion including $15.8&nbsp;billion for AI infrastructure; AI unit revenue +247% with a $1.3&nbsp;billion loss; no formal guidance issued). CNBC, 5 and 10 August 2026. Forbes, 5 August 2026. Share prices from Nasdaq market data via TradingView and Investing.com, 14 August 2026; 52-week range $104.83&ndash;$225.64.
+    </p>
+    <p class="src">
+      <b>Contested.</b> Post-IPO valuation figures above $2&nbsp;trillion appeared only briefly and vary by source. The February 2026 xAI merger valuation of $1.25&nbsp;trillion is as reported at the time and is not a current market value.
+    </p>
+    <p class="disc">
+      Prepared by IMagin Concierge for informational and educational purposes only. This document is not investment advice, not a recommendation to buy or sell any security, and does not account for the objectives or circumstances of any individual. Figures are drawn from company disclosures and press reporting on the dates noted and may since have changed. Verify independently before acting.
+    </p>
+  </footer>
+
+</div>
