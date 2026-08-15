@@ -206,8 +206,11 @@ the bridge every time. Work the problem → bring the *conclusion* back → writ
 - Herb — Isaac's birth father. Started law school and built an insurance business. The Perplexity agent, Flex, is named for him, and its research-and-law role reflects that.
 - Scott Kukes — first real prospect for the investor briefs. Asked "name a company" unprompted after seeing the Lucid one-pager, then named SpaceX. Travelling ~3 weeks from Aug 16 (Croatia, Amsterdam, Rome, then Michigan for his father's surgery). No ask until he is back.
 - Linda Hoyt — ONE Sotheby's International Realty. Live concierge pilot; the open-house reel is hers.
-- Arturo — partner/collaborator on Legends Ranch.
-- Isaac's mom — involved in Legends Ranch.
+- Arturo — partner/collaborator on Legends Ranch. **One of the two people Isaac is currently learning from.** Treat his vision as an input, not a task list.
+- Isaac's mom — involved in Legends Ranch. **The other person Isaac is currently learning from.**
+  Arturo and Isaac's mom are the present-day visionaries in his life, the way Sidney and Herb are
+  the ones he named the agents for. Legends Ranch is where that shows up as work — pace it as they
+  see the possibilities, not on a schedule.
 - Bobby — Arturo's grandson, involved in Legends Ranch.
 
 ## TODO (check every session, remove when done)
