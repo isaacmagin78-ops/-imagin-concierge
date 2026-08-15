@@ -42,8 +42,16 @@ def make(url: str, community: str) -> None:
         qr=qr_svg,
     ), encoding="utf-8")
 
+    card = CARD.format(
+        community=html.escape(community),
+        url_pretty=html.escape(pretty),
+        qr=qr_svg,
+    )
+    (ROOT / "cards.html").write_text(CARDS_SHEET.format(cards=card * 4), encoding="utf-8")
+
     print(f"wrote {ROOT/'qr.svg'}")
-    print(f"wrote {ROOT/'sign.html'}  ->  open it and Print to PDF (Letter, no margins, 100% scale)")
+    print(f"wrote {ROOT/'sign.html'}   ->  gate sign, Letter, Print to PDF")
+    print(f"wrote {ROOT/'cards.html'}  ->  4 hand-out cards per sheet, cut in quarters")
 
 
 SIGN = """<!DOCTYPE html>
@@ -77,6 +85,37 @@ SIGN = """<!DOCTYPE html>
   <div class="foot"><b>{community}</b>10 mph &middot; one car per gate cycle</div>
 </div></body></html>
 """
+
+
+CARDS_SHEET = """<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Hand-out cards</title>
+<style>
+  @page {{ size: letter portrait; margin: 0; }}
+  html,body {{ margin:0; padding:0; background:#fff; color:#000;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }}
+  .sheet {{ width:8.5in; height:11in; display:grid;
+    grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; }}
+  .card {{ border:1px dashed #bbb; padding:.3in; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; }}
+  .card .k {{ font-size:15pt; font-weight:800; letter-spacing:.03em; }}
+  .card h2 {{ font-size:25pt; line-height:1; margin:.06in 0 .12in; font-weight:900; letter-spacing:-.02em; }}
+  .card .q {{ width:2.6in; height:2.6in; }}
+  .card .q svg {{ width:100%; height:100%; display:block; }}
+  .card .u {{ font-size:11pt; font-weight:700; margin-top:.12in; word-break:break-all; }}
+  .card .c {{ font-size:10pt; margin-top:.05in; }}
+  @media screen {{ body {{ background:#555; padding:24px 0; }}
+    .sheet {{ background:#fff; margin:0 auto; box-shadow:0 8px 40px rgba(0,0,0,.5); }} }}
+</style></head>
+<body><div class="sheet">{cards}</div></body></html>
+"""
+
+CARD = """<div class="card">
+    <div class="k">LOST? DON'T GUESS.</div>
+    <h2>Scan for the<br>building map</h2>
+    <div class="q">{qr}</div>
+    <div class="u">{url_pretty}</div>
+    <div class="c">{community}</div>
+  </div>"""
 
 
 if __name__ == "__main__":

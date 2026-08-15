@@ -63,3 +63,16 @@ final** — a laminated sign pointing at a dead URL is worse than no sign.
 - No tracking, analytics, or logging. Drivers scan and go.
 - No gate codes or resident names in the file — it's a public URL by definition.
   Anything sensitive belongs behind the callbox, not on this page.
+
+## Three places the QR should live
+
+The gate sign is only one of them, and it's the weakest on its own — a driver who is
+already lost isn't reading signage.
+
+1. **Hand-out cards** (`cards.html`) — 4 per Letter sheet, cut in quarters. The guard
+   keeps a stack in the booth and hands one through the window. Highest conversion by
+   far: the driver is already stopped and already asking the question.
+2. **The gate sign** (`sign.html`) — catches people who arrive when the booth is empty
+   or after hours.
+3. **A link the guard can text** — the same URL. Costs nothing, works for the repeat
+   drivers who hit the property every week.
