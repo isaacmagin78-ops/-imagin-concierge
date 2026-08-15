@@ -211,6 +211,13 @@ the bridge every time. Work the problem → bring the *conclusion* back → writ
 - Kelly — his dad's assistant. The ChatGPT agent is named for her, and its operations / chief-of-staff role is the job she actually did.
 - Herb — Isaac's birth father. Started law school and built an insurance business. The Perplexity agent, Flex, is named for him, and its research-and-law role reflects that.
 - Scott Kukes — first real prospect for the investor briefs. Asked "name a company" unprompted after seeing the Lucid one-pager, then named SpaceX. Travelling ~3 weeks from Aug 16 (Croatia, Amsterdam, Rome, then Michigan for his father's surgery). No ask until he is back.
+- Adam — sales. Isaac's read: strong closer. Intended to sell the concierge offering broadly.
+  Blocked on two decisions only Isaac can make: the price of the offer, and Adam's cut.
+  A salesperson cannot sell an undefined thing — Adam is the forcing function for pricing.
+- Emilio — neighbour (Royal Palm, unit 203). Runs a service business; Isaac has been telling him for a
+  while that I. Magin could produce his marketing. 2026-08-15: Isaac sent him a rebuilt car-wash flyer
+  (`projects/concierge-site/samples/`) as a demonstration — the source flyer was a random one from the
+  lobby, not Emilio's. Still needed: what Emilio actually does, so a real sample can replace the demo.
 - Linda Hoyt — ONE Sotheby's International Realty. Live concierge pilot; the open-house reel is hers.
 - Arturo — partner/collaborator on Legends Ranch. **One of the two people Isaac is currently learning from.** Treat his vision as an input, not a task list.
   - **2026-08-15 — Isaac wants to make a documentary about Arturo's whole life.** Not scheduled, not scoped. If it ever moves, the only piece that cannot be made later is Arturo telling his own stories in his own voice — recorded interviews come first, everything else waits. The video engine already exists.
