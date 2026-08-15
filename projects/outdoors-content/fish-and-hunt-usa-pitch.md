@@ -99,20 +99,30 @@ package and what their clients ask for that they turn down. Price against that.
 
 ## Honest gaps to know before the call
 
-- **No on-location or drone footage capability yet.** They have drone crews. Don't imply
-  parity. The anthem film uses stock for three scenes.
+- **No on-location footage yet.** The anthem film uses stock for three scenes. This is
+  being closed — see the hunt-trip plan in `arturo-channel-concept.md`.
 - **No client base in this niche** beyond Legends Ranch.
 - **One person.** If they ask about capacity, be straight and scope accordingly.
 
-## Drone — the one gap worth closing
+## Drone — a capability that exists, currently down
 
-It's the cheapest capability gap to close and it's the thing that would make this a full
-offer rather than a partial one.
+**Correction, 2026-08-15:** an earlier version of this file said there was no drone
+capability. That was wrong. Isaac owns a **DJI Mini 3** and was getting good footage with
+it before it crashed — with reason to believe the cause was a malfunction rather than
+pilot error.
 
-**Requirement to know up front:** flying a drone for *any* commercial purpose in the US
-requires an **FAA Part 107 Remote Pilot Certificate**. Recreational flying doesn't, but
-the moment footage is used for a paying client it's commercial. It's a knowledge test at
-an FAA-approved center (roughly $175, no flight test), plus registering the aircraft.
+That is a materially better position than starting from nothing. The path is *recover*,
+not *acquire*: back up the flight logs, open the DJI claim, and check for DJI Care
+Refresh before buying a replacement. Full detail in `arturo-channel-concept.md`.
 
-Do that before quoting drone work, not after. `VERIFY` current requirements at
-faa.gov/uas before booking a test — rules in this area move.
+**Requirement before quoting any drone work:** flying commercially in the US requires an
+**FAA Part 107 Remote Pilot Certificate**. Recreational flying doesn't, but the moment
+footage goes to a paying client it's commercial. Knowledge test at an FAA-approved centre,
+roughly $175, no flight exam.
+
+**The 250g exemption does not help here.** The Mini 3 is 249g, which exempts it from
+registration *recreationally only*. Under Part 107, **registration is required regardless
+of weight.**
+
+Get certified before quoting drone work, not after. `VERIFY` current requirements at
+faa.gov/uas — rules in this area move.

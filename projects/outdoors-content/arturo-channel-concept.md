@@ -90,6 +90,98 @@ the existing engine. Ship it before designing a channel, a schedule, or a brand.
 If it lands with him and his family, everything else follows. If it doesn't, one episode
 is a cheap thing to have learned from.
 
+---
+
+# Going on the hunts — the structural fix
+
+Added 2026-08-15. This is the strongest idea in the track and it solves a problem that
+nothing else on this list solves.
+
+## Why it matters more than it looks
+
+**Everything Isaac currently owns is derivative.** The anthem film uses stock footage for
+three of its scenes — the deliverables README lists "real ranch footage for the three
+remaining stock scenes" as improvement #3. The documentary concept above runs on archive.
+The listing system runs on other people's photos.
+
+**Original footage is the one asset that cannot be replicated** — not by AI, not by an
+agency, not by a competitor. Being physically present, with a subject who trusts you, is
+the moat. Arturo is family-adjacent; nobody else gets that access.
+
+It also fixes the failure that actually happened. Publishing stopped 2026-08-10 because
+the material ran out. **One trip generates months of it.**
+
+And it closes the exact gap named in `fish-and-hunt-usa-pitch.md` — their advantage is
+on-location and drone work. Shooting on the ranch erases it.
+
+## The season sets the schedule, and it's close
+
+Legends Ranch is in **Bitely, Michigan**. Michigan's archery deer season traditionally
+opens **October 1**, firearm **November 15**. As of writing it is 15 August — roughly
+**6 to 10 weeks out**.
+
+`VERIFY with Arturo, not from memory.` Private high-fence ranches frequently run extended
+seasons under permit, so the real window may be wider. He is the source of truth on this,
+and asking him is also the phone call that starts the whole thing.
+
+**Consequence:** if there is to be footage this year, planning happens in August. There is
+no version of this that gets decided in October.
+
+## Two constraints to clear before booking anything
+
+**1. Drones and hunting are separately regulated.**
+Many states restrict drone use in connection with hunting; **Michigan prohibits using a
+drone to take or harass game.** Landscape, ranch, facility and b-roll footage is a
+different matter from flying over an active hunt. `VERIFY with the Michigan DNR` before
+building any drone shot into a hunt day. This is the kind of rule that ends a trip badly
+and cannot be fixed on site.
+
+**2. Kill footage caps distribution.**
+YouTube age-restricts graphic hunting content; Instagram and TikTok remove it. This is a
+reach ceiling, not a taste question.
+
+**The resolution is the angle already chosen above:** shoot the hunt, but the *film* is
+about the place, the man, the veterans, and Purple Heart Hunts. That travels far past the
+hunting audience and carries no platform risk. The hunt is the setting, not the subject.
+
+## Drone — resolve the claim before buying
+
+Isaac owns a **DJI Mini 3** that crashed, with reason to believe it was a malfunction
+rather than pilot error. He nearly bought a replacement on 2026-08-14.
+
+**Do the claim first.** If the flight log shows a defect, DJI repairs or replaces it and
+the replacement cost is never incurred. Buying now guarantees paying for something that
+may be covered.
+
+- **Back up the DJI Fly flight records immediately.** They live on the phone that was
+  connected. A new device or an app reinstall can lose them, and they are the entire
+  evidence base. A new iPad mini was set up on 2026-08-15 — this is live risk.
+- Submit the flight record to DJI support for official data analysis. The log shows motor
+  output, GPS, compass and IMU state, and whether behaviour matched input. A malfunction
+  is visibly distinct from pilot error; it is not a judgment call.
+- **Check for DJI Care Refresh.** If it's held, replacement is a low flat fee regardless
+  of cause, which bypasses the argument entirely.
+- Warranty generally runs one year from purchase. The clock matters.
+
+**Part 107 — required, and not gated by the 250g rule.** The Mini 3 is 249g, which exempts
+it from FAA registration *recreationally only*. Under Part 107 — any paid work —
+**registration is required regardless of weight**, in addition to the certificate.
+Knowledge test at an FAA-approved centre, roughly $175, no flight exam. Book it for
+September so it is not on the critical path in October. `VERIFY current requirements at
+faa.gov/uas.`
+
+## Order of operations
+
+1. **Call Arturo.** Ask to come up for the season and confirm the real dates. This is the
+   only step that cannot be done from a desk, and everything else depends on the answer.
+2. **Back up the Mini 3 flight logs**, then open the DJI claim.
+3. **Book the Part 107 test** for September.
+4. **Confirm Michigan drone-and-hunting rules** with the DNR.
+5. **Build the shot list before travelling** — including the three stock scenes in the
+   existing anthem that real footage would replace (forest flyover, aerial, whitetail
+   buck). Coming home with those three is a complete win on its own, because it upgrades
+   a film that already exists.
+
 ## Related
 - `fish-and-hunt-usa-pitch.md` — the partnership track, and the FAA Part 107 requirement
   that gates any paid drone work
