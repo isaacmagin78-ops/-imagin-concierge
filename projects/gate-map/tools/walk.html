@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Gate Map — Walk Sheet</title>
+<style>
+  :root{
+    --bg:#f4f5f7;--surface:#fff;--surface-2:#eceef1;--ink:#14181d;--ink-2:#4c555f;--ink-3:#79838e;
+    --line:#d7dbe0;--accent:#0b6bcb;--accent-ink:#fff;--soft:#e3effb;--warn:#f0b429;--r:14px;
+    --shadow:0 1px 2px rgba(0,0,0,.06),0 6px 20px rgba(0,0,0,.07);
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#0e1216;--surface:#161c22;--surface-2:#1e262e;--ink:#f2f5f8;--ink-2:#b6c0cb;--ink-3:#8794a1;
+    --line:#2b343d;--accent:#4da3ff;--accent-ink:#06131f;--soft:#12293f;--warn:#ffc93c;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.45);}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:400 17px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    padding:0 0 calc(90px + env(safe-area-inset-bottom));-webkit-text-size-adjust:100%}
+  .wrap{max-width:620px;margin:0 auto;padding:16px 14px}
+  h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--ink-2);font-size:15px;margin-bottom:14px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    box-shadow:var(--shadow);padding:16px;margin-bottom:14px}
+  h2{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0 0 10px;font-weight:600}
+  label{display:block;font-size:14px;color:var(--ink-2);margin:12px 0 5px;font-weight:500}
+  label:first-of-type{margin-top:0}
+  input,textarea,select{width:100%;font:inherit;font-size:17px;padding:13px;border-radius:11px;
+    border:2px solid var(--line);background:var(--bg);color:var(--ink);-webkit-appearance:none}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
+  textarea{min-height:78px;resize:vertical}
+  .row{display:flex;gap:10px}.row>*{flex:1}
+  button{font:inherit;font-weight:600;border:0;border-radius:11px;padding:15px;cursor:pointer}
+  .primary{background:var(--accent);color:var(--accent-ink);width:100%;font-size:17px}
+  .ghost{background:var(--surface-2);color:var(--ink-2)}
+  .tip{background:var(--soft);border-radius:10px;padding:11px 13px;font-size:14px;margin-top:10px;color:var(--ink)}
+  .tip b{display:block;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);margin-bottom:3px}
+  .item{display:flex;gap:12px;align-items:flex-start;padding:13px;border:1px solid var(--line);
+    border-radius:11px;margin-bottom:8px;background:var(--bg)}
+  .num{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--accent);color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px}
+  .num.alt{background:var(--surface-2);color:var(--ink-2);font-size:12px;text-align:center;line-height:1.1}
+  .item .b{flex:1;min-width:0}
+  .item .t{font-weight:600;font-size:16px}
+  .item .s{color:var(--ink-2);font-size:14px;margin-top:2px;white-space:pre-wrap;word-break:break-word}
+  .x{flex:0 0 auto;background:none;border:0;color:var(--ink-3);font-size:22px;padding:0 4px;cursor:pointer}
+  .none{color:var(--ink-3);font-size:15px;padding:6px 2px}
+  .bar{position:fixed;left:0;right:0;bottom:0;padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+    background:var(--surface);border-top:1px solid var(--line);z-index:30}
+  .bar .primary{background:var(--warn);color:#3a2c00}
+  .count{text-align:center;font-size:13px;color:var(--ink-3);margin-bottom:8px}
+  #out{width:100%;min-height:200px;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;margin-top:10px;display:none}
+  #out.on{display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Walk sheet</h1>
+<div class="sub">Fill this in as you walk the property. It saves as you go — you can close the phone
+and come back. When you're done, hit the yellow button and paste the result into Claude.</div>
+
+<div class="card">
+  <h2>Step 1 · Before you start walking</h2>
+  <label>Community name</label>
+  <input id="cname" placeholder="e.g. Palm Grove Villas">
+  <label>Office / callbox phone <span style="color:var(--ink-3)">(optional)</span></label>
+  <input id="cphone" type="tel" placeholder="954-555-0123">
+  <div class="tip"><b>Do this one thing first</b>
+    Open Google Maps, find your community, switch to satellite, zoom so the whole property fills the
+    screen, and screenshot it. That single image gives Claude the road shape — far more accurate than
+    describing turns. Send it along with this sheet.</div>
+</div>
+
+<div class="card">
+  <h2>Step 2 · Stand at the gate, then drive/walk the loop</h2>
+  <div class="tip"><b>Order matters</b>
+    Add buildings in the order you actually pass them coming in from the gate. That order tells Claude
+    the layout even if the satellite shot is fuzzy.</div>
+
+  <label>What is it?</label>
+  <select id="kind">
+    <option value="building">Building (has units)</option>
+    <option value="amenity">Amenity / landmark (office, package room, pool, dumpsters, mailboxes)</option>
+  </select>
+
+  <label id="lbl-name">Building number or name</label>
+  <input id="name" placeholder="e.g. 5  —  or  Building C">
+
+  <div id="unitrow">
+    <label>Unit numbers in this building</label>
+    <div class="row">
+      <input id="u1" inputmode="numeric" placeholder="lowest, e.g. 501">
+      <input id="u2" inputmode="numeric" placeholder="highest, e.g. 524">
+    </div>
+  </div>
+
+  <label>How do you get there from the gate?</label>
+  <textarea id="dir" placeholder="Say it out loud the way you'd tell a driver:&#10;Through the gate, straight to the loop, turn left, it's the second one on the right."></textarea>
+
+  <label>Anything a driver needs to know? <span style="color:var(--ink-3)">(optional)</span></label>
+  <textarea id="note" placeholder="Entrance faces the lake, not the road. Guest parking is the row by the fence. Gate code needed after 8."></textarea>
+
+  <button class="primary" id="add" style="margin-top:14px">Add to the list</button>
+</div>
+
+<div class="card">
+  <h2>What you've recorded</h2>
+  <div id="list"></div>
+</div>
+
+<div class="card">
+  <h2>Step 3 · Don't forget</h2>
+  <div class="tip"><b>Easy to miss on the walk</b>
+    Package room or parcel lockers · Leasing / HOA office · Mailboxes · Dumpsters · Guest parking ·
+    Any building whose entrance faces away from the road · Any dead end or gate that looks like a through-road but isn't.</div>
+</div>
+
+<textarea id="out" readonly></textarea>
+
+</div>
+
+<div class="bar">
+  <div class="count" id="count">Nothing recorded yet</div>
+  <button class="primary" id="done">Copy everything for Claude</button>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const KEY = "gatemap.walk.v1";
+let data = load();
+
+function load(){
+  try { return JSON.parse(localStorage.getItem(KEY)) || {cname:"",cphone:"",items:[]}; }
+  catch(e){ return {cname:"",cphone:"",items:[]}; }
+}
+function save(){
+  data.cname = $("#cname").value;
+  data.cphone = $("#cphone").value;
+  try { localStorage.setItem(KEY, JSON.stringify(data)); } catch(e){}
+}
+function esc(s){ return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+$("#cname").value = data.cname || "";
+$("#cphone").value = data.cphone || "";
+$("#cname").addEventListener("input", save);
+$("#cphone").addEventListener("input", save);
+
+$("#kind").addEventListener("change", () => {
+  const b = $("#kind").value === "building";
+  $("#unitrow").style.display = b ? "" : "none";
+  $("#lbl-name").textContent = b ? "Building number or name" : "What is it called?";
+  $("#name").placeholder = b ? "e.g. 5  —  or  Building C" : "e.g. Package Room";
+});
+
+$("#add").addEventListener("click", () => {
+  const name = $("#name").value.trim();
+  if (!name) { $("#name").focus(); return; }
+  data.items.push({
+    kind: $("#kind").value,
+    name,
+    u1: $("#u1").value.trim(),
+    u2: $("#u2").value.trim(),
+    dir: $("#dir").value.trim(),
+    note: $("#note").value.trim()
+  });
+  ["#name","#u1","#u2","#dir","#note"].forEach(s => $(s).value = "");
+  save(); render();
+  $("#name").focus();
+  window.scrollTo({top: $("#list").getBoundingClientRect().top + window.scrollY - 80, behavior:"smooth"});
+});
+
+function render(){
+  const list = $("#list");
+  if (!data.items.length){ list.innerHTML = '<div class="none">Nothing yet. Start at the gate.</div>'; }
+  else {
+    list.innerHTML = data.items.map((it,i) => {
+      const units = (it.u1 && it.u2) ? `Units ${esc(it.u1)}–${esc(it.u2)}` : (it.u1 ? `Units ${esc(it.u1)}` : "");
+      const bits = [units, it.dir, it.note].filter(Boolean).map(esc).join("\n");
+      const badge = it.kind === "building"
+        ? `<span class="num">${esc(it.name)}</span>`
+        : `<span class="num alt">${esc(it.name.slice(0,2).toUpperCase())}</span>`;
+      return `<div class="item">${badge}<div class="b"><div class="t">${
+        it.kind === "building" ? "Building " + esc(it.name) : esc(it.name)
+      }</div><div class="s">${bits || "no details"}</div></div>
+      <button class="x" data-i="${i}" aria-label="Remove">&times;</button></div>`;
+    }).join("");
+    list.querySelectorAll(".x").forEach(b => b.addEventListener("click", () => {
+      data.items.splice(+b.dataset.i, 1); save(); render();
+    }));
+  }
+  const n = data.items.filter(i => i.kind === "building").length;
+  const a = data.items.length - n;
+  $("#count").textContent = data.items.length
+    ? `${n} building${n===1?"":"s"} · ${a} landmark${a===1?"":"s"} recorded`
+    : "Nothing recorded yet";
+}
+
+function text(){
+  const L = [];
+  L.push("GATE MAP — WALK SHEET");
+  L.push("Community: " + (data.cname || "(not filled in)"));
+  if (data.cphone) L.push("Office phone: " + data.cphone);
+  L.push("Recorded in the order encountered from the gate.");
+  L.push("");
+  data.items.forEach((it,i) => {
+    L.push(`${i+1}. ${it.kind === "building" ? "BUILDING " + it.name : it.name.toUpperCase()}`);
+    if (it.u1 && it.u2) L.push(`   Units: ${it.u1}-${it.u2}`);
+    else if (it.u1) L.push(`   Units: ${it.u1}`);
+    if (it.dir) L.push(`   From gate: ${it.dir}`);
+    if (it.note) L.push(`   Note: ${it.note}`);
+    L.push("");
+  });
+  return L.join("\n");
+}
+
+$("#done").addEventListener("click", async () => {
+  save();
+  const t = text();
+  const out = $("#out");
+  out.value = t; out.classList.add("on");
+  try {
+    await navigator.clipboard.writeText(t);
+    $("#done").textContent = "Copied — paste it into Claude";
+  } catch(e) {
+    $("#done").textContent = "Select the text below and copy it";
+  }
+  out.scrollIntoView({behavior:"smooth", block:"start"});
+  setTimeout(() => { $("#done").textContent = "Copy everything for Claude"; }, 6000);
+});
+
+$("#kind").dispatchEvent(new Event("change"));
+render();
+</script>
+</body>
+</html>
