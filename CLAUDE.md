@@ -184,7 +184,7 @@ people.** Treat them with that in mind.
 |---|---|---|
 | **Sid** | Claude — this assistant | **Sidney Schneider**, Isaac's stepfather |
 | **Flex** | Perplexity — research and law | **Herb**, Isaac's birth father, who started law school and built an insurance business. The role fits the man. |
-| Kelly | ChatGPT | — (ask Isaac) |
+| **Kelly** | ChatGPT — operations / chief of staff | **Kelly**, his dad's assistant. The role is the job she actually did. |
 | Gem / "Gemmy" | Gemini | — (ask Isaac) |
 | Percy | listed as "Perplexity Computer" — same product family as Flex | — (ask Isaac) |
 | **Todd** | **no tool attached** | — (ask Isaac) |
@@ -194,8 +194,13 @@ but names no product. **Do not treat Todd as an authority.** The roster's open c
 asked whether Isaac or Todd is the final decision maker — with no tool behind the name,
 **Isaac decides.** That conflict is closed.
 
-Ask Isaac who Kelly, Gem, Percy and Todd are named for before assuming anything about
-them. Given Sid and Flex, the answer is likely people who matter to him.
+**The pattern is exact: each agent's role is the role the real person played.** Herb went to
+law school, so Flex does research and law. Kelly ran his dad's office, so Kelly is operations
+and chief of staff. These assignments are considered, not arbitrary — do not reshuffle roles
+between agents casually.
+
+Still to ask Isaac: who Gem, Percy and Todd are named for. Given the pattern, they are people
+who matter to him, and their roles will mirror what those people did.
 
 **HARD RULE from the roster, still true:** no two agents can talk to each other. Isaac is
 the bridge every time. Work the problem → bring the *conclusion* back → write it down.
@@ -203,6 +208,7 @@ the bridge every time. Work the problem → bring the *conclusion* back → writ
 ## PEOPLE
 - Isaac (isaacmagin78-ops) — owner. Pompano Beach, FL (Eastern time). Uses voice-to-text; confirm ambiguous messages before acting.
 - Sidney Schneider — Isaac's stepfather. This assistant is named for him.
+- Kelly — his dad's assistant. The ChatGPT agent is named for her, and its operations / chief-of-staff role is the job she actually did.
 - Herb — Isaac's birth father. Started law school and built an insurance business. The Perplexity agent, Flex, is named for him, and its research-and-law role reflects that.
 - Scott Kukes — first real prospect for the investor briefs. Asked "name a company" unprompted after seeing the Lucid one-pager, then named SpaceX. Travelling ~3 weeks from Aug 16 (Croatia, Amsterdam, Rome, then Michigan for his father's surgery). No ask until he is back.
 - Linda Hoyt — ONE Sotheby's International Realty. Live concierge pilot; the open-house reel is hers.
