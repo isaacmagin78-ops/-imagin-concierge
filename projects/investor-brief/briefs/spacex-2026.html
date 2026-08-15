@@ -10,6 +10,7 @@
     --rule:rgba(214,179,107,.26);
     --rule-soft:rgba(214,179,107,.13);
     --serif:"Didot","Bodoni MT","Big Caslon","Playfair Display",Georgia,"Times New Roman",serif;
+    --geo:"Futura","Avenir Next","Century Gothic","Poppins","Questrial",system-ui,sans-serif;
     --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   }
   *{box-sizing:border-box}
@@ -49,9 +50,17 @@
     font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);
     padding-top:4px;
   }
-  .mark{text-align:right;line-height:1}
-  .mark .a{font-family:var(--serif);font-size:21px;letter-spacing:.30em;color:var(--gold)}
-  .mark .b{font-size:9px;letter-spacing:.42em;color:var(--muted);margin-top:5px}
+  .mark{display:flex;align-items:center;gap:13px}
+  .mark .petal{flex:0 0 auto;width:34px;height:34px}
+  .mark .words{text-align:right;line-height:1}
+  .mark .a{
+    font-family:var(--geo);font-weight:300;font-size:20px;letter-spacing:.30em;
+    color:var(--gold);padding-left:.30em;
+  }
+  .mark .b{
+    font-family:var(--geo);font-weight:400;font-size:8.5px;letter-spacing:.44em;
+    color:var(--gold);opacity:.72;margin-top:6px;padding-left:.44em;
+  }
 
   h1{
     font-family:var(--serif);
@@ -168,8 +177,19 @@
   <div class="top">
     <div class="prepared">Prepared for The Kukes Group</div>
     <div class="mark">
-      <div class="a">IMAGIN</div>
-      <div class="b">CONCIERGE</div>
+      <div class="words">
+        <div class="a">IMAGIN</div>
+        <div class="b">CONCIERGE</div>
+      </div>
+      <svg class="petal" viewBox="0 0 100 100" aria-label="IMagin Concierge">
+        <g fill="#C9A54E">
+          <ellipse cx="50" cy="27" rx="15.5" ry="24"/>
+          <ellipse cx="50" cy="27" rx="15.5" ry="24" transform="rotate(72 50 50)"/>
+          <ellipse cx="50" cy="27" rx="15.5" ry="24" transform="rotate(144 50 50)"/>
+          <ellipse cx="50" cy="27" rx="15.5" ry="24" transform="rotate(216 50 50)"/>
+          <ellipse cx="50" cy="27" rx="15.5" ry="24" transform="rotate(288 50 50)"/>
+        </g>
+      </svg>
     </div>
   </div>
 
