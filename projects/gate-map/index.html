@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Community Map — Deliveries &amp; Visitors</title>
+<meta name="description" content="Scan at the gate. Type a unit or building number and see exactly where to go.">
+<style>
+  /* ---------- tokens ---------- */
+  :root{
+    --bg:#f4f5f7; --surface:#ffffff; --surface-2:#eceef1;
+    --ink:#14181d; --ink-2:#4c555f; --ink-3:#79838e;
+    --line:#d7dbe0;
+    --accent:#0b6bcb; --accent-ink:#ffffff; --accent-soft:#e3efFB;
+    --hit:#f0b429; --hit-ink:#3a2c00;
+    --road:#c9ced5; --bldg:#dfe3e8; --bldg-line:#b6bdc6;
+    --shadow:0 1px 2px rgba(0,0,0,.06),0 6px 20px rgba(0,0,0,.07);
+    --r:14px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0e1216; --surface:#161c22; --surface-2:#1e262e;
+      --ink:#f2f5f8; --ink-2:#b6c0cb; --ink-3:#8794a1;
+      --line:#2b343d;
+      --accent:#4da3ff; --accent-ink:#06131f; --accent-soft:#12293f;
+      --hit:#ffc93c; --hit-ink:#2b2000;
+      --road:#39424c; --bldg:#232c35; --bldg-line:#3b4650;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.45);
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:400 17px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    -webkit-text-size-adjust:100%;
+    padding:0 0 env(safe-area-inset-bottom);
+  }
+  .wrap{max-width:620px;margin:0 auto;padding:0 14px 40px}
+
+  /* ---------- header ---------- */
+  header{padding:18px 0 10px}
+  h1{font-size:22px;line-height:1.2;margin:0;letter-spacing:-.01em}
+  .sub{color:var(--ink-2);font-size:15px;margin-top:3px}
+
+  /* ---------- search ---------- */
+  .searchbox{position:sticky;top:0;z-index:20;padding:10px 0 12px;background:linear-gradient(var(--bg) 76%,transparent)}
+  .field{position:relative;display:flex;align-items:center}
+  #q{
+    width:100%;font-size:20px;padding:16px 46px 16px 16px;
+    border-radius:var(--r);border:2px solid var(--line);
+    background:var(--surface);color:var(--ink);box-shadow:var(--shadow);
+    -webkit-appearance:none;
+  }
+  #q:focus{outline:none;border-color:var(--accent)}
+  #q::placeholder{color:var(--ink-3)}
+  #clear{
+    position:absolute;right:8px;border:0;background:var(--surface-2);color:var(--ink-2);
+    width:32px;height:32px;border-radius:16px;font-size:18px;line-height:1;cursor:pointer;display:none;
+  }
+  #clear.on{display:block}
+
+  .chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 2px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{
+    flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);
+    padding:9px 14px;border-radius:999px;font-size:15px;cursor:pointer;white-space:nowrap;
+  }
+  .chip:active{background:var(--surface-2)}
+
+  /* ---------- results ---------- */
+  #results{margin:10px 0 0;display:grid;gap:8px}
+  .res{
+    display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:14px;font:inherit;color:inherit;cursor:pointer;box-shadow:var(--shadow);
+  }
+  .res:active{background:var(--surface-2)}
+  .badge{
+    flex:0 0 auto;min-width:46px;height:46px;border-radius:12px;background:var(--accent);color:var(--accent-ink);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:19px;padding:0 8px;
+  }
+  .badge.alt{background:var(--surface-2);color:var(--ink-2);font-size:15px}
+  .res .t{font-weight:600}
+  .res .s{color:var(--ink-2);font-size:14px;margin-top:1px}
+  .empty{color:var(--ink-2);padding:16px 4px;font-size:15px}
+
+  /* ---------- detail ---------- */
+  #detail{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    box-shadow:var(--shadow);padding:16px;margin:10px 0 0;display:none;
+  }
+  #detail.on{display:block}
+  .dhead{display:flex;align-items:center;gap:12px}
+  .dhead .badge{background:var(--hit);color:var(--hit-ink)}
+  .dtitle{font-size:20px;font-weight:700;line-height:1.2}
+  .dsub{color:var(--ink-2);font-size:15px;margin-top:2px}
+  ol.steps{margin:14px 0 0;padding:0 0 0 22px}
+  ol.steps li{margin:0 0 8px;font-size:17px}
+  .note{
+    margin-top:12px;background:var(--accent-soft);border-radius:10px;padding:11px 13px;
+    font-size:15px;color:var(--ink)
+  }
+  .note b{display:block;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);margin-bottom:2px}
+
+  /* ---------- map ---------- */
+  .maprow{display:flex;align-items:baseline;justify-content:space-between;margin:22px 0 8px}
+  h2{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);margin:0;font-weight:600}
+  .hint{font-size:13px;color:var(--ink-3)}
+  .mapcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:8px}
+  svg#map{width:100%;height:auto;display:block;touch-action:manipulation}
+  .b-shape{fill:var(--bldg);stroke:var(--bldg-line);stroke-width:2;cursor:pointer}
+  .b-label{fill:var(--ink);font:700 32px system-ui,sans-serif;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+  .b-sub{fill:var(--ink-3);font:500 17px system-ui,sans-serif;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+  g.b.sel .b-shape{fill:var(--hit);stroke:var(--hit-ink)}
+  g.b.sel .b-label,g.b.sel .b-sub{fill:var(--hit-ink)}
+  svg#map.hasSel g.b:not(.sel){opacity:.42}
+  .amen .b-shape{fill:var(--surface-2);stroke-dasharray:5 4}
+  .amen .b-label{font-size:19px}
+  .road{fill:none;stroke:var(--road);stroke-width:26;stroke-linecap:round;stroke-linejoin:round}
+  .road-dash{fill:none;stroke:var(--surface);stroke-width:2;stroke-dasharray:10 12;opacity:.75}
+  .gate-ic{fill:var(--accent)}
+  .gate-tx{fill:var(--accent-ink);font:700 15px system-ui,sans-serif;text-anchor:middle;dominant-baseline:central}
+  .youare{fill:var(--ink-2);font:600 13px system-ui,sans-serif;text-anchor:middle;letter-spacing:.06em}
+
+  /* ---------- driver rules ---------- */
+  .rules{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+  .rules ul{margin:10px 0 0;padding-left:20px}
+  .rules li{margin:0 0 7px;font-size:16px;color:var(--ink-2)}
+  .callbtn{
+    display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;
+    background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;font-size:17px;
+    padding:15px;border-radius:12px;
+  }
+  footer{margin-top:26px;text-align:center;color:var(--ink-3);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1 id="cname">Community Map</h1>
+  <div class="sub" id="csub">Deliveries &amp; visitors</div>
+</header>
+
+<div class="searchbox">
+  <div class="field">
+    <input id="q" type="search" enterkeyhint="search" autocomplete="off" autocapitalize="off"
+           spellcheck="false" placeholder="Type a unit or building #">
+    <button id="clear" aria-label="Clear">&times;</button>
+  </div>
+  <div class="chips" id="chips"></div>
+</div>
+
+<div id="detail" aria-live="polite"></div>
+<div id="results"></div>
+
+<div class="maprow"><h2>Site map</h2><span class="hint">Tap a building</span></div>
+<div class="mapcard">
+  <svg id="map" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Community site map"></svg>
+</div>
+
+<div class="rules">
+  <h2>Notes for drivers</h2>
+  <ul id="rules"></ul>
+  <a class="callbtn" id="call" href="#">Call the office</a>
+</div>
+
+<footer id="foot"></footer>
+</div>
+
+<script>
+/* ==========================================================================
+   EDIT EVERYTHING BELOW THIS LINE. Nothing else in this file needs to change.
+
+   Coordinates are on a 1000 x 700 grid. Think of the gate at the bottom
+   center and the property spreading up and out from there. x = left→right,
+   y = top→bottom. w/h are the size of each building box.
+   ========================================================================== */
+const COMMUNITY = {
+  name: "Palm Grove Villas",            // <- real community name
+  subtitle: "Deliveries & visitors — you are at the front gate",
+  office: { label: "Call the office", phone: "+15550000000" },
+
+  driverNotes: [
+    "Speed limit 10 mph. Kids and dogs everywhere.",
+    "Gate arm closes fast — one car at a time, don't tailgate.",
+    "Packages: leave at the unit door, not the building entry.",
+    "After 8 PM use the callbox; the office is closed."
+  ],
+
+  // Roads drawn under the buildings. Plain SVG paths on the 1000x700 grid.
+  roads: [
+    "M500 700 L500 560",                       // entry drive from gate
+    "M500 560 L170 560 L170 180 L830 180 L830 560 L500 560", // the loop
+    "M170 370 L830 370"                        // cross street
+  ],
+
+  gate: { x: 500, y: 655, label: "GATE" },
+
+  // type: "building" gets a big number badge. "amenity" is a dashed box.
+  places: [
+    { id:"b1",  type:"building", label:"1",  units:[101,124], x:200, y:210, w:150, h:105,
+      steps:["Through the gate, go straight to the loop.","Turn LEFT at the loop.","Building 1 is the first on your right, at the corner."],
+      note:"Guest parking is the row facing the lake." },
+
+    { id:"b2",  type:"building", label:"2",  units:[201,224], x:425, y:210, w:150, h:105,
+      steps:["Through the gate, straight to the loop.","Turn LEFT, then RIGHT at the top.","Building 2 is on your right, second one."],
+      note:"" },
+
+    { id:"b3",  type:"building", label:"3",  units:[301,324], x:650, y:210, w:150, h:105,
+      steps:["Through the gate, straight to the loop.","Turn RIGHT, follow it all the way around to the top.","Building 3 is the last one on the left."],
+      note:"" },
+
+    { id:"b4",  type:"building", label:"4",  units:[401,424], x:200, y:400, w:150, h:105,
+      steps:["Through the gate, straight to the loop.","Turn LEFT.","Building 4 is immediately on your right."],
+      note:"" },
+
+    { id:"b5",  type:"building", label:"5",  units:[501,524], x:425, y:400, w:150, h:105,
+      steps:["Through the gate, straight to the loop.","Turn LEFT, then take the first RIGHT (cross street).","Building 5 is on your left."],
+      note:"" },
+
+    { id:"b6",  type:"building", label:"6",  units:[601,624], x:650, y:400, w:150, h:105,
+      steps:["Through the gate, straight to the loop.","Turn RIGHT.","Building 6 is immediately on your left."],
+      note:"" },
+
+    { id:"office", type:"amenity", label:"Leasing Office", aliases:["office","leasing","management","front desk"],
+      x:590, y:590, w:170, h:70,
+      steps:["Through the gate, the office is the low building on your right before the loop."],
+      note:"Open Mon–Fri 9–5." },
+
+    { id:"pkg", type:"amenity", label:"Package Room", aliases:["packages","parcel","amazon","locker","lockers"],
+      x:775, y:590, w:150, h:70,
+      steps:["Past the office, door on the right side of the same row.","Code is on the callbox screen after hours."],
+      note:"Oversize items only. Everything else goes to the unit door." },
+
+    { id:"pool", type:"amenity", label:"Pool / Clubhouse", aliases:["clubhouse","pool","gym","amenity"],
+      x:80, y:590, w:180, h:70,
+      steps:["Through the gate, first LEFT before the loop."],
+      note:"" },
+
+    { id:"trash", type:"amenity", label:"Dumpsters", aliases:["trash","garbage","dumpster","waste"],
+      x:290, y:590, w:130, h:70,
+      steps:["Hard RIGHT immediately inside the gate, follow the wall to the end."],
+      note:"" }
+  ]
+};
+/* ==========================================================================
+   STOP EDITING HERE.
+   ========================================================================== */
+
+const $ = s => document.querySelector(s);
+const byId = Object.fromEntries(COMMUNITY.places.map(p => [p.id, p]));
+
+/* ---------- header, rules, footer ---------- */
+$("#cname").textContent = COMMUNITY.name;
+$("#csub").textContent = COMMUNITY.subtitle;
+$("#rules").innerHTML = COMMUNITY.driverNotes.map(n => `<li>${esc(n)}</li>`).join("");
+const call = $("#call");
+if (COMMUNITY.office && COMMUNITY.office.phone) {
+  call.href = "tel:" + COMMUNITY.office.phone;
+  call.textContent = COMMUNITY.office.label || "Call the office";
+} else { call.remove(); }
+$("#foot").textContent = COMMUNITY.name;
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function unitText(p){ return p.units ? `Units ${p.units[0]}–${p.units[1]}` : ""; }
+function title(p){ return p.type === "building" ? `Building ${p.label}` : p.label; }
+
+/* ---------- map ---------- */
+(function drawMap(){
+  const svg = $("#map");
+  svg.setAttribute("viewBox", "0 0 1000 700");
+  const ns = "http://www.w3.org/2000/svg";
+  const el = (n, a) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); return e; };
+
+  COMMUNITY.roads.forEach(d => {
+    svg.appendChild(el("path", {d, class:"road"}));
+    svg.appendChild(el("path", {d, class:"road-dash"}));
+  });
+
+  COMMUNITY.places.forEach(p => {
+    const g = el("g", {class:"b " + (p.type === "amenity" ? "amen" : ""), "data-id":p.id, role:"button", tabindex:"0"});
+    g.appendChild(el("rect", {x:p.x, y:p.y, width:p.w, height:p.h, rx:10, class:"b-shape"}));
+    const cx = p.x + p.w/2, cy = p.y + p.h/2, sub = unitText(p);
+    const lab = el("text", {x:cx, y: sub ? cy - 12 : cy, class:"b-label"});
+    lab.textContent = p.label;
+    g.appendChild(lab);
+    if (sub) { const s = el("text", {x:cx, y:cy + 18, class:"b-sub"}); s.textContent = sub; g.appendChild(s); }
+    g.addEventListener("click", () => select(p.id));
+    g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(p.id); } });
+    svg.appendChild(g);
+  });
+
+  const G = COMMUNITY.gate;
+  svg.appendChild(el("rect", {x:G.x-70, y:G.y-24, width:140, height:48, rx:24, class:"gate-ic"}));
+  const gt = el("text", {x:G.x, y:G.y, class:"gate-tx"}); gt.textContent = G.label; svg.appendChild(gt);
+  const ya = el("text", {x:G.x, y:G.y+42, class:"youare"}); ya.textContent = "YOU ARE HERE"; svg.appendChild(ya);
+})();
+
+/* ---------- search ---------- */
+function matches(query){
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  const n = parseInt(q, 10);
+  const out = [];
+  for (const p of COMMUNITY.places){
+    let score = 0, why = "";
+    if (!isNaN(n) && p.units && n >= p.units[0] && n <= p.units[1]) { score = 100; why = `Unit ${n} is in ${title(p)}`; }
+    else if (p.type === "building" && p.label.toLowerCase() === q) { score = 90; why = unitText(p); }
+    else if (p.label.toLowerCase().includes(q)) { score = 70; why = unitText(p); }
+    else if ((p.aliases||[]).some(a => a.includes(q) || q.includes(a))) { score = 60; why = ""; }
+    if (score) out.push({p, score, why});
+  }
+  return out.sort((a,b) => b.score - a.score);
+}
+
+function render(){
+  const v = $("#q").value;
+  $("#clear").classList.toggle("on", v.length > 0);
+  const res = $("#results");
+  if (!v.trim()) { res.innerHTML = ""; return; }
+  const hits = matches(v);
+  if (!hits.length){
+    res.innerHTML = `<div class="empty">Nothing matches “${esc(v)}”. Try just the building number, or tap it on the map below.</div>`;
+    return;
+  }
+  res.innerHTML = hits.map(({p, why}) => `
+    <button class="res" data-id="${p.id}">
+      <span class="badge ${p.type === "amenity" ? "alt" : ""}">${esc(p.label)}</span>
+      <span><span class="t">${esc(title(p))}</span><span class="s">${esc(why || p.note || "Tap for directions")}</span></span>
+    </button>`).join("");
+  res.querySelectorAll(".res").forEach(b => b.addEventListener("click", () => select(b.dataset.id)));
+}
+
+/* ---------- selection ---------- */
+function select(id){
+  const p = byId[id];
+  if (!p) return;
+  const d = $("#detail");
+  const q = $("#q").value.trim();
+  const n = parseInt(q, 10);
+  const unitLine = (!isNaN(n) && p.units && n >= p.units[0] && n <= p.units[1])
+    ? `Unit ${n} · ${unitText(p)}` : unitText(p);
+
+  d.innerHTML = `
+    <div class="dhead">
+      <span class="badge">${esc(p.label)}</span>
+      <span><div class="dtitle">${esc(title(p))}</div>${unitLine ? `<div class="dsub">${esc(unitLine)}</div>` : ""}</span>
+    </div>
+    <ol class="steps">${(p.steps||[]).map(s => `<li>${esc(s)}</li>`).join("")}</ol>
+    ${p.note ? `<div class="note"><b>Heads up</b>${esc(p.note)}</div>` : ""}`;
+  d.classList.add("on");
+
+  const svg = $("#map");
+  svg.classList.add("hasSel");
+  svg.querySelectorAll("g.b").forEach(g => g.classList.toggle("sel", g.dataset.id === id));
+  $("#results").innerHTML = "";
+  d.scrollIntoView({behavior:"smooth", block:"nearest"});
+}
+
+/* ---------- chips ---------- */
+$("#chips").innerHTML = COMMUNITY.places
+  .filter(p => p.type === "amenity")
+  .map(p => `<button class="chip" data-id="${p.id}">${esc(p.label)}</button>`).join("");
+$("#chips").querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => select(c.dataset.id)));
+
+$("#q").addEventListener("input", render);
+$("#clear").addEventListener("click", () => {
+  $("#q").value = ""; render(); $("#q").focus();
+  $("#detail").classList.remove("on");
+  $("#map").classList.remove("hasSel");
+  $("#map").querySelectorAll("g.b").forEach(g => g.classList.remove("sel"));
+});
+</script>
+</body>
+</html>
