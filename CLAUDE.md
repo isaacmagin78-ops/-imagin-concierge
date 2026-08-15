@@ -1,5 +1,13 @@
 # ISAAC WORKSPACE OPERATING CHARTER
 
+## 🗓 THIS REPO IS BEING RETIRED — decided 2026-08-15
+
+Isaac decided this repo folds into `isaacmagin78-ops/I.Magin-island-repair-` as project
+folders, then gets **archived**. One repo, one memory. **See `MERGE-PLAN.md` for the
+steps — and read it before adding anything new here.**
+
+Do not start new work in this repo. Put it in the island repo.
+
 ## ⛔ STOP — READ `HANDOFF.md` BEFORE DOING ANYTHING
 
 **This file is NOT the memory of record. `HANDOFF.md` is.**
