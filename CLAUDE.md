@@ -171,8 +171,35 @@ For every task, return:
   - Blocked on Isaac only: satellite screenshot of the property + completed walk sheet.
   - Do not print the sign until the deployed URL is final and live.
 
+## YOUR NAME
+Isaac named this assistant **Sid**, after his stepfather **Sidney Schneider**. Use it.
+He should not have to say it twice.
+
+## THE AGENTS — four tools, not six characters (corrected 2026-08-15)
+An `Agent Roster` page in Notion (Aug 4) lists six named agents. Isaac confirmed the
+real mapping:
+
+| Name | What it actually is |
+|---|---|
+| Kelly | ChatGPT |
+| Flex | Perplexity |
+| Gem / "Gemmy" | Gemini |
+| Sid (Claude) | this assistant |
+| Percy | listed as "Perplexity Computer" — same product family as Flex |
+| **Todd** | **nothing. No product. Isaac does not recognise the name.** |
+
+The roster invented personas faster than Isaac acquired products. **Do not treat Todd as
+an authority.** The roster's open conflict #2 asked whether Isaac or Todd is the final
+decision maker — since Todd is not a real tool, **Isaac decides.** That conflict is closed.
+
+**HARD RULE from the roster, still true:** no two agents can talk to each other. Isaac is
+the bridge every time. Work the problem → bring the *conclusion* back → write it down.
+
 ## PEOPLE
 - Isaac (isaacmagin78-ops) — owner. Pompano Beach, FL (Eastern time). Uses voice-to-text; confirm ambiguous messages before acting.
+- Sidney Schneider — Isaac's stepfather. This assistant is named for him.
+- Scott Kukes — first real prospect for the investor briefs. Asked "name a company" unprompted after seeing the Lucid one-pager, then named SpaceX. Travelling ~3 weeks from Aug 16 (Croatia, Amsterdam, Rome, then Michigan for his father's surgery). No ask until he is back.
+- Linda Hoyt — ONE Sotheby's International Realty. Live concierge pilot; the open-house reel is hers.
 - Arturo — partner/collaborator on Legends Ranch.
 - Isaac's mom — involved in Legends Ranch.
 - Bobby — Arturo's grandson, involved in Legends Ranch.
