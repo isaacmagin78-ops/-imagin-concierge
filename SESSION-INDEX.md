@@ -139,6 +139,12 @@ A session on 2026-08-14 mistakenly rebuilt it as an active project; that was rem
 
 Conversation-only. No artifact exists and no transcript API is available. Not recoverable.
 
+## Added 2026-08-15
+| Date | Session | Branch |
+|---|---|---|
+| 08-14 | Isaac workspace operating charter *(this recovery session)* | `claude/isaac-workspace-charter-htet5g` ✅ *(concierge)* |
+| 08-15 | QR code gate map for delivery driver | `claude/qr-code-gate-map-5sbszh` ✅ *(concierge)* |
+
 ## Unattributed branches (no session record)
 `claude/workspace-cleanup` · `export/isaac-video-engine` · `export/madison-moves` ·
 `export/send-off` — the `export/*` set looks like prepared repo splits.
