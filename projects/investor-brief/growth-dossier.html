@@ -1,0 +1,321 @@
+<title>I. Magin Growth Dossier</title>
+<style>
+  :root{
+    --ground:#0A1712;
+    --surface:#0F241C;
+    --surface-2:#143026;
+    --ink:#E4EFE7;
+    --ink-2:#A9C3B5;
+    --muted:#77937f;
+    --jade:#3FCB8E;
+    --jade-deep:#1E8F63;
+    --brass:#C9A54E;
+    --brass-soft:rgba(201,165,78,.16);
+    --line:rgba(63,203,142,.16);
+    --line-2:rgba(228,239,231,.09);
+    --serif:"Didot","Bodoni MT","Big Caslon","Playfair Display",Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,sans-serif;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.55;
+  }
+  .wrap{max-width:940px;margin:0 auto;padding:44px 24px 80px;display:flex;flex-direction:column;gap:44px}
+
+  /* header */
+  .masthead{display:flex;justify-content:space-between;align-items:flex-start;gap:32px}
+  .masthead>div:first-child{flex:1 1 auto;min-width:0}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--jade)}
+  h1{font-family:var(--serif);font-size:clamp(34px,5.4vw,52px);line-height:1.02;margin:12px 0 0;text-wrap:balance}
+  .standfirst{color:var(--ink-2);font-size:17px;margin-top:14px;max-width:62ch}
+  .brandmark{text-align:right;font-family:var(--serif);line-height:1.2;flex:0 0 auto}
+  .brandmark .n{font-size:15px;letter-spacing:.18em;color:var(--ink)}
+  .brandmark .s{font-size:8.5px;letter-spacing:.30em;color:var(--brass);margin-top:4px}
+
+  h2{
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--jade);margin:0 0 4px;font-weight:500;
+  }
+  .sec-title{font-family:var(--serif);font-size:27px;margin:0 0 18px;line-height:1.15}
+  section{display:flex;flex-direction:column}
+
+  /* figures */
+  .figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+  .fig{background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:20px}
+  .fig .v{font-family:var(--mono);font-size:31px;letter-spacing:-.02em;color:var(--jade);font-variant-numeric:tabular-nums;line-height:1}
+  .fig .k{font-size:13.5px;color:var(--ink-2);margin-top:9px;line-height:1.4}
+  .fig .src{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:9px;letter-spacing:.04em}
+
+  /* table */
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;min-width:520px}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line-2);font-size:14.5px}
+  th{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--jade);font-weight:500}
+  td.p{font-family:var(--mono);color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td.n{color:var(--ink-2)}
+
+  /* read */
+  .read{display:flex;flex-direction:column;gap:16px}
+  .read p{margin:0;max-width:70ch;color:var(--ink)}
+  .read .lead{font-size:18px;line-height:1.5}
+  mark{background:var(--brass-soft);color:var(--ink);padding:1px 4px;border-radius:2px}
+
+  /* the five */
+  .five{display:flex;flex-direction:column;gap:12px;counter-reset:f}
+  .card{
+    background:linear-gradient(180deg,var(--surface-2),var(--surface));
+    border:1px solid rgba(201,165,78,.30);border-radius:3px;
+    padding:20px 22px;display:flex;gap:18px;
+  }
+  .card::before{
+    counter-increment:f;content:counter(f);
+    font-family:var(--mono);font-size:13px;color:var(--brass);
+    flex:0 0 auto;padding-top:3px;
+  }
+  .card h3{margin:0;font-size:18px;font-family:var(--serif);letter-spacing:.01em;color:var(--ink)}
+  .card p{margin:7px 0 0;font-size:14.5px;color:var(--ink-2);max-width:66ch}
+  .card .why{display:block;margin-top:7px;color:var(--brass);font-size:13px}
+
+  /* thirty */
+  .group{margin-top:22px}
+  .group-h{
+    font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-2);padding-bottom:9px;border-bottom:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:baseline;gap:12px;
+  }
+  .group-h span{color:var(--muted)}
+  ol.items{list-style:none;margin:0;padding:0}
+  ol.items li{display:flex;gap:15px;padding:11px 0;border-bottom:1px solid var(--line-2);font-size:14.5px;align-items:baseline}
+  ol.items li:last-child{border-bottom:0}
+  ol.items .num{font-family:var(--mono);font-size:11.5px;color:var(--jade-deep);flex:0 0 26px;font-variant-numeric:tabular-nums}
+  ol.items .txt{flex:1;min-width:0}
+  ol.items b{color:var(--ink);font-weight:600}
+  ol.items .txt{color:var(--ink-2)}
+  .star{color:var(--brass);font-size:11px;letter-spacing:.1em;font-family:var(--mono)}
+
+  footer{border-top:1px solid var(--line);padding-top:20px;color:var(--muted);font-size:12px;line-height:1.65;max-width:80ch}
+  footer b{color:var(--ink-2);font-weight:600}
+  footer .asof{font-family:var(--mono);color:var(--jade);letter-spacing:.14em;text-transform:uppercase;font-size:11px;margin-bottom:9px}
+
+  @media (max-width:600px){
+    .masthead{flex-direction:column-reverse;gap:20px}
+    .brandmark{text-align:left}
+    .wrap{padding:28px 16px 56px;gap:34px}
+    .card{flex-direction:column;gap:6px}
+    ol.items li{gap:11px}
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div>
+      <div class="eyebrow">Position &amp; Growth Dossier</div>
+      <h1>What the concierge market pays for, and where you actually stand</h1>
+      <p class="standfirst">Researched 15 August 2026 against the live luxury-concierge market and the
+      real-estate AI tools competing for the same budget. Thirty moves, ranked. Five that matter.</p>
+    </div>
+    <div class="brandmark">
+      <div class="n">I. MAGIN</div>
+      <div class="s">EXECUTIVE CONCIERGE</div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Section 01</h2>
+    <div class="sec-title">The market, in numbers you can price against</div>
+    <div class="figs">
+      <div class="fig">
+        <div class="v">$744M</div>
+        <div class="k">Global luxury concierge market in 2026, growing 9.2% a year to $1.38B by 2033.</div>
+        <div class="src">Coherent Market Insights</div>
+      </div>
+      <div class="fig">
+        <div class="v">36–41%</div>
+        <div class="k">Share of luxury concierge revenue that is <b>travel</b> — the largest and fastest-growing segment.</div>
+        <div class="src">Sector reporting, 2025–26</div>
+      </div>
+      <div class="fig">
+        <div class="v">$2k–$8k</div>
+        <div class="k">Typical annual membership band, entry to platinum. Ultra-premium firms run $10k–$100k+.</div>
+        <div class="src">Bespoke Life, BusinessDojo</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Section 02</h2>
+    <div class="sec-title">What agents already pay for less than you do</div>
+    <div class="tw">
+      <table>
+        <thead>
+          <tr><th>Tool</th><th>Price</th><th>What it actually does</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="n">Ylopo</td><td class="p">$1,000+/mo</td><td class="n">Ad generation plus AI text and synthetic-voice follow-up</td></tr>
+          <tr><td class="n">Structurely</td><td class="p">~$500/mo</td><td class="n">AI that texts leads like a human ISA, qualifies and nurtures</td></tr>
+          <tr><td class="n">Lead-nurture tier</td><td class="p">$295–$1,000/mo</td><td class="n">Long-cycle follow-up across CRM integrations</td></tr>
+          <tr><td class="n">Lead-capture tier</td><td class="p">$50–$200/mo</td><td class="n">Replaces the contact form with a conversational interviewer</td></tr>
+          <tr><td class="n">Specialist concierge, hourly</td><td class="p">$200–$500/hr</td><td class="n">Human advisory, the boutique end of the market</td></tr>
+          <tr><td class="n"><b style="color:var(--brass)">I. Magin, today</b></td><td class="p" style="color:var(--brass)">$0</td><td class="n">Reels, briefs, and a live pilot — delivered free</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Section 03</h2>
+    <div class="sec-title">The honest read</div>
+    <div class="read">
+      <p class="lead">You are competing in a category where the going rate is <mark>$500 to $1,000 a month</mark>,
+      and you have been delivering above that standard for nothing. That is the single biggest gap between
+      where you are and where the market already is.</p>
+
+      <p>The market is also splitting. Analysts expect consolidation through 2030, with a widening gap between
+      digital-first mass-premium providers and human-led boutique operators. Almost every boutique concierge is
+      a digital laggard, and almost every digital-first provider has no human taste. <b>You are sitting in the
+      one corner nobody occupies well: boutique judgment delivered at software speed.</b> That is not a
+      positioning exercise — it is literally what you did tonight, twice.</p>
+
+      <p>Second finding, and it is the uncomfortable one: <mark>travel is 36–41% of the entire luxury concierge
+      market</mark> — the biggest and fastest-growing slice of the business you are already in. It is also the
+      idea you have been sitting on longest. That is worth revisiting on its own merits, separately from any
+      question of who you build it with.</p>
+
+      <p>Third: no single tool wins all four agent workflows — capture, nurture, listing prep, transaction.
+      The software is stuck fighting over capture and nurture. Listing prep is where your reels live, and
+      almost nobody is serving it well.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Section 04</h2>
+    <div class="sec-title">The five that count</div>
+    <div class="five">
+      <div class="card">
+        <div>
+          <h3>Put a price on it this month</h3>
+          <p>Anchor at $750/month for a named client, which sits inside the band agents already pay Structurely
+          and Ylopo without blinking. Not a discount, not a trial — a number.</p>
+          <span class="why">Free work has no comparison price, so it gets valued at nothing.</span>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Sell the artifact, not the assistant</h3>
+          <p>"AI executive concierge" is abstract and every competitor says it. A reel, a company brief, a
+          listing package — those are objects a buyer can hold up. Lead with the thing you hand them.</p>
+          <span class="why">Scott asked "name a company" after seeing one object, not one pitch.</span>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Make Linda a case study, not a favor</h3>
+          <p>One named client with a stated result — listing, reel, open house, outcome — is the only sales
+          asset that closes the next five. Ask permission to publish the result before you deliver it.</p>
+          <span class="why">A pilot with no published outcome is charity with extra steps.</span>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h3>One landing page, one QR, on everything</h3>
+          <p>Every brief, reel end-card, deck, and sign carries the same code to the same page. The brief already
+          travels — right now it travels without a way back to you.</p>
+          <span class="why">You built the QR mechanism tonight for the gate. It is the same mechanism.</span>
+        </div>
+      </div>
+      <div class="card">
+        <div>
+          <h3>Take the travel segment seriously</h3>
+          <p>It is 36–41% of your own market and the largest growth area in it. Whatever the history there, the
+          market fact stands independently and deserves a decision rather than a drift.</p>
+          <span class="why">The biggest slice of the category you are already selling into.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Section 05</h2>
+    <div class="sec-title">The full thirty</div>
+
+    <div class="group">
+      <div class="group-h">Positioning <span>01–05</span></div>
+      <ol class="items">
+        <li><span class="num">01</span><span class="txt"><b>Claim the boutique-plus-digital corner explicitly.</b> Say the sentence out loud in the deck: human judgment, software speed. <span class="star">★ TOP 5</span></span></li>
+        <li><span class="num">02</span><span class="txt"><b>Drop "AI" from the lead line.</b> Every competitor says AI. Nobody else can hand over what you make.</span></li>
+        <li><span class="num">03</span><span class="txt"><b>Name the buyer precisely</b> — top-producing agents at brokerages with no in-house marketing.</span></li>
+        <li><span class="num">04</span><span class="txt"><b>Pick one vertical to win first.</b> Luxury residential in South Florida is small enough to dominate and rich enough to matter.</span></li>
+        <li><span class="num">05</span><span class="txt"><b>Write a one-sentence promise</b> you can repeat identically for a year.</span></li>
+      </ol>
+    </div>
+
+    <div class="group">
+      <div class="group-h">Pricing &amp; packaging <span>06–11</span></div>
+      <ol class="items">
+        <li><span class="num">06</span><span class="txt"><b>Set $750/month as the anchor.</b> Inside the band the market already pays. <span class="star">★ TOP 5</span></span></li>
+        <li><span class="num">07</span><span class="txt"><b>Build three tiers, not one price.</b> The market moved to tiered membership; single pricing reads amateur.</span></li>
+        <li><span class="num">08</span><span class="txt"><b>Sell an annual, not a monthly.</b> $2,000–$8,000 a year is the established shape of this category.</span></li>
+        <li><span class="num">09</span><span class="txt"><b>Price the one-off brief separately</b> so a buyer can start without a contract.</span></li>
+        <li><span class="num">10</span><span class="txt"><b>Publish the price.</b> Concealed pricing makes a boutique look like it is guessing per client.</span></li>
+        <li><span class="num">11</span><span class="txt"><b>Charge for the pilot, even a token amount.</b> A paid pilot converts; a free one ends.</span></li>
+      </ol>
+    </div>
+
+    <div class="group">
+      <div class="group-h">Product <span>12–17</span></div>
+      <ol class="items">
+        <li><span class="num">12</span><span class="txt"><b>Lead with the artifact.</b> The brief and the reel are the product. <span class="star">★ TOP 5</span></span></li>
+        <li><span class="num">13</span><span class="txt"><b>Own listing prep.</b> The one agent workflow the AI tools have not taken.</span></li>
+        <li><span class="num">14</span><span class="txt"><b>Standardise the reel</b> the way the company brief is now standardised — one spec, any listing.</span></li>
+        <li><span class="num">15</span><span class="txt"><b>Ship a monthly cadence,</b> not one-offs. Recurring output is what justifies recurring price.</span></li>
+        <li><span class="num">16</span><span class="txt"><b>White-label it.</b> The client's name at the top is the whole product for advisors and agents.</span></li>
+        <li><span class="num">17</span><span class="txt"><b>Keep the compliance rails visible.</b> The NAR guardrail already written is a selling point, not overhead.</span></li>
+      </ol>
+    </div>
+
+    <div class="group">
+      <div class="group-h">Distribution &amp; proof <span>18–24</span></div>
+      <ol class="items">
+        <li><span class="num">18</span><span class="txt"><b>One landing page, one QR, on every artifact.</b> <span class="star">★ TOP 5</span></span></li>
+        <li><span class="num">19</span><span class="txt"><b>Publish Linda's result as a case study.</b> <span class="star">★ TOP 5</span></span></li>
+        <li><span class="num">20</span><span class="txt"><b>Put the QR on the reel end-card,</b> where it sits on screen for three seconds anyway.</span></li>
+        <li><span class="num">21</span><span class="txt"><b>Send one brief a week</b> to a named person who did not ask. Cheapest possible demand test.</span></li>
+        <li><span class="num">22</span><span class="txt"><b>Track who scans.</b> A landing page with no analytics repeats tonight's attribution problem.</span></li>
+        <li><span class="num">23</span><span class="txt"><b>Ask every recipient for one referral</b> at the moment they compliment the work, not later.</span></li>
+        <li><span class="num">24</span><span class="txt"><b>Credit collaborators publicly</b> — photographers, agents. It costs nothing and buys the next introduction.</span></li>
+      </ol>
+    </div>
+
+    <div class="group">
+      <div class="group-h">Operations &amp; leverage <span>25–30</span></div>
+      <ol class="items">
+        <li><span class="num">25</span><span class="txt"><b>Decide the travel question.</b> 36–41% of the market. <span class="star">★ TOP 5</span></span></li>
+        <li><span class="num">26</span><span class="txt"><b>One tool, one job.</b> Research gathers, the assistant formats, one place holds the truth.</span></li>
+        <li><span class="num">27</span><span class="txt"><b>Keep the brand fixed.</b> The serif and the monogram are equity now; change the world around them, not them.</span></li>
+        <li><span class="num">28</span><span class="txt"><b>Kill the recurring jobs that generate work</b> rather than finish it. A daily briefing that manufactures a nine-item list is a cost.</span></li>
+        <li><span class="num">29</span><span class="txt"><b>Audit the subscriptions.</b> Linktree Pro has billed since July with nothing in it; the same pattern will repeat elsewhere.</span></li>
+        <li><span class="num">30</span><span class="txt"><b>Fix the broken checkout before adding anything new.</b> A live product that cannot take a card outranks every idea on this page.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <footer>
+    <div class="asof">Researched 15 August 2026</div>
+    <p><b>Sources.</b> Coherent Market Insights, luxury concierge service market size and CAGR. Bespoke Life
+    and BusinessDojo, 2026 concierge pricing and membership tiers. Sector reporting on travel's revenue share
+    and expected consolidation through 2030. SuperDupr, Perspective AI and viaim comparisons of real-estate AI
+    tooling for Structurely, Ylopo and lead-capture pricing.</p>
+    <p><b>Limits.</b> Market-size figures come from commercial research summaries rather than purchased reports,
+    and vendor pricing is list pricing, which negotiates. Treat the bands as directionally right and the exact
+    figures as approximate. The competitive read on workflow coverage is an interpretation, not a sourced claim.</p>
+    <p><b>On the QR code.</b> Deliberately not printed yet. There is no concierge landing page for it to point
+    at, and a code that goes nowhere is worse than no code. Build the page, then every artifact gets the same
+    code — see items 18, 20 and 22.</p>
+  </footer>
+
+</div>
