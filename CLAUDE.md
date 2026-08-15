@@ -175,22 +175,27 @@ For every task, return:
 Isaac named this assistant **Sid**, after his stepfather **Sidney Schneider**. Use it.
 He should not have to say it twice.
 
-## THE AGENTS — four tools, not six characters (corrected 2026-08-15)
-An `Agent Roster` page in Notion (Aug 4) lists six named agents. Isaac confirmed the
-real mapping:
+## THE AGENTS — named for Isaac's family (corrected 2026-08-15)
+An `Agent Roster` page in Notion (Aug 4) lists six named agents. **The names are not
+generated personas — Isaac named them after people in his life, and the roles match the
+people.** Treat them with that in mind.
 
-| Name | What it actually is |
-|---|---|
-| Kelly | ChatGPT |
-| Flex | Perplexity |
-| Gem / "Gemmy" | Gemini |
-| Sid (Claude) | this assistant |
-| Percy | listed as "Perplexity Computer" — same product family as Flex |
-| **Todd** | **nothing. No product. Isaac does not recognise the name.** |
+| Name | Tool | Named for |
+|---|---|---|
+| **Sid** | Claude — this assistant | **Sidney Schneider**, Isaac's stepfather |
+| **Flex** | Perplexity — research and law | **Herb**, Isaac's birth father, who started law school and built an insurance business. The role fits the man. |
+| Kelly | ChatGPT | — (ask Isaac) |
+| Gem / "Gemmy" | Gemini | — (ask Isaac) |
+| Percy | listed as "Perplexity Computer" — same product family as Flex | — (ask Isaac) |
+| **Todd** | **no tool attached** | — (ask Isaac) |
 
-The roster invented personas faster than Isaac acquired products. **Do not treat Todd as
-an authority.** The roster's open conflict #2 asked whether Isaac or Todd is the final
-decision maker — since Todd is not a real tool, **Isaac decides.** That conflict is closed.
+Todd is the one real gap: the roster gives Todd "central execution, strategic direction"
+but names no product. **Do not treat Todd as an authority.** The roster's open conflict #2
+asked whether Isaac or Todd is the final decision maker — with no tool behind the name,
+**Isaac decides.** That conflict is closed.
+
+Ask Isaac who Kelly, Gem, Percy and Todd are named for before assuming anything about
+them. Given Sid and Flex, the answer is likely people who matter to him.
 
 **HARD RULE from the roster, still true:** no two agents can talk to each other. Isaac is
 the bridge every time. Work the problem → bring the *conclusion* back → write it down.
@@ -198,6 +203,7 @@ the bridge every time. Work the problem → bring the *conclusion* back → writ
 ## PEOPLE
 - Isaac (isaacmagin78-ops) — owner. Pompano Beach, FL (Eastern time). Uses voice-to-text; confirm ambiguous messages before acting.
 - Sidney Schneider — Isaac's stepfather. This assistant is named for him.
+- Herb — Isaac's birth father. Started law school and built an insurance business. The Perplexity agent, Flex, is named for him, and its research-and-law role reflects that.
 - Scott Kukes — first real prospect for the investor briefs. Asked "name a company" unprompted after seeing the Lucid one-pager, then named SpaceX. Travelling ~3 weeks from Aug 16 (Croatia, Amsterdam, Rome, then Michigan for his father's surgery). No ask until he is back.
 - Linda Hoyt — ONE Sotheby's International Realty. Live concierge pilot; the open-house reel is hers.
 - Arturo — partner/collaborator on Legends Ranch.
