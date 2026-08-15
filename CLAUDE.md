@@ -159,6 +159,18 @@ For every task, return:
 
 - 2026-08-14: **CORRECTION + RECOVERY.** An earlier entry here claimed Isaac's phrase "Tyson and cat story" was voice-to-text garble and that the real property was the Negbaum manatee book. **That was false and it poisoned every session that read it.** Tyson = Isaac's rescue dog, Miss T = the cat. Corrected at the top of this file. Also recovered: the live business (First 30 Days Kit, $19, selling; @tysonstime at ~1,500 reach/post; open Southwest deal) lives on branch `claude/optimize-repository-context-i7ulyu` in the island repo, along with the real memory file `HANDOFF.md`. Full session→branch map written to `SESSION-INDEX.md`. Negbaum material removed from `/projects/` (preserved on its own branch + in this repo's git history).
 
+- 2026-08-15: **GATE MAP started** (`projects/gate-map/`, branch `claude/qr-code-gate-map-5sbszh`).
+  Isaac's idea: a QR code at his community's gate that delivery drivers and visitors scan
+  to see where the buildings are. Built and working: single-file `index.html` (unit-number
+  search → building highlighted on map + directions from the gate), `tools/make-qr.py`
+  (segno, error-correction H), print-ready `sign.html`, and `tools/walk.html` — a phone form
+  Isaac fills while walking the property, which emits a paste-ready data block.
+  - It is **his own community** in Pompano Beach, not a client. **No HOA approval needed**
+    to post a sign at the gate — confirmed by Isaac 2026-08-15.
+  - Community data in `index.html` is **placeholder** until the walk-through comes back.
+  - Blocked on Isaac only: satellite screenshot of the property + completed walk sheet.
+  - Do not print the sign until the deployed URL is final and live.
+
 ## PEOPLE
 - Isaac (isaacmagin78-ops) — owner. Pompano Beach, FL (Eastern time). Uses voice-to-text; confirm ambiguous messages before acting.
 - Arturo — partner/collaborator on Legends Ranch.
@@ -169,3 +181,4 @@ For every task, return:
 - [ ] Isaac to rename this repo: remove the stray leading dash in `-imagin-concierge` (GitHub → repo Settings → Repository name). Reminder scheduled for 2026-07-27 morning. Nothing breaks on rename; GitHub redirects the old name.
 - [x] ~~DECIDED 2026-07-27: First active project = TEMPLATE PACK~~ **SUPERSEDED 2026-08-14.** This was planning a first product while a first product was already live and selling. The real first product is the **$19 First 30 Days Kit** (`tysons-time-kit.vercel.app`, Stripe live). Do not restart a "which product should we build" conversation — the answer is: grow the one that already sells. See `HANDOFF.md` and `money-engine/INSTRUCTIONS.md` on `claude/optimize-repository-context-i7ulyu`.
 - [ ] Optional: Isaac renames `I.Magin-island-repair-` to something like `imagin-projects` (it's now a clean monorepo, not a repair app).
+- [ ] GATE MAP — waiting on Isaac: satellite screenshot of his community + completed walk sheet (`projects/gate-map/tools/walk.html`). Then: fill the real data, deploy, regenerate QR against the live URL, print the sign. Still to confirm with him: office/callbox phone number for the call button, or drop the button.
