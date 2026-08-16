@@ -8,24 +8,40 @@ that runs after their work ships.
 and already wrote `FIX-INSTRUCTIONS.md` *for their developer*. Lead with the help, not
 the criticism.
 
-**What not to do:** do not open by pointing out the placeholder Vimeo clip on the Legends
-Ranch homepage. It's real leverage but it reads as an attack from a stranger. Offer the
-fix doc instead — the observation lands on its own once they open it.
+> ## ⛔ THE OPENING IS DEAD — rewrite before sending (corrected 2026-08-15)
+>
+> **The Legends Ranch homepage video is already fixed.** Isaac checked the live site.
+> The defect was confirmed 2026-07-24 and has since been repaired.
+>
+> Both email drafts below open by offering a fix doc for it. **Sending either as written
+> would tell a web agency you haven't looked at their client's site in three weeks** —
+> the precise opposite of the intended effect.
+>
+> **The replacement opening is stronger anyway.** Drop the fix-doc angle entirely and
+> lead with the observation that survives: their clients get a site and a hero film, then
+> have nothing to post for eleven months. Legends Ranch's own footer still links Facebook
+> and nothing else. That is a live, checkable gap — and it doesn't require them to have
+> done anything wrong.
+>
+> The `FIX-INSTRUCTIONS.md` reference in the site audit is also stale. See
+> `legends-ranch/site-audit/`.
+
+**What not to do:** do not open by pointing out a defect on their client's site. It reads
+as an attack from a stranger — and in this case the defect is fixed, so it would also be
+wrong.
 
 ---
 
 ## Email — version A (warm, short, recommended)
 
-> **Subject:** Legends Ranch anthem slot — fix doc for your dev, plus one idea
+> **Subject:** Video work with Legends Ranch — one idea for your other clients
 >
 > Hi —
 >
-> I've been doing video work with Legends Ranch in Bitely. While I was going through the
-> site I put together a short fix doc for your developer on the homepage anthem slot —
-> the player's fine, it just has the wrong file plugged into it. Screenshots and exact
-> steps, about a page. Happy to send it over, no strings.
+> I've been doing video work with Legends Ranch in Bitely — the brand anthem and a piece
+> for the Wildlife Center. Nice site you built them.
 >
-> While I was in there I noticed something I think is a real opportunity for you.
+> Going through it, I noticed something I think is a real opportunity for you.
 >
 > Your clients get a great site and a hero film. Then they've got nothing to post for the
 > next eleven months. Legends Ranch's footer links Facebook and nothing else — no
@@ -39,7 +55,7 @@ fix doc instead — the observation lands on its own once they open it.
 > I'm not looking to touch your web, SEO, or logo work. I'd rather be the piece you can
 > sell on top of it — white-labelled under your name, or as a referral. Either works.
 >
-> Want me to send the fix doc and a sample package from the Legends Ranch material?
+> Want me to send a sample package built from the Legends Ranch material?
 >
 > Isaac Magin
 > [phone] · [email]
