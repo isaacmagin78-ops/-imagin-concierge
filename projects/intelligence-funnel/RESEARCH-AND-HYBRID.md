@@ -155,3 +155,119 @@ one thing offerable to Linda as a gift rather than an ask.
 ---
 
 *Notion twin (discussable): "The Best Possible Plan — live, watch this fill in", under IMagin Concierge.*
+
+---
+
+# CORRECTIONS — rounds two and three, 18 Aug 2026
+
+Two deeper researchers landed. Both could only reach sources through search extraction (the
+sandbox blocked direct page fetches), so figures are search-surfaced, not read on the source
+page. Graded accordingly. **Two findings change the plan.**
+
+## 1. The membership tier is wrong — kill it
+
+Audience arithmetic, defensible inputs only:
+
+- 2,700 followers ≠ 2,700 subscribers. Social-to-email capture is realistically 5–15% →
+  **135–400 emails.** That is the binding constraint, not price.
+- beehiiv's measured **median free-to-paid conversion is 0.62%** (~6 payers per 1,000). On 2,700
+  subscribers → ~17 payers. At $10/mo → **~$170/month.**
+- Kajabi's owned-list buyer rate ~7.5%. On 400 emails → ~30 buyers. **At $2,000 → ~$60,000.**
+- **Gumroad's own published 2020 distribution:** of 45,917 creators who earned anything, only
+  **1,853 cleared $10,000**; ~83% never cleared $1,000.
+
+**A $10–30/month membership on this audience is not a business. A few people paying a lot is.**
+
+## 2. Sell access + judgment, not interpretation alone
+
+Round two searched five ways and found **nobody selling situational intelligence as a named,
+priced product.** Real white space — but empty for four honest reasons: it can't be proved before
+purchase; the buyer must admit they don't know; it doesn't obviously recur; it's inseparable from
+the person. **The bundle that survives is access + interpretation.** Access is provable and
+recurring; the read is the moat and the renewal reason. Selling the read alone is much harder.
+
+Round three sharpened it: **every high-priced comparable sells *to* the wealthy, not *about* them.**
+Etiquette education tops out at **$75–$599 a class**; retained access runs **$50,000–$200,000/yr**
+for the same underlying knowledge — ~100× apart. **Sell being escorted, not being taught.**
+
+## 3. The proof-of-concept has a name
+
+**Jaclyn Sienna India, Sienna Charles (founded 2008).** BA in Art History; **started at Le Bec-Fin,
+a restaurant in Philadelphia**; no elite credential. Prices **from $50,000/yr** travel concierge,
+**+$25,000/yr** lifestyle; other pages say from $75,000; *Hollywood Reporter* reported a
+**$150,000/yr** tier. Screens clients at **$100M+ net worth**. Her own framing: she became
+*"a student of the ultra-high net worth."* **Same story, different name.**
+
+## 4. Three tiers, ~100× apart — pick tier 2
+
+| Tier | Sourced price | Verdict |
+|---|---|---|
+| Information (course/newsletter/cheap membership) | $170–$4,500/mo ceiling here | ❌ deflating — AI Overviews cut top-result CTR **58%** (Ahrefs, Feb 2026); Chegg non-subscriber traffic −49% |
+| **Judgment (retained access + advice)** | **$200–$1,000+/hr; $5,000–$25,000/yr luxury retainers; $50k–$200k/yr UHNW** | ✅ **best supported — and needs almost no audience.** Sienna Charles is a waitlist business, not a follower business |
+| Asset (document → name → license) | **EOS**: $5,000 franchise fee, $61,715–$152,540 total investment, ~$1,465/mo per licensee, acquired 2018 | 🕐 later, but this is the destination |
+
+**The corpus is the input to tiers 2 and 3, not a product in tier 1.**
+
+## 5. Three institutions, three datasets, one conclusion
+
+- **Dallas Fed, 24 Feb 2026** — 200+ occupations since ChatGPT. Where the experience premium is
+  high, AI exposure produced **wage gains**. Mechanism: *AI replicates codified textbook knowledge;
+  it does not replicate tacit knowledge built over years on the job.*
+- **PwC 2026 Global AI Jobs Barometer** — 1B+ job ads, 27 countries. Roles where AI **magnifies
+  expert judgment**: **2× job growth, 42% faster salary increases.**
+- **Springer, *Electronic Commerce Research* (2025, peer-reviewed)** — for **experience goods**,
+  when the human is framed as a **"Super Expert"**, consumers prefer the human.
+
+> **Publish the knowledge as content and it commoditises. Embody it in judgment and access and it
+> carries a measurable premium.** Same asset, opposite outcomes.
+
+## 6. The legal reason to write it down
+
+**Undocumented know-how is legally nothing.** Trade-secret protection requires the secret be
+documented **"with reasonable particularity"**; valuation and licensing both require it.
+**Writing it down converts thirty years from a personal trait into a balance-sheet item.**
+
+## 7. Funded path to build the corpus
+
+**Mercor, Surge AI, Scale AI pay domain experts to formalise rubrics, frameworks and judgment for
+AI training** — advertised **$55–$400/hr**, **$100+/hr common** in specialist domains; Mercor
+raised $350M. Surge describes it as *"partnering with researchers to formalise frameworks, rubrics
+and quality outputs."* **Literally paid to write down tacit expertise.** Worth an application.
+
+## 8. Florida is stricter than round one said
+
+Statute covers any seller **or promoter** of travel (Fla. Stat. Ch. 559, Part XI). Full
+registration **$300/yr + surety bond up to $25,000**; with vacation certificates $300 + $100 +
+**$50,000 bond**. The ~$50 independent-agent exemption is **not self-executing** — requires a
+letter of exemption from FDACS. **Criminal penalties exist** (s. 559.937). **Call FDACS before any
+client work touching travel.** Separately: Broward County requires **chauffeur registration** to
+drive clients for compensation — cleanest answer is never drive, book a licensed operator. Carry
+**E&O insurance** (~$500–$1,200/yr, US general figure) since the product is advice.
+
+## 9. Other operating findings
+
+- **Velocity Black: $3,100/yr + $900 initiation, acquired by Capital One June 2023 for a reported
+  $297M.** A ~$3k price point is proven at scale — and the buyer was a **card issuer**, i.e. the
+  real customer at that price is an institution buying a retention perk. Matches the 29 Jul
+  B2B2C note.
+- **£6,000–£40,000/yr band has essentially no published pricing.** No reference price exists, so
+  Isaac sets the anchor — and cannot win on "cheaper than Knightsbridge."
+- **Quintessentially Trustpilot review:** *"They don't seem to have any sway in getting a table."*
+  The category sells influence and delivers a list. **Solo is the feature** — no queue, no handoff.
+- **HNW clients defect over communication, not results** — 4 of the top 5 reasons.
+- **Don't sell hours.** Standard solo structure is ~$2,500/mo for 40 hrs, overage $75/hr — that
+  prices labour. Image consultants, also selling judgment, charge **$150–$800/hr** vs concierge
+  **$35–$75/hr**. Don't inherit the errand anchor.
+- **Set the client cap before the price.** He is both the asset and the ceiling.
+- **Ten Lifestyle Group** (only audited public comparator): **22.2% EBITDA margin** on £65.7m.
+  Ordinary economics, not spectacular.
+- **Market-size literature is unusable** — $773M, $16.1B and $25.3B for overlapping categories.
+- **#1 failure trigger is being unable to explain the offer.** If Isaac can't say it in one
+  sentence a prospect repeats back correctly, it does not launch.
+
+## Revised asks
+
+1. **How many clients can he serve at once?** Price derives from this. First decision.
+2. **Escort or teach?** Evidence says escorting, by ~100×.
+3. **The one-sentence offer.** If it doesn't exist, that's the first piece of work.
+4. **Still outstanding: yes or now on saving the room reads.**
