@@ -1,0 +1,398 @@
+<title>Rented and Owned</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root{
+    --ground:#FBFBFC;
+    --panel:#FFFFFF;
+    --ink:#14181E;
+    --ink-soft:#4E5865;
+    --ink-faint:#79838F;
+    --rule:#DFE3E8;
+    --rule-soft:#EDEFF2;
+    --accent:#1D5A6E;
+    --accent-soft:#E4EEF1;
+    --good:#2C6E52;
+    --warn:#8A5F17;
+    --crit:#A9432C;
+    --band:#E9ECF0;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0D1014;
+      --panel:#141920;
+      --ink:#E7EAEF;
+      --ink-soft:#9BA5B2;
+      --ink-faint:#6F7986;
+      --rule:#252C36;
+      --rule-soft:#1B212A;
+      --accent:#69B6CD;
+      --accent-soft:#152B33;
+      --good:#63B48D;
+      --warn:#C79A47;
+      --crit:#DE8168;
+      --band:#1C222B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0D1014;
+    --panel:#141920;
+    --ink:#E7EAEF;
+    --ink-soft:#9BA5B2;
+    --ink-faint:#6F7986;
+    --rule:#252C36;
+    --rule-soft:#1B212A;
+    --accent:#69B6CD;
+    --accent-soft:#152B33;
+    --good:#63B48D;
+    --warn:#C79A47;
+    --crit:#DE8168;
+    --band:#1C222B;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:17px;
+    line-height:1.62;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:44rem;
+    margin:0 auto;
+    padding:clamp(28px,6vw,64px) clamp(20px,5vw,32px) 96px;
+    display:flex;
+    flex-direction:column;
+    gap:38px;
+  }
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:.7rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0;
+  }
+  h1{
+    font-family:"Archivo",sans-serif;
+    font-weight:800;
+    font-size:clamp(2.1rem,7.5vw,3.1rem);
+    line-height:1.04;
+    letter-spacing:-.028em;
+    text-wrap:balance;
+    margin:.35em 0 0;
+  }
+  .standfirst{
+    font-size:1.115rem;
+    color:var(--ink-soft);
+    margin:.75em 0 0;
+    text-wrap:pretty;
+  }
+  h2{
+    font-family:"Archivo",sans-serif;
+    font-weight:700;
+    font-size:1.34rem;
+    letter-spacing:-.014em;
+    line-height:1.22;
+    text-wrap:balance;
+    margin:0;
+  }
+  h3{
+    font-family:"Archivo",sans-serif;
+    font-weight:700;
+    font-size:1.02rem;
+    letter-spacing:-.008em;
+    margin:0;
+  }
+  p{margin:0;}
+  section{display:flex;flex-direction:column;gap:14px;}
+  .rule{height:1px;background:var(--rule);border:0;margin:0;}
+
+  strong{font-weight:600;color:var(--ink);}
+  .num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;font-weight:600;}
+
+  figure{margin:0;display:flex;flex-direction:column;gap:11px;}
+  .figbox{
+    overflow-x:auto;
+    background:var(--panel);
+    border:1px solid var(--rule);
+    padding:20px 18px;
+  }
+  .figbox svg{display:block;min-width:520px;width:100%;height:auto;}
+  figcaption{
+    font-size:.9rem;
+    color:var(--ink-soft);
+    line-height:1.5;
+  }
+  figcaption b{color:var(--ink);font-weight:600;}
+
+  .ledger{
+    display:grid;
+    grid-template-columns:1fr;
+    border:1px solid var(--rule);
+    background:var(--panel);
+  }
+  @media(min-width:620px){ .ledger{grid-template-columns:1fr 1fr;} }
+  .col{padding:18px 18px 20px;display:flex;flex-direction:column;gap:11px;}
+  .col + .col{border-top:1px solid var(--rule);}
+  @media(min-width:620px){ .col + .col{border-top:0;border-left:1px solid var(--rule);} }
+  .col ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .col li{
+    font-size:.945rem;
+    color:var(--ink-soft);
+    padding-left:15px;
+    position:relative;
+    line-height:1.45;
+  }
+  .col li::before{
+    content:"";
+    position:absolute;left:0;top:.62em;
+    width:6px;height:1px;background:var(--ink-faint);
+  }
+  .verdict{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.72rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+  }
+  .v-crit{color:var(--crit);}
+  .v-good{color:var(--good);}
+
+  .test{display:flex;flex-direction:column;border-top:1px solid var(--rule);}
+  .row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:6px 16px;
+    align-items:baseline;
+    padding:13px 0;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  .row .what{font-size:.98rem;font-weight:500;}
+  .row .note{grid-column:1/-1;font-size:.87rem;color:var(--ink-soft);line-height:1.45;}
+  .tag{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.68rem;
+    letter-spacing:.09em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    padding:3px 8px;
+    border:1px solid currentColor;
+  }
+  .t-yes{color:var(--good);}
+  .t-no{color:var(--crit);}
+  .t-open{color:var(--warn);}
+
+  ol.actions{
+    margin:0;padding:0;list-style:none;
+    display:flex;flex-direction:column;gap:15px;
+    counter-reset:a;
+  }
+  ol.actions li{
+    counter-increment:a;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:14px;
+    align-items:start;
+  }
+  ol.actions li::before{
+    content:counter(a);
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.78rem;
+    font-weight:600;
+    color:var(--accent);
+    border:1px solid var(--accent);
+    width:26px;height:26px;
+    display:grid;place-items:center;
+    margin-top:2px;
+  }
+  ol.actions p{font-size:.965rem;color:var(--ink-soft);margin-top:3px;}
+  ol.actions b{color:var(--ink);font-weight:600;}
+
+  .pull{
+    border-left:2px solid var(--accent);
+    padding:2px 0 2px 18px;
+    font-size:1.06rem;
+    color:var(--ink);
+    text-wrap:pretty;
+  }
+
+  footer{
+    font-size:.83rem;
+    color:var(--ink-faint);
+    line-height:1.55;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  footer b{color:var(--ink-soft);font-weight:600;}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">IMagin Concierge · situation read · 18 Aug 2026</p>
+    <h1>Rented and Owned</h1>
+    <p class="standfirst">You asked what we can do, what's out there, and how to keep compounding. The tools are not the advantage. Two things are — and only one of them is currently being written down.</p>
+  </header>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Everything splits into two piles</h2>
+    <p>Roughly <span class="num">40</span> live connectors reached this session — Stripe, Notion, Blotato, Drive, Figma, Descript, Supabase, Booking.com. A batch of them disconnected and re-registered mid-session, which is the tell: <strong>none of it is yours.</strong> Anyone with a card gets the same shelf in six months.</p>
+
+    <div class="ledger">
+      <div class="col">
+        <p class="verdict v-crit">Rented · resets to zero</p>
+        <h3>The tool shelf</h3>
+        <ul>
+          <li>The models, and every generator on top of them</li>
+          <li>~40 MCP connectors, which drop without warning</li>
+          <li>Site, video, copy and image generation</li>
+          <li>Hosting, payments, scheduling</li>
+        </ul>
+        <p style="font-size:.9rem;color:var(--ink-soft);margin-top:2px;">Improves whether or not you touch it. Confers no lead.</p>
+      </div>
+      <div class="col">
+        <p class="verdict v-good">Owned · compounds</p>
+        <h3>What nobody can buy</h3>
+        <ul>
+          <li>Thirty years of how the rooms actually work</li>
+          <li>Linda, Arturo, Scott, Mom — access, not contacts</li>
+          <li>The verified record, once written down</li>
+          <li>Tyson and Miss T as property</li>
+          <li>Your own instinct for what's coming</li>
+        </ul>
+        <p style="font-size:.9rem;color:var(--ink-soft);margin-top:2px;">Only grows when it is captured.</p>
+      </div>
+    </div>
+
+    <p class="pull">Every hour spent on the rented pile has to convert into the owned pile, or it was rent.</p>
+  </section>
+
+  <figure>
+    <div class="figbox">
+      <svg viewBox="0 0 700 340" role="img" aria-label="Chart showing rented capability rising for everyone as a shaded band, owned-and-captured knowledge rising above it, and owned-but-uncaptured knowledge staying flat inside the band.">
+        <defs>
+          <linearGradient id="bandfade" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="var(--band)" stop-opacity=".55"/>
+            <stop offset="1" stop-color="var(--band)" stop-opacity="1"/>
+          </linearGradient>
+        </defs>
+
+        <!-- axes -->
+        <line x1="62" y1="286" x2="668" y2="286" stroke="var(--rule)" stroke-width="1"/>
+        <line x1="62" y1="26" x2="62" y2="286" stroke="var(--rule)" stroke-width="1"/>
+        <text x="62" y="312" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-faint)">today</text>
+        <text x="668" y="312" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-faint)">2 years out</text>
+        <text x="30" y="34" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-faint)">lead</text>
+
+        <!-- the market band: everyone's rented capability -->
+        <path d="M62 262 L668 96 L668 176 L62 278 Z" fill="url(#bandfade)"/>
+        <text x="386" y="205" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="500" fill="var(--ink-faint)">everyone's rented capability</text>
+
+        <!-- owned + captured -->
+        <path d="M62 258 C 240 240, 380 168, 668 44" fill="none" stroke="var(--accent)" stroke-width="2.75" stroke-linecap="round"/>
+        <circle cx="668" cy="44" r="4.5" fill="var(--accent)"/>
+        <text x="656" y="32" text-anchor="end" font-family="IBM Plex Sans, sans-serif" font-size="13.5" font-weight="600" fill="var(--accent)">owned + written down</text>
+
+        <!-- owned, not captured -->
+        <path d="M62 258 C 260 254, 420 250, 668 244" fill="none" stroke="var(--crit)" stroke-width="2.25" stroke-dasharray="5 5" stroke-linecap="round"/>
+        <circle cx="668" cy="244" r="4.5" fill="var(--crit)"/>
+        <text x="656" y="266" text-anchor="end" font-family="IBM Plex Sans, sans-serif" font-size="13.5" font-weight="600" fill="var(--crit)">owned, never captured</text>
+
+        <!-- start marker -->
+        <circle cx="62" cy="258" r="4" fill="var(--ink-soft)"/>
+      </svg>
+    </div>
+    <figcaption><b>The room knowledge is the top line only if it gets written down.</b> Left uncaptured it is still real, still yours, and still worth exactly what it was worth yesterday — while the rented band rises underneath it and swallows the lead.</figcaption>
+  </figure>
+
+  <hr class="rule">
+
+  <section>
+    <h2>One test decides everything: does it accumulate?</h2>
+    <p>Not "is it useful." Useful things evaporate. The only question worth asking of any hour, any tool, any new project: <strong>does it leave something behind that the next one starts from?</strong></p>
+
+    <div class="test">
+      <div class="row">
+        <span class="what">The watcher — <code>.github/workflows/watch.yml</code></span>
+        <span class="tag t-yes">Accumulates</span>
+        <span class="note">Runs twice a day on GitHub's servers. No key, no approval, nobody awake. Appends to <code>WATCH-FEED.md</code>, and writes a line even when it finds nothing. This one is already right.</span>
+      </div>
+      <div class="row">
+        <span class="what">The posting queue — Blotato</span>
+        <span class="tag t-yes">Accumulates</span>
+        <span class="note"><span class="num">20</span> posts scheduled right now, next one today at <span class="num">17:00</span> UTC, across TikTok, Instagram, Threads and YouTube. <span class="num">3,890</span> credits in hand. Read live today — the record saying the queue was empty is out of date.</span>
+      </div>
+      <div class="row">
+        <span class="what"><code>room-read</code> — the situational-intelligence skill</span>
+        <span class="tag t-no">Evaporates</span>
+        <span class="note">Already built, 16 Aug, and it is the product prototype. But it answers and stops. Every run spends the thirty years and stores none of it. <b>This is the leak.</b></span>
+      </div>
+      <div class="row">
+        <span class="what"><code>market-read</code> — on-demand market reads</span>
+        <span class="tag t-no">Evaporates</span>
+        <span class="note">Same shape, same leak. Read it out loud, lose it.</span>
+      </div>
+      <div class="row">
+        <span class="what">The adaptive funnel</span>
+        <span class="tag t-open">Open</span>
+        <span class="note">Accumulates only if answers persist and the routing gets better from them. That is a design decision, not a consequence — and it is still unmade.</span>
+      </div>
+      <div class="row">
+        <span class="what">A fifteenth project folder</span>
+        <span class="tag t-no">Evaporates</span>
+        <span class="note">One person, on a phone. Attention is the binding constraint, not capability.</span>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>Staying ahead is not the missing piece</h2>
+    <p>The watcher already runs, twice daily, unattended. Your own file says the real regression is different: three months ago you knew about Block's Buzz before Scott did, and the system took those hours and gave back maintenance.</p>
+    <p class="pull">The measure is not a tidier repo. It is whether you are back ahead of the news and out of the upkeep.</p>
+    <p>So the trend answer is not another feed. It is that <strong>nothing new gets its own project</strong> — it attaches to a loop that already runs, or it gets logged and parked.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section>
+    <h2>What to do</h2>
+    <ol class="actions">
+      <li>
+        <div>
+          <h3>Give <code>room-read</code> a memory</h3>
+          <p>Add one step: every run appends the room, the door rule, the dress read and what was current, to a single growing file. <b>No new build, no new project</b> — one paragraph added to a skill that already works. This is the moat, and today it is being spent and thrown away.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Decide the funnel accumulates</h3>
+          <p>Before any code: answers persist, and routing improves from them. Otherwise it is a nicer form, and a nicer form is rented too.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h3>Park everything that fails the test</h3>
+          <p>One person. Anything needing daily hands does not survive — the 31-day posting run proved that once already. Keep the loops that run without you.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <hr class="rule">
+
+  <footer>
+    <p><b>Read live today, 18 Aug 2026:</b> Blotato credits and the 20-post schedule; the connector roster; repo and branch contents; the three skills and the watcher workflow.</p>
+    <p><b>Not verified live, carried from HANDOFF.md (14 Aug):</b> the $1.29 lifetime third-party revenue figure — Amazon Associates has no connector here, so it could not be re-checked. Treat it as of that date.</p>
+    <p><b>Palette note:</b> deliberately clinical rather than the Miami brand palette. This is an internal diagnosis, per the <code>show-it</code> rule — semantic colour only, nothing decorative.</p>
+  </footer>
+
+</div>
