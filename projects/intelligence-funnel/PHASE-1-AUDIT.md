@@ -337,3 +337,43 @@ session picks a different one.
 5. **Push access to the island repo.**
 6. **Collapse the three Notion briefs to v0.1** and add the travel thesis back into it.
 7. **Miami palette or the existing navy/brass?**
+
+---
+
+# Addendum 2 — how it has to feel (Isaac, 2026-08-18)
+
+A product requirement, not a mood. In his own words:
+
+> *"The more people feel like they're living in the moment, like it's almost like sci-fi,
+> people will enjoy how they can interact with it once they get used to it. So we have to
+> make it like me. I'm having fun and making things — that has to be fun for the people
+> using it, yet beautiful and something that they need."*
+
+Five tests anything built under IMagin Concierge has to pass:
+
+1. **Alive, not static.** It responds in the moment. A page that sits there fails.
+2. **Sci-fi in feel, never in language.** The wonder comes from behaviour. Saying "AI" at
+   someone is the opposite of this — and the AI-fear audience is the one he reaches.
+3. **Fun first.** If it isn't enjoyable, nobody stays long enough to get used to it.
+4. **Beautiful.** Apple restraint, Miami palette — already fixed in `DESIGN-DIRECTION.md`.
+5. **Needed.** Fun and beautiful *on top of* something people actually need, not instead.
+
+**This raises the bar on Option A.** A merely clean questionnaire passes the brief and
+fails this. The deterministic routing still holds — but the *feel* has to be alive:
+motion that responds, questions that visibly react to what came before, a result that
+arrives rather than loads.
+
+## Also recorded — he cannot ask questions while reading
+
+He said reading these pages is hard, and he wants to talk about them instead. That is a
+real constraint on every deliverable, not a preference:
+
+- **Checked 2026-08-18:** no artifact runtime capability lets a published page hold a
+  conversation. The roster is `artifact`, `downloads`, `mcp`, `self` — state, files, and
+  connector calls. No model access. **A talking page cannot be built today.** Do not
+  promise one.
+- **The working route is Notion**, where Notion AI can discuss the page in place and he
+  can paste it into Perplexity or Gemini. Every substantial deliverable from here gets a
+  Notion twin written so another assistant can pick up the conversation cold.
+- First one: `The Bucket With A Hole — talk to me about this one`, under `IMagin Concierge`
+  in the Ike OS registry.
