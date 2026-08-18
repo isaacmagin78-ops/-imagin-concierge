@@ -222,3 +222,118 @@ lead is what it is, and exports CSV exactly as she does now.
    the registry.
 5. **Miami palette or the existing navy/brass?** `DESIGN-DIRECTION.md` says Miami; the
    page being forked is navy/brass. One of them has to give.
+
+---
+
+# Addendum — travel is the destination (Isaac, 2026-08-18)
+
+**Restating the direction so it is on record:** bespoke travel is the ultimate goal for
+IMagin Concierge in the long run. Travel has to be a first-class route in the engine,
+not something bolted on after real estate.
+
+## This is the third time it is on record, and the brief dropped it
+
+| When | Where | What it says |
+|---|---|---|
+| 2026-07-29 | Notion, **the canonical `IMagin Concierge` page itself**, "Future expansion" | *"AI-driven voice concierge for HNW households, paired with a **hybrid travel model** — post-transaction retention tool sold through elite brokers."* Revenue: *"bypass low-margin consumer affiliate programs; use **host-agency partnerships to capture commissions on luxury travel, aviation, yachting**."* Distribution: B2B2C through ONE Sotheby's-tier networks. |
+| 2026-08-16 | `HANDOFF.md`, "The concierge differentiator" | *"anywhere in the world, wants to change their travel or do anything they want — that needs to be built in."* Filed as **a product requirement, not a passing remark.** Ends: **"Nobody has scoped this."** |
+| 2026-08-18 | This session | Bespoke travel is the long-run goal. |
+
+**ChatGPT's three briefs mention travel zero times.** All three were written off the
+IMagin Concierge Notion page — the same page that carries the travel thesis in its own
+"Future expansion" section. The endgame was on the page and did not survive into the
+brief. That is the single largest gap in it, and it is why the brief optimizes for a
+real-estate lead form rather than an engine.
+
+## The finding that changes the architecture
+
+**The travel product splits into two halves with opposite data problems.**
+
+**Half one — logistics.** Flights, hotels, availability, price, amenities.
+**Verified live in this session, not assumed:** a Booking.com query for 5-star Fort
+Lauderdale properties, 12–14 Sep, returned real inventory — Four Seasons at $1,275.50,
+Ritz-Carlton at $839.06, Pier Sixty-Six at $718.20 — with review counts, coordinates,
+full facility lists and live booking URLs. Expedia, Trivago and lastminute.com are
+attached alongside it.
+
+This matters because of the hard rule: **never invent a fact.** Real estate has no
+verified data source in this workspace — no MLS access, so every listing fact must be
+hand-entered or requested from Linda, which is an ask Isaac has said he will not make.
+**Travel's data layer is already solved and real estate's is not.** That is the opposite
+of what the brief assumes.
+
+⚠️ **But the moat is zero here, and one caveat is load-bearing:** those booking URLs carry
+`aid=8132308` — the connector's affiliate ID, **not Isaac's**. The connector proves the
+*data layer*, not the *revenue*. Commission requires his own host-agency relationship,
+exactly as the 2026-07-29 note already said. Do not confuse the two.
+
+**Half two — situational intelligence.** What to wear to this specific evening. What gets
+you turned away at that door. What is current this season versus dated. How the event
+actually runs, and who is in the room. **There is no data source for this anywhere** —
+not in an API, not in a repo, not scrapeable. It exists only in Isaac's thirty years in
+those rooms, and `HANDOFF.md` already identifies it as the moat.
+
+**So the scarce asset is not code and not inventory. It is elicitation from Isaac.**
+It has the longest lead time of anything in this plan and it needs zero engineering.
+
+## What changes — and what does not
+
+**The recommendation stands: Option A, then B.** Travel does not justify jumping to
+Option C. Building a general engine before one stranger has completed one flow is the
+same mistake in a more expensive costume. What travel changes is small and cheap:
+
+1. **A's verified-facts blob becomes an adapter with a declared shape** — `facts`,
+   `constraints`, `routes`, `resultTemplates` — so a travel payload can replace the
+   real-estate payload without touching the presentation layer. Roughly thirty extra
+   minutes in Option A, and it is what makes B a port instead of a rewrite.
+2. **v0.2 becomes the travel front door**, not vertical three. Real estate proves the
+   interaction; travel is what the interaction is ultimately for.
+3. **Do not merge travel routes into the open-house flow.** Two front doors, one engine.
+   A yard-sign QR that asks about travel is incoherent, and incoherence is what kills
+   completion rates.
+
+## The recommendation this actually produces
+
+**Start the situational-intelligence capture now, in parallel with Option A. It needs no
+code and nothing else can start it.**
+
+Concretely: structured interview passes with Isaac, one room at a time — an art opening,
+a members' club dinner, a boat-show week, a charity gala, a first meeting at someone's
+home. For each: what to wear and what specifically fails, what time people actually
+arrive, what gets said and not said, what the host is judging, what a newcomer gets
+wrong. Captured as structured records against a controlled vocabulary, the same shape
+`concierge_tools.py` already uses for the collection inventory — derived recommendations,
+never stored ones.
+
+That corpus is the thing a competitor cannot buy, and every month it does not exist is a
+month of the moat not compounding.
+
+## Open commercial question
+
+The 2026-07-29 note says explicitly: **bypass low-margin consumer affiliate programs.**
+"Bespoke" points the same way — fee or retainer, relationship-driven, low volume, high
+ticket, sold B2B2C through brokers — not affiliate commissions on hotel bookings. Worth
+confirming, because it decides whether the travel front door optimizes for booking volume
+or for qualifying a very small number of people.
+
+## Contradiction found — three pilot properties across three canonical records
+
+| Record | Property |
+|---|---|
+| Notion `IMagin Concierge`, "Pilot" | **400 SE 5th Terrace, Pompano Beach** — $500 for one listing |
+| `HANDOFF.md`, verified 2026-08-15 | **1205 SW 4th Street, Sailboat Bend** — her actual live listing |
+| Open-house POC code | **2756 NE 35th Street** — the page that would be forked |
+
+Three records, three addresses, all current. Pick one and write it down, or the next
+session picks a different one.
+
+## Revised open questions
+
+1. **Approve Option A with the adapter shape**, then B, with travel as v0.2?
+2. **Start the situational-intelligence capture in parallel?** This is the one with the
+   longest lead time and it is not blocked by anything.
+3. **Bespoke fee model or booking commissions?** Decides what the travel front door optimizes for.
+4. **Which property** for the real-estate v0.1 — and see the contradiction above.
+5. **Push access to the island repo.**
+6. **Collapse the three Notion briefs to v0.1** and add the travel thesis back into it.
+7. **Miami palette or the existing navy/brass?**
