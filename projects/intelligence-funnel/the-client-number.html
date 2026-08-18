@@ -1,0 +1,368 @@
+<title>The Client Number</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+
+<style>
+  :root{
+    --ground:#FDFCFB;
+    --panel:#FFFFFF;
+    --ink:#14100E;
+    --soft:#5B534D;
+    --faint:#9A918A;
+    --line:#E9E2DC;
+    --aqua:#0C89AE;
+    --coral:#DE2F63;
+    --violet:#6E2ECC;
+    --peach:#D2703A;
+    --glow:rgba(12,137,174,.10);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#08070A;
+      --panel:#121016;
+      --ink:#F7F3EF;
+      --soft:#A79E97;
+      --faint:#6E655F;
+      --line:#25212B;
+      --aqua:#33C7EB;
+      --coral:#FF5787;
+      --violet:#A159FF;
+      --peach:#FFB78C;
+      --glow:rgba(51,199,235,.16);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#08070A;
+    --panel:#121016;
+    --ink:#F7F3EF;
+    --soft:#A79E97;
+    --faint:#6E655F;
+    --line:#25212B;
+    --aqua:#33C7EB;
+    --coral:#FF5787;
+    --violet:#A159FF;
+    --peach:#FFB78C;
+    --glow:rgba(51,199,235,.16);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:17px;
+    line-height:1.55;
+  }
+  .wrap{
+    max-width:34rem;
+    margin:0 auto;
+    padding:clamp(26px,6vw,52px) clamp(18px,5vw,26px) 90px;
+    display:flex;flex-direction:column;
+    gap:clamp(30px,6vw,42px);
+  }
+
+  h1{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-weight:400;
+    font-size:clamp(2.3rem,9.5vw,3.4rem);
+    line-height:1.02;
+    letter-spacing:-.015em;
+    text-wrap:balance;
+    margin:0;
+  }
+  .sub{color:var(--soft);margin:.6em 0 0;font-size:1.06rem;text-wrap:pretty;}
+  p{margin:0;text-wrap:pretty;}
+
+  .lab{
+    display:flex;justify-content:space-between;align-items:baseline;
+    gap:12px;margin-bottom:6px;
+  }
+  .lab .t{font-size:.97rem;font-weight:600;}
+  .lab .v{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:1.5rem;color:var(--aqua);
+    font-variant-numeric:tabular-nums;
+  }
+
+  input[type=range]{
+    -webkit-appearance:none;appearance:none;
+    width:100%;height:44px;background:transparent;margin:0;
+    cursor:pointer;display:block;
+  }
+  input[type=range]:focus{outline:none;}
+  input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--glow),0 0 0 2px var(--aqua);}
+  input[type=range]::-webkit-slider-runnable-track{
+    height:6px;border-radius:3px;background:var(--line);
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none;appearance:none;
+    width:30px;height:30px;border-radius:50%;
+    background:var(--aqua);border:3px solid var(--panel);
+    box-shadow:0 2px 10px var(--glow);
+    margin-top:-12px;
+  }
+  input[type=range]::-moz-range-track{height:6px;border-radius:3px;background:var(--line);}
+  input[type=range]::-moz-range-thumb{
+    width:26px;height:26px;border-radius:50%;border:3px solid var(--panel);
+    background:var(--aqua);box-shadow:0 2px 10px var(--glow);
+  }
+  .ends{
+    display:flex;justify-content:space-between;
+    font-size:.8rem;color:var(--faint);margin-top:-4px;
+  }
+
+  .readout{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:26px 22px 24px;
+    text-align:center;
+    display:flex;flex-direction:column;gap:6px;
+  }
+  .readout .cap{
+    font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--faint);font-weight:600;
+  }
+  .big{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(3rem,15vw,4.6rem);
+    line-height:1;
+    letter-spacing:-.02em;
+    font-variant-numeric:tabular-nums;
+    transition:color .25s ease;
+  }
+  .per{color:var(--soft);font-size:.98rem;}
+  .load{
+    margin-top:12px;padding-top:14px;border-top:1px solid var(--line);
+    font-size:.95rem;color:var(--soft);
+  }
+  .load b{color:var(--ink);font-weight:600;}
+  .warn{color:var(--coral);font-weight:600;}
+
+  /* ladder */
+  .ladder{display:flex;flex-direction:column;gap:14px;}
+  .rail{
+    position:relative;height:76px;
+    border-left:1px solid var(--line);border-right:1px solid var(--line);
+  }
+  .rail .bar{
+    position:absolute;left:0;right:0;top:34px;height:2px;background:var(--line);
+  }
+  .tick{position:absolute;top:26px;width:1px;height:18px;background:var(--faint);opacity:.5;}
+  .tick.on{background:var(--aqua);opacity:1;height:26px;top:22px;width:2px;}
+  .tname{
+    position:absolute;top:0;font-size:.72rem;color:var(--faint);
+    transform:translateX(-50%);white-space:nowrap;
+  }
+  .tname.on{color:var(--aqua);font-weight:600;}
+  .tprice{
+    position:absolute;top:56px;font-size:.72rem;color:var(--faint);
+    transform:translateX(-50%);white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+  .you{
+    position:absolute;top:18px;width:16px;height:34px;
+    transform:translateX(-50%);
+    transition:left .22s cubic-bezier(.22,.61,.36,1);
+  }
+  .you i{
+    display:block;width:3px;height:34px;margin:0 auto;
+    background:var(--coral);border-radius:2px;
+  }
+  .you span{
+    position:absolute;top:-19px;left:50%;transform:translateX(-50%);
+    font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--coral);
+  }
+
+  .verdict{
+    background:var(--panel);border:1px solid var(--line);
+    border-left:3px solid var(--aqua);
+    border-radius:0 14px 14px 0;
+    padding:18px 18px 18px 20px;
+    display:flex;flex-direction:column;gap:7px;
+  }
+  .verdict h3{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-weight:400;font-size:1.35rem;margin:0;line-height:1.2;
+  }
+  .verdict p{font-size:.98rem;color:var(--soft);}
+  .verdict b{color:var(--ink);font-weight:600;}
+
+  h2{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-weight:400;font-size:1.6rem;margin:0;line-height:1.15;
+  }
+  .note{font-size:.95rem;color:var(--soft);}
+
+  footer{
+    border-top:1px solid var(--line);padding-top:18px;
+    font-size:.83rem;color:var(--faint);line-height:1.5;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;}
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <h1>The client number</h1>
+    <p class="sub">Drag the two sliders. Everything else follows from where they land — including who your client turns out to be.</p>
+  </header>
+
+  <section style="display:flex;flex-direction:column;gap:22px;">
+    <div>
+      <div class="lab"><span class="t">People you look after</span><span class="v" id="v-c">12</span></div>
+      <input type="range" id="s-c" min="1" max="40" value="12" step="1" aria-label="Number of clients">
+      <div class="ends"><span>1</span><span>40</span></div>
+    </div>
+
+    <div>
+      <div class="lab"><span class="t">What you want the business to make</span><span class="v" id="v-t">$180,000</span></div>
+      <input type="range" id="s-t" min="60000" max="600000" value="180000" step="10000" aria-label="Target yearly revenue">
+      <div class="ends"><span>$60k</span><span>$600k</span></div>
+    </div>
+  </section>
+
+  <section class="readout">
+    <p class="cap">Each person pays you</p>
+    <div class="big" id="price">$15,000</div>
+    <p class="per">per year</p>
+    <p class="load" id="load"></p>
+  </section>
+
+  <section class="ladder">
+    <h2>Who you'd be standing next to</h2>
+    <div class="rail" id="rail" role="img" aria-label="Price ladder of real concierge businesses, with your position marked">
+      <div class="bar"></div>
+      <div class="you" id="you"><span>YOU</span><i></i></div>
+    </div>
+    <p class="note" style="font-size:.83rem;color:var(--faint);">Real published prices. £ figures are placed at an approximate dollar position so they can sit on one line — the label keeps the original currency.</p>
+  </section>
+
+  <section class="verdict" id="verdict">
+    <h3 id="v-h"></h3>
+    <p id="v-p"></p>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:10px;">
+    <h2>What this is really asking</h2>
+    <p class="note">Not how many people you'd <em>like</em>. How many could be texting you — <em>"I'm going to this thing Thursday, what am I walking into?"</em> — before it stops being good.</p>
+    <p class="note">Fewer people means a higher price. A higher price means a different kind of person walks through the door. That's the whole trade, and it's why the number comes before the price.</p>
+  </section>
+
+  <footer>
+    <p><b>Sources, all read 18 Aug 2026:</b> Knightsbridge Circle published pricing · Sienna Charles (Hollywood Reporter, and the company's own membership page) · Quintessentially tiers via Stirling Access · Velocity Black via Capital One's acquisition announcement · Innerplace published memberships · luxury lifestyle retainer band from industry rate cards.</p>
+    <p>The contact estimate assumes roughly 2–3 requests per person per month. That is an assumption, not a measured figure — nobody has run this yet.</p>
+    <p><b>Nothing here is a commitment.</b> It's a way to feel the trade before deciding anything.</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var MARKS = [
+    {n:"Quintessentially entry", p:2600,  lab:"£2,000"},
+    {n:"Velocity Black",         p:3100,  lab:"$3,100"},
+    {n:"Innerplace top",         p:7800,  lab:"£6,000"},
+    {n:"Lifestyle retainers",    p:25000, lab:"$25,000"},
+    {n:"Quintessentially Elite", p:32000, lab:"£25,000"},
+    {n:"Sienna Charles",         p:50000, lab:"$50,000"},
+    {n:"Knightsbridge top",      p:200000,lab:"$200,000"}
+  ];
+  var LO = 1500, HI = 260000;
+  var lg = Math.log;
+  function pos(p){
+    var x = (lg(Math.max(LO,Math.min(HI,p))) - lg(LO)) / (lg(HI) - lg(LO));
+    return Math.max(0, Math.min(100, x*100));
+  }
+
+  var rail = document.getElementById("rail");
+  MARKS.forEach(function(m, i){
+    var x = pos(m.p);
+    var t = document.createElement("div");
+    t.className = "tick"; t.style.left = x + "%"; t.dataset.i = i;
+    var n = document.createElement("div");
+    n.className = "tname"; n.style.left = x + "%"; n.textContent = m.n; n.dataset.i = i;
+    var pr = document.createElement("div");
+    pr.className = "tprice"; pr.style.left = x + "%"; pr.textContent = m.lab;
+    // stagger labels so they don't collide on narrow screens
+    if (i % 2 === 1) { n.style.top = "12px"; pr.style.top = "68px"; }
+    rail.appendChild(t); rail.appendChild(n); rail.appendChild(pr);
+  });
+
+  var sc = document.getElementById("s-c"),
+      st = document.getElementById("s-t"),
+      vc = document.getElementById("v-c"),
+      vt = document.getElementById("v-t"),
+      price = document.getElementById("price"),
+      load = document.getElementById("load"),
+      you = document.getElementById("you"),
+      vh = document.getElementById("v-h"),
+      vp = document.getElementById("v-p");
+
+  function money(n){
+    return "$" + Math.round(n).toLocaleString("en-US");
+  }
+
+  function band(p){
+    if (p < 3000) return {
+      h: "This only works if the buyer is a bank.",
+      t: "Velocity Black sold to Capital One at about this price — but the customer was a <b>card issuer buying a perk for its own clients</b>, not an individual. At this price you need hundreds of people, and you cannot look after hundreds."
+    };
+    if (p < 8000) return {
+      h: "Boutique. Real, but you'd need a crowd.",
+      t: "This is where the smaller London firms sit. It's an honest price — the problem is the volume it demands. <b>Check the contact load above and ask whether that's a life you want.</b>"
+    };
+    if (p < 30000) return {
+      h: "Serious money, still one of you.",
+      t: "Quintessentially's upper tiers and the luxury lifestyle retainer band live here. People paying this expect to be <b>known</b>, not queued. That suits one person far better than it suits a call centre — which is exactly the complaint their customers leave in reviews."
+    };
+    if (p < 75000) return {
+      h: "Sienna Charles territory.",
+      t: "Jaclyn Sienna India charges from $50,000 and screens clients at <b>$100M+ net worth</b>. She has no elite credential — she started out working in a Philadelphia restaurant and learned these people by being near them. <b>This is the closest thing to proof the plan is possible.</b>"
+    };
+    return {
+      h: "The dedicated-manager tier.",
+      t: "Knightsbridge Circle's top level is $200,000 a year plus a $50,000 joining fee, for a manager with <b>no other clients at all</b>. Their average member is worth $800 million. A very small number of very particular people — and they will expect you to pick up."
+    };
+  }
+
+  function render(){
+    var c = +sc.value, t = +st.value;
+    var p = t / c;
+    vc.textContent = c;
+    vt.textContent = money(t);
+    price.textContent = money(p);
+
+    var reqLo = Math.round(c*2), reqHi = Math.round(c*3);
+    var heavy = reqHi > 60;
+    load.innerHTML = "Roughly <b>" + reqLo + "–" + reqHi + " requests a month</b> coming at you" +
+      (heavy ? " — <span class='warn'>that's two or more every single day, including weekends.</span>" : ".");
+
+    you.style.left = pos(p) + "%";
+
+    // highlight nearest mark
+    var best = 0, bd = Infinity;
+    MARKS.forEach(function(m,i){
+      var d = Math.abs(lg(m.p) - lg(Math.max(LO,Math.min(HI,p))));
+      if (d < bd){ bd = d; best = i; }
+    });
+    Array.prototype.forEach.call(rail.querySelectorAll(".tick,.tname"), function(el){
+      el.classList.toggle("on", +el.dataset.i === best);
+    });
+
+    var b = band(p);
+    vh.textContent = b.h;
+    vp.innerHTML = b.t;
+  }
+
+  sc.addEventListener("input", render);
+  st.addEventListener("input", render);
+  render();
+})();
+</script>
