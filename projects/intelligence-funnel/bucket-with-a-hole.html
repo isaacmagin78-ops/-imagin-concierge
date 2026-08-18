@@ -1,0 +1,303 @@
+<title>The Bucket With A Hole</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+
+<style>
+  :root{
+    --ground:#FFFCFA;
+    --card:#FFFFFF;
+    --ink:#14120F;
+    --soft:#5A544D;
+    --faint:#9C948A;
+    --line:#E8E0D8;
+    --aqua:#0E8FB4;
+    --aqua-fill:#D6F0F8;
+    --coral:#E03A6B;
+    --coral-fill:#FFE0E9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0C0A09;
+      --card:#151210;
+      --ink:#F6F1EC;
+      --soft:#A79E95;
+      --faint:#736A61;
+      --line:#2A2521;
+      --aqua:#33C7EB;
+      --aqua-fill:#0D2C36;
+      --coral:#FF5787;
+      --coral-fill:#33121E;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0C0A09;
+    --card:#151210;
+    --ink:#F6F1EC;
+    --soft:#A79E95;
+    --faint:#736A61;
+    --line:#2A2521;
+    --aqua:#33C7EB;
+    --aqua-fill:#0D2C36;
+    --coral:#FF5787;
+    --coral-fill:#33121E;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Figtree",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:19px;
+    line-height:1.55;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:36rem;
+    margin:0 auto;
+    padding:clamp(30px,7vw,60px) clamp(20px,5vw,28px) 100px;
+    display:flex;
+    flex-direction:column;
+    gap:clamp(44px,9vw,68px);
+  }
+
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:800;
+    font-size:clamp(2.5rem,11vw,3.9rem);
+    line-height:.98;
+    letter-spacing:-.03em;
+    text-wrap:balance;
+    margin:0;
+  }
+  .sub{
+    font-size:1.2rem;
+    color:var(--soft);
+    margin:.65em 0 0;
+    text-wrap:pretty;
+  }
+
+  .step{display:flex;flex-direction:column;gap:16px;}
+  .n{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:800;
+    font-size:.82rem;
+    letter-spacing:.12em;
+    color:var(--faint);
+    margin:0;
+  }
+  h2{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:800;
+    font-size:clamp(1.75rem,6.4vw,2.4rem);
+    line-height:1.06;
+    letter-spacing:-.022em;
+    text-wrap:balance;
+    margin:0;
+  }
+  p{margin:0;text-wrap:pretty;}
+  .say{font-size:1.16rem;color:var(--soft);}
+  .say b{color:var(--ink);font-weight:700;}
+
+  .art{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:22px 18px;
+    overflow-x:auto;
+  }
+  .art svg{display:block;width:100%;height:auto;min-width:420px;}
+
+  .punch{
+    font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;
+    font-size:1.32rem;
+    line-height:1.24;
+    letter-spacing:-.014em;
+    padding:18px 20px;
+    border-radius:14px;
+    text-wrap:pretty;
+  }
+  .p-coral{background:var(--coral-fill);color:var(--ink);}
+  .p-aqua{background:var(--aqua-fill);color:var(--ink);}
+
+  .good{
+    display:flex;flex-direction:column;gap:14px;
+    border-left:3px solid var(--aqua);
+    padding-left:18px;
+  }
+  .good p{font-size:1.06rem;color:var(--soft);}
+  .good b{color:var(--ink);font-weight:700;}
+
+  .ask{
+    border:2px solid var(--ink);
+    border-radius:18px;
+    padding:24px 22px;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .ask h2{font-size:clamp(1.5rem,5.4vw,1.95rem);}
+
+  footer{
+    font-size:.88rem;
+    color:var(--faint);
+    line-height:1.5;
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <h1>The bucket with a hole</h1>
+    <p class="sub">The last page I made was too complicated. Here is the same thing, drawn.</p>
+  </header>
+
+  <section class="step">
+    <p class="n">1 — TWO KINDS OF THINGS</p>
+    <h2>Some stuff you rent. Some stuff you own.</h2>
+
+    <div class="art">
+      <svg viewBox="0 0 560 258" role="img" aria-label="On the left, three identical rental boxes that anybody can take. On the right, one locked box that only Isaac has.">
+        <text x="20" y="26" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="17" fill="var(--coral)">RENT</text>
+        <text x="20" y="48" font-family="Figtree, sans-serif" font-size="14" fill="var(--soft)">anybody can grab these</text>
+
+        <g stroke="var(--coral)" stroke-width="3.5" fill="var(--coral-fill)">
+          <rect x="20" y="72" width="66" height="66" rx="10"/>
+          <rect x="98" y="72" width="66" height="66" rx="10"/>
+          <rect x="176" y="72" width="66" height="66" rx="10"/>
+        </g>
+        <g fill="var(--coral)" opacity=".55">
+          <circle cx="53" cy="168" r="8"/><rect x="45" y="180" width="16" height="20" rx="6"/>
+          <circle cx="131" cy="168" r="8"/><rect x="123" y="180" width="16" height="20" rx="6"/>
+          <circle cx="209" cy="168" r="8"/><rect x="201" y="180" width="16" height="20" rx="6"/>
+        </g>
+        <text x="20" y="228" font-family="Figtree, sans-serif" font-size="14.5" font-weight="600" fill="var(--ink)">AI tools. Websites. Video.</text>
+        <text x="20" y="248" font-family="Figtree, sans-serif" font-size="14.5" fill="var(--soft)">Everyone gets the same box.</text>
+
+        <line x1="288" y1="16" x2="288" y2="238" stroke="var(--line)" stroke-width="2" stroke-dasharray="6 7"/>
+
+        <text x="320" y="26" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="17" fill="var(--aqua)">OWN</text>
+        <text x="320" y="48" font-family="Figtree, sans-serif" font-size="14" fill="var(--soft)">only one of these exists</text>
+
+        <rect x="320" y="72" width="144" height="66" rx="10" fill="var(--aqua-fill)" stroke="var(--aqua)" stroke-width="3.5"/>
+        <path d="M384 108 v-10 a8 8 0 0 1 16 0 v10" stroke="var(--aqua)" stroke-width="3.5" fill="none"/>
+        <rect x="380" y="107" width="24" height="19" rx="4" fill="var(--aqua)"/>
+
+        <g fill="var(--aqua)" opacity=".55">
+          <circle cx="392" cy="168" r="8"/><rect x="384" y="180" width="16" height="20" rx="6"/>
+        </g>
+        <text x="320" y="228" font-family="Figtree, sans-serif" font-size="14.5" font-weight="600" fill="var(--ink)">30 years in those rooms.</text>
+        <text x="320" y="248" font-family="Figtree, sans-serif" font-size="14.5" fill="var(--soft)">Nobody can buy that.</text>
+      </svg>
+    </div>
+
+    <p class="say">All the AI stuff we plug in is <b>rented</b>. It's great, and in six months every guy on the internet has the exact same box. Being good at renting doesn't put you ahead of anybody.</p>
+    <p class="say">What you <b>own</b> is thirty years of knowing how a room works. What to wear. What gets you turned away at the door. Who's actually who. <b>That is the whole business.</b></p>
+  </section>
+
+  <section class="step">
+    <p class="n">2 — HERE'S THE PROBLEM</p>
+    <h2>Right now that knowledge pours straight out of a hole.</h2>
+
+    <div class="art">
+      <svg viewBox="0 0 560 285" role="img" aria-label="A bucket. Knowledge pours in the top but runs straight out of a hole in the side, leaving the bucket nearly empty.">
+        <text x="150" y="24" font-family="Figtree, sans-serif" font-size="15" font-weight="600" fill="var(--aqua)">you tell me about a room</text>
+        <g fill="var(--aqua)">
+          <ellipse cx="250" cy="46" rx="6" ry="9"/>
+          <ellipse cx="272" cy="64" rx="5" ry="7.5"/>
+          <ellipse cx="252" cy="82" rx="5.5" ry="8"/>
+        </g>
+
+        <path d="M186 104 L214 246 a6 6 0 0 0 6 5 h96 a6 6 0 0 0 6 -5 L346 104 Z"
+              fill="none" stroke="var(--ink)" stroke-width="4" stroke-linejoin="round"/>
+        <line x1="180" y1="104" x2="352" y2="104" stroke="var(--ink)" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M219 226 L214.5 246 a6 6 0 0 0 6 5 h96 a6 6 0 0 0 6 -5 L317 226 Z" fill="var(--aqua)" opacity=".35"/>
+
+        <circle cx="333" cy="176" r="10" fill="var(--ground)" stroke="var(--coral)" stroke-width="4"/>
+
+        <path d="M344 178 C 380 184, 402 200, 414 236" fill="none" stroke="var(--coral)" stroke-width="4.5" stroke-linecap="round"/>
+        <g fill="var(--coral)">
+          <ellipse cx="424" cy="248" rx="5.5" ry="8"/>
+          <ellipse cx="446" cy="230" rx="4.5" ry="6.5"/>
+          <ellipse cx="406" cy="262" rx="4" ry="6"/>
+        </g>
+        <text x="392" y="166" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="16" fill="var(--coral)">GONE</text>
+        <text x="392" y="186" font-family="Figtree, sans-serif" font-size="13.5" fill="var(--soft)">nothing saved</text>
+
+        <text x="30" y="174" font-family="Figtree, sans-serif" font-size="14.5" font-weight="600" fill="var(--ink)">I answer you</text>
+        <text x="30" y="194" font-family="Figtree, sans-serif" font-size="14.5" fill="var(--soft)">perfectly, every time</text>
+        <path d="M142 184 h32" stroke="var(--faint)" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <p class="say">You already built the thing that does this. It's called <b>room-read</b>. You ask what to wear, it tells you, and it's good.</p>
+    <p class="say">But when the conversation ends, <b>it forgets everything.</b> Next week you ask again and I start from nothing. Thirty years goes in the top and runs straight out the hole.</p>
+
+    <p class="punch p-coral">You've been paying for the water and keeping none of it.</p>
+  </section>
+
+  <section class="step">
+    <p class="n">3 — THE FIX</p>
+    <h2>Plug the hole. That's the whole idea.</h2>
+
+    <div class="art">
+      <svg viewBox="0 0 560 252" role="img" aria-label="Four buckets over twelve months, each fuller than the last, ending with a completely full bucket.">
+        <g font-family="Figtree, sans-serif" font-size="13" fill="var(--soft)" text-anchor="middle">
+          <text x="72" y="240">month 1</text>
+          <text x="216" y="240">month 4</text>
+          <text x="360" y="240">month 8</text>
+          <text x="500" y="240">month 12</text>
+        </g>
+
+        <path d="M46 78 L60 200 a5 5 0 0 0 5 4 h14 a5 5 0 0 0 5 -4 L98 78 Z" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M62 188 L60 200 a5 5 0 0 0 5 4 h14 a5 5 0 0 0 5 -4 L82 188 Z" fill="var(--aqua)" opacity=".85"/>
+        <line x1="42" y1="78" x2="102" y2="78" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+
+        <path d="M190 78 L204 200 a5 5 0 0 0 5 4 h14 a5 5 0 0 0 5 -4 L242 78 Z" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M199 148 L204 200 a5 5 0 0 0 5 4 h14 a5 5 0 0 0 5 -4 L233 148 Z" fill="var(--aqua)" opacity=".85"/>
+        <line x1="186" y1="78" x2="246" y2="78" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+
+        <path d="M334 78 L348 200 a5 5 0 0 0 5 4 h14 a5 5 0 0 0 5 -4 L386 78 Z" fill="none" stroke="var(--ink)" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M341 116 L348 200 a5 5 0 0 0 5 4 h14 a5 5 0 0 0 5 -4 L379 116 Z" fill="var(--aqua)" opacity=".85"/>
+        <line x1="330" y1="78" x2="390" y2="78" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+
+        <path d="M474 78 L488 200 a5 5 0 0 0 5 4 h14 a5 5 0 0 0 5 -4 L526 78 Z" fill="none" stroke="var(--aqua)" stroke-width="4.5" stroke-linejoin="round"/>
+        <path d="M476 86 L488 200 a5 5 0 0 0 5 4 h14 a5 5 0 0 0 5 -4 L524 86 Z" fill="var(--aqua)"/>
+        <line x1="470" y1="78" x2="530" y2="78" stroke="var(--aqua)" stroke-width="5" stroke-linecap="round"/>
+        <text x="500" y="64" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="15" fill="var(--aqua)">FULL</text>
+
+        <path d="M118 40 h318" stroke="var(--faint)" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 9"/>
+        <path d="M442 40 l-11 -6 v12 Z" fill="var(--faint)"/>
+        <text x="118" y="28" font-family="Figtree, sans-serif" font-size="13.5" fill="var(--faint)">every room you walk into, saved</text>
+      </svg>
+    </div>
+
+    <p class="say">Every time I give you a room read, I also <b>write it down in one file</b>. The place. The door rule. What you wore. What was current that night.</p>
+    <p class="say">Nothing new to build. No new project. It is <b>one extra step</b> added to something that already works.</p>
+
+    <p class="punch p-aqua">In a year that file is a book on how the rich world actually works, and there is exactly one copy of it on earth. That's the thing people pay for.</p>
+  </section>
+
+  <section class="step">
+    <p class="n">4 — GOOD NEWS</p>
+    <h2>Two things are already running without you.</h2>
+
+    <div class="good">
+      <p><b>Staying ahead of the news is handled.</b> A little robot on GitHub checks twice a day and writes down what it finds. No key, no button, nobody has to be awake. It's been running since 16 Aug.</p>
+      <p><b>Your posting is not dead.</b> I checked live today — <b>20 posts are scheduled</b>, the next one goes out this afternoon, across TikTok, Instagram, Threads and YouTube. The old note saying the queue was empty is out of date.</p>
+    </div>
+  </section>
+
+  <section class="ask">
+    <h2>So I only need one yes from you.</h2>
+    <p class="say">Should I add the saving step to <b>room-read</b>, so from now on every room you walk into gets kept instead of thrown away?</p>
+    <p class="say" style="color:var(--faint);font-size:1rem;">It's a small change to one file. Nothing else moves, nothing breaks, and it can be undone.</p>
+  </section>
+
+  <footer>
+    Checked live today, 18 Aug 2026: the posting schedule and credits, the news robot, and the room-read file. The one number I could not re-check is the $1.29 of lifetime earnings — that's from your notes on 14 Aug, because Amazon isn't connected here.
+  </footer>
+
+</div>
