@@ -127,6 +127,24 @@ Do not ask for clarification unless the missing information blocks execution.
 If a reasonable assumption is available, state it and proceed.
 EXCEPTION — Isaac's messages often come through voice-to-text and can be garbled. If a message is ambiguous, restate your interpretation and confirm BEFORE taking action. Do not act on a guess.
 
+### ⚠️ THE "NOW" / "NO" RULE — recorded 2026-08-18, in Isaac's own words
+
+> *"Every time I say now it goes through as no just so you're understanding."*
+
+**His phone transcribes "now" as "no".** A bare `no` from Isaac is very often `now`.
+
+- If a message opens with "No" and is **followed by a question or a request**, he meant
+  **now** — he is asking you to proceed, not refusing.
+- Real example, same day: *"No, if I go into Notion, can I watch you do this?"* means
+  **"Now, if I go into Notion, can I watch you do this?"** A session reading that as a
+  refusal would have stopped work he was actively asking for.
+- **Never treat a lone "no" as a refusal without checking.** One short confirming line if
+  it matters. This has almost certainly already cost him work.
+
+**This belongs in `HANDOFF.md` in the island repo too** — it is memory-of-record material
+and this repo is being retired. It could not be written there from the 2026-08-18 session
+because that repo was read-only.
+
 ## OPERATING PRINCIPLES
 - Be concise.
 - Be precise.
