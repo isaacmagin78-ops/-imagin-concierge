@@ -1,0 +1,269 @@
+<title>The One Sentence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+
+<style>
+  :root{
+    --ground:#FCFBFA;
+    --card:#FFFFFF;
+    --card-on:#FFFFFF;
+    --ink:#15110F;
+    --soft:#5C544E;
+    --faint:#9A918B;
+    --line:#E7E0DA;
+    --line-on:#0C89AE;
+    --aqua:#0C89AE;
+    --coral:#D42F5F;
+    --peach:#C4652F;
+    --good:#2B6B4F;
+    --tint:rgba(12,137,174,.055);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#09080B;
+      --card:#121016;
+      --card-on:#161320;
+      --ink:#F7F3EF;
+      --soft:#A79E98;
+      --faint:#6D645E;
+      --line:#241F2A;
+      --line-on:#33C7EB;
+      --aqua:#33C7EB;
+      --coral:#FF5787;
+      --peach:#FFB78C;
+      --good:#63B48D;
+      --tint:rgba(51,199,235,.07);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#09080B;
+    --card:#121016;
+    --card-on:#161320;
+    --ink:#F7F3EF;
+    --soft:#A79E98;
+    --faint:#6D645E;
+    --line:#241F2A;
+    --line-on:#33C7EB;
+    --aqua:#33C7EB;
+    --coral:#FF5787;
+    --peach:#FFB78C;
+    --good:#63B48D;
+    --tint:rgba(51,199,235,.07);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:17px;line-height:1.55;-webkit-text-size-adjust:100%;
+  }
+  .wrap{
+    max-width:46rem;margin:0 auto;
+    padding:clamp(28px,6vw,60px) clamp(18px,5vw,30px) 90px;
+    display:flex;flex-direction:column;gap:clamp(26px,5vw,38px);
+  }
+  h1{
+    font-family:"Instrument Serif",Georgia,serif;font-weight:400;
+    font-size:clamp(2.3rem,7vw,3.4rem);line-height:1.03;
+    letter-spacing:-.015em;text-wrap:balance;margin:0;
+  }
+  .sub{color:var(--soft);margin:.6em 0 0;font-size:1.08rem;text-wrap:pretty;}
+  p{margin:0;text-wrap:pretty;}
+
+  .test{
+    border-left:2px solid var(--coral);padding:4px 0 4px 18px;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .test .h{font-weight:700;font-size:.78rem;letter-spacing:.11em;text-transform:uppercase;color:var(--coral);}
+  .test p{color:var(--soft);font-size:1.02rem;}
+  .test b{color:var(--ink);font-weight:600;}
+
+  .cards{display:flex;flex-direction:column;gap:14px;}
+  .card{
+    border:1px solid var(--line);background:var(--card);
+    border-radius:16px;padding:0;overflow:hidden;
+    transition:border-color .18s ease, background .18s ease;
+  }
+  .card.on{border-color:var(--line-on);background:var(--card-on);}
+  .head{
+    display:flex;gap:16px;align-items:flex-start;
+    padding:20px 20px;cursor:pointer;
+    width:100%;background:none;border:0;text-align:left;color:inherit;font:inherit;
+  }
+  .head:focus-visible{outline:2px solid var(--aqua);outline-offset:-3px;border-radius:16px;}
+  .num{
+    font-family:"Instrument Sans",sans-serif;
+    font-size:.72rem;font-weight:700;letter-spacing:.08em;
+    color:var(--faint);border:1px solid var(--line);
+    width:26px;height:26px;flex:0 0 26px;border-radius:50%;
+    display:grid;place-items:center;margin-top:5px;
+    transition:color .18s,border-color .18s;
+  }
+  .card.on .num{color:var(--aqua);border-color:var(--aqua);}
+  .quote{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(1.35rem,3.6vw,1.8rem);
+    line-height:1.24;letter-spacing:-.008em;
+    text-wrap:pretty;
+  }
+  .tagline{font-size:.9rem;color:var(--faint);margin-top:7px;}
+
+  .body{
+    display:none;padding:0 20px 22px 62px;
+    flex-direction:column;gap:13px;
+  }
+  .card.on .body{display:flex;}
+  .row{display:flex;gap:11px;align-items:flex-start;font-size:.97rem;line-height:1.5;}
+  .row .k{
+    flex:0 0 84px;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;
+    font-weight:700;color:var(--faint);padding-top:3px;
+  }
+  .row .v{color:var(--soft);}
+  .row .v b{color:var(--ink);font-weight:600;}
+  .row.risk .k{color:var(--coral);}
+  .row.win .k{color:var(--good);}
+
+  .pick{
+    background:var(--tint);border:1px solid var(--line-on);
+    border-radius:16px;padding:22px 22px;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .pick .h{
+    font-size:.75rem;letter-spacing:.11em;text-transform:uppercase;
+    font-weight:700;color:var(--aqua);
+  }
+  .pick .q{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(1.5rem,4.2vw,2.05rem);line-height:1.2;
+  }
+  .pick p{color:var(--soft);font-size:.99rem;}
+  .pick b{color:var(--ink);font-weight:600;}
+
+  h2{
+    font-family:"Instrument Serif",Georgia,serif;font-weight:400;
+    font-size:1.55rem;margin:0;line-height:1.18;
+  }
+  .note{font-size:.97rem;color:var(--soft);}
+
+  footer{
+    border-top:1px solid var(--line);padding-top:18px;
+    font-size:.85rem;color:var(--faint);line-height:1.5;
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <h1>The one sentence</h1>
+    <p class="sub">The research was blunt: the most common reason a business like this dies is that the owner can't say what it is in one sentence. You don't have to write it. Just find which one is already yours.</p>
+  </header>
+
+  <div class="test">
+    <span class="h">The actual test</span>
+    <p>Not which reads best. <b>Which one could you say out loud to Arturo without feeling stupid</b> — and which one would he repeat back correctly to somebody else the next day?</p>
+  </div>
+
+  <div class="cards" id="cards">
+
+    <div class="card" data-i="1">
+      <button class="head" aria-expanded="false">
+        <span class="num">1</span>
+        <span>
+          <span class="quote">"I tell you how the room works before you walk into it."</span>
+          <span class="tagline">Plain. Factual. Zero salesmanship.</span>
+        </span>
+      </button>
+      <div class="body">
+        <div class="row"><span class="k">Promises</span><span class="v">Judgment only. <b>Information, delivered before it's needed.</b></span></div>
+        <div class="row win"><span class="k">Strength</span><span class="v">Impossible to misunderstand. Nobody has to ask what you mean.</span></div>
+        <div class="row risk"><span class="k">Risk</span><span class="v">Sounds like something they could look up. <b>No access in it</b> — and the research says access is the provable half people actually pay for.</span></div>
+      </div>
+    </div>
+
+    <div class="card" data-i="2">
+      <button class="head" aria-expanded="false">
+        <span class="num">2</span>
+        <span>
+          <span class="quote">"You text me before anything that matters, and I tell you exactly what you're walking into."</span>
+          <span class="tagline">Closest to how you actually talk.</span>
+        </span>
+      </button>
+      <div class="body">
+        <div class="row"><span class="k">Promises</span><span class="v">A relationship. <b>You, reachable.</b></span></div>
+        <div class="row win"><span class="k">Strength</span><span class="v">It's the one that sounds like a person instead of a company — which is the whole reason to buy from you rather than Quintessentially.</span></div>
+        <div class="row risk"><span class="k">Risk</span><span class="v"><b>"Anything that matters" has no edges.</b> An unbounded promise at a fixed price is the exact mechanism the research says kills solo operators. This one needs a boundary before it's sold.</span></div>
+      </div>
+    </div>
+
+    <div class="card" data-i="3">
+      <button class="head" aria-expanded="false">
+        <span class="num">3</span>
+        <span>
+          <span class="quote">"I make sure you never walk into a room wrong."</span>
+          <span class="tagline">The shortest. The most repeatable.</span>
+        </span>
+      </button>
+      <div class="body">
+        <div class="row"><span class="k">Promises</span><span class="v">An outcome — and it's about how they'll be seen, which is what they actually care about.</span></div>
+        <div class="row win"><span class="k">Strength</span><span class="v">Nine words. Someone repeats this at dinner without trying.</span></div>
+        <div class="row risk"><span class="k">Risk</span><span class="v">It's a <b>guarantee about something you don't fully control.</b> One bad night and the sentence is used against you.</span></div>
+      </div>
+    </div>
+
+    <div class="card" data-i="4">
+      <button class="head" aria-expanded="false">
+        <span class="num">4</span>
+        <span>
+          <span class="quote">"I get you in, I tell you how it works, and I put the trip together."</span>
+          <span class="tagline">The complete one. Matches what the research says sells.</span>
+        </span>
+      </button>
+      <div class="body">
+        <div class="row"><span class="k">Promises</span><span class="v">Access <b>and</b> judgment <b>and</b> travel — the full stack.</span></div>
+        <div class="row win"><span class="k">Strength</span><span class="v">The research was clear: <b>access is the provable, recurring half; the read is why they renew.</b> Sold apart, the read alone is a much harder business. This is the bundle that survives.</span></div>
+        <div class="row risk"><span class="k">Risk</span><span class="v">Two real ones. <b>"I get you in" is a promise you have to actually keep</b> — every time. And the travel half triggers the Florida licensing question that's still unanswered.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pick">
+    <span class="h">If it were mine to pick</span>
+    <p class="q">"I get you in, and I tell you exactly what you're walking into."</p>
+    <p><b>Number 4's structure, in number 2's voice.</b> Access and judgment together — which is what the evidence supports — but short enough to survive being repeated, and it sounds like you rather than a brochure.</p>
+    <p>Travel isn't in the sentence on purpose. It's layer three, it's where this ends up, and it's the part with a licensing question still open. It gets added the day it's real, not before.</p>
+  </div>
+
+  <section style="display:flex;flex-direction:column;gap:10px;">
+    <h2>What happens once you pick one</h2>
+    <p class="note">Everything downstream stops being a guess. What the free front door has to prove in ninety seconds. What a membership includes and — more importantly — what it doesn't. What you say to the first person you try this on.</p>
+    <p class="note">And you don't have to take any of mine. <b>Say it your own way and that's the real one.</b> Yours beats mine every time, because you're the one who has to say it out loud.</p>
+  </section>
+
+  <footer>
+    Click any sentence to see what it commits you to. The strengths and risks come from the research run 18 Aug 2026 — the concierge market, the failure-mode data on solo operators, and the Florida seller-of-travel rules. Nothing here is decided; it's four options and a recommendation.
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll(".card"));
+  cards.forEach(function(c){
+    var btn = c.querySelector(".head");
+    btn.addEventListener("click", function(){
+      var open = c.classList.contains("on");
+      cards.forEach(function(o){
+        o.classList.remove("on");
+        o.querySelector(".head").setAttribute("aria-expanded","false");
+      });
+      if (!open){
+        c.classList.add("on");
+        btn.setAttribute("aria-expanded","true");
+      }
+    });
+  });
+})();
+</script>
