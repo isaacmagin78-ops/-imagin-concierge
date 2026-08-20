@@ -7,27 +7,63 @@
     "sub": "Same hands, same chair, every time. Text me and I'll hold a slot — no calling the shop, no waiting on hold.",
     "price": "Text to book",
     "priceNote": "Ask me about pricing — it depends what you want done.",
-    "facts": [["Where", "Victoria's Nails"], ["Book by", "Text — fastest way to reach me"], ["Bring", "A photo if you have a look in mind"]],
+    "facts": [
+      [
+        "Where",
+        "Victoria's Nails"
+      ],
+      [
+        "Book by",
+        "Text — fastest way to reach me"
+      ],
+      [
+        "Bring",
+        "A photo if you have a look in mind"
+      ]
+    ],
     "scanTitle": "Scan to text me",
     "scanNote": "Opens a text already written. Send the day and time you want and I'll confirm.",
-    "phone": "555-0100", "phoneDisplay": "555 0100", "who": "Becky · Victoria's Nails",
+    "phone": "555-0100",
+    "phoneDisplay": "555 0100",
+    "who": "Becky · Victoria's Nails",
     "smsBody": "Hi Becky - I'd like to book a nail appointment. I'm free: ",
-    "bg": "#FBF7F4", "accent": "#A8446B", "serif": true
+    "bg": "#FBF7F4",
+    "accent": "#A8446B",
+    "serif": true,
+    "story": "<b>Becky does nails at Victoria's.</b> She's built her whole book one client at a time, by remembering exactly what you asked for last time."
   },
   {
     "slug": "rich",
     "name": "Rich",
-    "eyebrow": "Rides · Your building",
-    "headline": "Need a<br>ride?",
-    "sub": "Airport runs, appointments, groceries — anywhere you need to be. Text me the night before and I'll be downstairs.",
-    "price": "Text for a quote",
-    "priceNote": "Flat price before you get in. No meter, no surge.",
-    "facts": [["Airport", "Book the night before"], ["Around town", "Same day, usually"], ["Pay", "However's easiest for you"]],
+    "eyebrow": "Car wash · In your building",
+    "headline": "Car wash<br>without<br>leaving.",
+    "sub": "I wash cars right here on the weekends. Park, hand me the keys or don't — you never have to move it.",
+    "price": "$25",
+    "priceNote": "Full outside wash & tires. Same price every car, no add-ons.",
+    "facts": [
+      [
+        "When",
+        "Weekends"
+      ],
+      [
+        "Where",
+        "Right here — your spot"
+      ],
+      [
+        "How long",
+        "About 30 minutes"
+      ]
+    ],
     "scanTitle": "Scan to text me",
-    "scanNote": "Opens a text already written. Send where you're going and when.",
-    "phone": "555-0100", "phoneDisplay": "555 0100", "who": "Rich · your driver",
-    "smsBody": "Hi Rich - I need a ride. Where and when: ",
-    "bg": "#F6F7F4", "accent": "#1F5C3D", "headlineSize": "64pt"
+    "scanNote": "Opens a text already written. Send your spot number and a time, and I'll confirm.",
+    "phone": "555-0100",
+    "phoneDisplay": "555 0100",
+    "who": "Rich · your neighbour",
+    "smsBody": "Hi Rich - I'd like a car wash. My spot and time: ",
+    "bg": "#F6F7F4",
+    "accent": "#1F5C3D",
+    "headlineSize": "56pt",
+    "story": "<b>Rich has lived in this building for years.</b> He's retired now — spent his working life in the courts — and he does this because he likes doing it well, not because he has to."
   },
   {
     "slug": "dolores",
@@ -37,11 +73,31 @@
     "sub": "She's helped just about everyone in this building at some point, and never once asked for anything. If she's helped you, here's a way to say so.",
     "price": "Any amount",
     "priceNote": "Or none at all — she'd tell you not to.",
-    "facts": [["Goes to", "Dolores, directly"], ["Takes", "About ten seconds"], ["Or just", "Say it to her face — that counts more"]],
+    "facts": [
+      [
+        "Goes to",
+        "Dolores, directly"
+      ],
+      [
+        "Takes",
+        "About ten seconds"
+      ],
+      [
+        "Or just",
+        "Say it to her face — that counts more"
+      ]
+    ],
     "scanTitle": "Scan to send a thank-you",
     "scanNote": "Opens her tip link. Nothing is shared with anyone else in the building.",
-    "phone": "555-0100", "phoneDisplay": "", "who": "With love from your neighbours",
+    "phone": "555-0100",
+    "phoneDisplay": "",
+    "who": "With love from your neighbours",
     "link": "PLACEHOLDER_TIP_LINK",
-    "bg": "#FCFAF3", "accent": "#9A6B1F", "serif": true, "headlineSize": "52pt", "priceSize": "36pt"
+    "bg": "#FCFAF3",
+    "accent": "#9A6B1F",
+    "serif": true,
+    "headlineSize": "52pt",
+    "priceSize": "36pt",
+    "story": "<b>Dolores is past ninety</b> and has quietly helped half this building — groceries, a spare key, sitting with someone who needed company. She has never once asked for anything back."
   }
 ]

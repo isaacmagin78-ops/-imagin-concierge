@@ -56,3 +56,52 @@ Ivan wants "bigger things" — that's a separate conversation, not a flyer.
 Print one, then scan it **from the distance someone would actually stand.** Confirm the
 text opens with the right number and the right message. A QR that opens a blank message
 to a wrong number costs you the relationship, not just the scan.
+
+---
+
+## Upgraded 2026-08-15 — photo + one true sentence
+
+Isaac's note: *"we should be able to do something very good for these people, not just
+generic basic stuff. Impressive."*
+
+He's right, and two things carry that:
+
+1. **Their face.** A flyer with a real photograph is a different object than one without.
+   Drop the image file in the person's folder and name it in `people.json` as `photo`.
+   Until then the flyer prints a dashed placeholder saying so.
+2. **One true sentence.** Not marketing — a fact only a neighbour would know. Rich's
+   reads: *"Rich has lived in this building for years. He's retired now — spent his
+   working life in the courts — and he does this because he likes doing it well, not
+   because he has to."* That sentence is the whole difference between a template and
+   something a person is proud to hang up.
+
+Both are now tracked as unresolved, so a flyer cannot silently ship without them.
+
+**Isaac has Rich's photo and details already** — they're in a ChatGPT conversation. They
+need to come across; nothing here can reach them.
+
+## ⚠️ Unresolved: which service is Rich's
+
+Isaac first described **Rich as "the driving guy"** and separately mentioned "some car
+wash guy" who'd take over since **Emilio** isn't interested. Later he said **"Rich, the
+car wash guy is retired."**
+
+Rich's flyer is currently built as **car wash**, reusing Emilio's proven $25 weekend
+format. **Confirm with Isaac before printing.** If Rich drives instead, it's a one-line
+change in `people.json` — the earlier driver copy is in git history.
+
+## The wider roster — not yet built
+
+| Person | Note |
+|---|---|
+| **Chloe** | Called excited. Isaac describes her and Madison as potential **partners with their own projects**, not customers — that is a different conversation from a flyer |
+| **Madison** | Travel; could work a travel convention |
+| **Mark** | Handyman in the building, grandpa of Ruca |
+| **Ivan** + wife | Car sales; wants "bigger things" |
+| **Fernando** | Via Jared |
+| **Paco** | Jared's employee — **interested in the punchlist tool**, which is the one thing anyone has actually used |
+| Finance guy with the dog | Owns a home in Colombia |
+
+**Chloe and Madison are the standout note here.** Everyone else on this list is someone
+to make a flyer for. Those two were described as people who could *run* something. That
+is worth separating before it gets flattened into the same pile.
